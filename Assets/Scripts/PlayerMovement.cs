@@ -6,17 +6,21 @@ public class PlayerMovement : MonoBehaviour
 {
 
 
-    [SerializeField] float speed;
+    [SerializeField]
+    [Range(1,15)]
+    float speed;
     Rigidbody2D playerRB;
     // Start is called before the first frame update
     void Start()
     {
+        //Retrieve Components
         playerRB = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        playerRB.MovePosition((Vector2)transform.position + new Vector2(Input.GetAxis("Horizontal")*speed*Time.deltaTime,transform.position.y));
+        Vector2 playerVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, 0) * Time.fixedDeltaTime;
+        playerRB.position += playerVelocity;
     }
 }
