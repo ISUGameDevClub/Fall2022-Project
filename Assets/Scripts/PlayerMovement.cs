@@ -7,8 +7,10 @@ public class PlayerMovement : MonoBehaviour
 
 
     [SerializeField]
-    [Range(1,15)]
+    [Range(13f,13.5f)]
     float speed;
+    [SerializeField]
+    [Range(14f, 14.5f)]
     public float jumpHeight;
     Rigidbody2D playerRB;
     // Start is called before the first frame update
