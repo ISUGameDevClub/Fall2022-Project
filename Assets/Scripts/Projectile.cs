@@ -5,7 +5,10 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float movement = .5f;
+    public GameObject parent;
+    public int travelFrames = 1;
 
+    private int framesTaveled = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -18,8 +21,31 @@ public class Projectile : MonoBehaviour
     {
         transform.Translate(movement, 0 , 0);
 
-        //despawn bullet after distance
 
-        //despawn bullet on collision
+        framesTaveled++;
+        //despawn bullet after distance
+        if(framesTaveled > travelFrames)
+        {
+            Destroy(gameObject);
+            //Debug.Log("despawning bullet!");
+        }
+        
+        
     }
+    //   private void OnCollisionEnter2D(Collision2D collision)
+    //   {
+    //       if(collision.gameObject!= parent)
+    //           Destroy(gameObject);
+    //  }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("wanting to collided!");
+        if (collision.gameObject != parent)
+        {
+            Destroy(gameObject);
+            Debug.Log("colliding!");
+        }
+    }
+
 }
