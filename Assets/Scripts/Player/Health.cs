@@ -8,14 +8,14 @@ public class Health : MonoBehaviour
 
     [SerializeField] int maxHealth = 2;
     [SerializeField] int maxCooldown = 60;
-    int health;
+    public int PlayerHealth;
     int damageCooldown;
     int healCooldown;
 
     
     void Start()
     {
-        health = maxHealth;
+        PlayerHealth = maxHealth;
         damageCooldown = 0;
         healCooldown = 0;
     }
@@ -34,7 +34,7 @@ public class Health : MonoBehaviour
         }
 
 
-     if (health <= 0)
+     if (PlayerHealth <= 0)
         {
             Destroy(gameObject);
         }
@@ -44,9 +44,9 @@ public class Health : MonoBehaviour
     //simple Health Gain method
     public void gainHealth()
     {
-        if (health < maxHealth)
+        if (PlayerHealth < maxHealth)
         {
-            health++;
+            PlayerHealth++;
             healCooldown = maxCooldown;
         }
     }
@@ -55,14 +55,14 @@ public class Health : MonoBehaviour
     //simple health loss method
     public void loseHealth()
     {
-        health--;
+        PlayerHealth--;
         damageCooldown = maxCooldown;
     }
 
     //lose all health method
     public void die()
     {
-        health = 0;
+        PlayerHealth = 0;
     }
 
     //check for collision
@@ -78,9 +78,8 @@ public class Health : MonoBehaviour
             }
         }
 
-
         //If collision is heal type, heal one health
-        if (collision.gameObject.tag == "Heal")
+        if (collision.gameObject.tag == "Health")
         {
              if (healCooldown == 0)
              {
