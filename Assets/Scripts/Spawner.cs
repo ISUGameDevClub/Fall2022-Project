@@ -20,7 +20,7 @@ public class Spawner : MonoBehaviour
     //Start is called before the first frame update
     void Start()
     {
-     
+        StartCoroutine("UpdateTime");
     }
 
     // Update is called once per frame
@@ -35,9 +35,8 @@ public class Spawner : MonoBehaviour
         { 
             if (!init) //Used to only initialize the spawner once
             {
-                //Using a unity method Invoke repeating to call the UpdateTime function every 1 second.
                 //UpdateTime() function is below the Update() function.
-                InvokeRepeating("UpdateTime", 1f, 1f);
+                time = 0;
                 GameObject spawner = (GameObject)Instantiate(obj, transform.position, transform.rotation);
                 spawns++;
             }
@@ -60,11 +59,13 @@ public class Spawner : MonoBehaviour
        
         //To do something when key pressed if (Input.GetKeyDown(KeyCode.X))
     }
-
-    void UpdateTime()
+    IEnumerator UpdateTime()
     {
-        //Updating the time variable every second by using InvokeRepeating in start method.
-        time++;
+        while (true) // this just equates to "repeat forever"
+        {
+            yield return new WaitForSeconds(1f); // "pauses" for 1 second.. note, the actual game doesn't pause..
+            time++; //increases time by 1
+        }
     }
 
 }
