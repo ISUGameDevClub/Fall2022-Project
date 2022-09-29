@@ -95,8 +95,8 @@ GameObject:
   - component: {fileID: 8618745532429111454}
   - component: {fileID: 8618745532429111455}
   m_Layer: 0
-  m_Name: Hat Pickup
-  m_TagString: Hat
+  m_Name: Hat on Cat
+  m_TagString: HatOnCat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
