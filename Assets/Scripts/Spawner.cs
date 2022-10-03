@@ -27,7 +27,7 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         //Player Position and Spawner position are assaigned to corresponsing variables
-        pos = FindObjectOfType<PlayerMovement>().transform.position.x;
+        pos = FindObjectOfType<NewPlayerMovement>().transform.position.x;
         spawnerPos = transform.position.x;
 
         //If X value of player in addition to the specified distance is greater than the spawners position, Initialize the spawner
