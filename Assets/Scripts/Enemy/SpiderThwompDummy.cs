@@ -2,29 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpiderDummy : MonoBehaviour
+public class SpiderThwompDummy : MonoBehaviour
 {
-    private Spider spiderMovement;
+
+    private SpiderThwomp spiderMovement;
 
     // Start is called before the first frame update
     void Start()
     {
-        spiderMovement = GetComponentInParent<Spider>();
+        spiderMovement = GetComponentInParent <SpiderThwomp>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             spiderMovement.spiderMoveDown();
-            Debug.Log("Trigger!");
+            Debug.Log("Thwomp Trigger!");
         }
     }
-
 }

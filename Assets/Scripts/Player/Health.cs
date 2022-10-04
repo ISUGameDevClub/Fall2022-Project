@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -8,21 +9,26 @@ public class Health : MonoBehaviour
 
     [SerializeField] int maxHealth = 2;
     [SerializeField] int maxCooldown = 60;
-    public int PlayerHealth;
+    public int playerHealth = 2;
+    public Text playerHealthText;
     int damageCooldown;
     int healCooldown;
+    private GameObject player;
 
     
     void Start()
     {
-        PlayerHealth = maxHealth;
+        playerHealth = maxHealth;
         damageCooldown = 0;
         healCooldown = 0;
+        playerHealthText.text = playerHealth.ToString();
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (damageCooldown > 0)
         {
             damageCooldown--;
@@ -34,19 +40,21 @@ public class Health : MonoBehaviour
         }
 
 
-     if (PlayerHealth <= 0)
+     if (playerHealth <= 0)
         {
             Destroy(gameObject);
         }
-    }
 
+        playerHealthText.text = playerHealth.ToString();
+
+    }
 
     //simple Health Gain method
     public void gainHealth()
     {
-        if (PlayerHealth < maxHealth)
+        if (playerHealth < maxHealth)
         {
-            PlayerHealth++;
+            playerHealth++;
             healCooldown = maxCooldown;
         }
     }
@@ -55,40 +63,29 @@ public class Health : MonoBehaviour
     //simple health loss method
     public void loseHealth()
     {
-        PlayerHealth--;
+        playerHealth--;
         damageCooldown = maxCooldown;
     }
 
     //lose all health method
     public void die()
     {
-        PlayerHealth = 0;
+        playerHealth = 0;
     }
 
     //check for collision
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        //If collision is enemy type, take one damage
         if (collision.gameObject.tag == "Enemy")
         {
-            if (damageCooldown == 0)
-            {
-                loseHealth();
-            }
+            loseHealth();
         }
 
-        //If collision is heal type, heal one health
         if (collision.gameObject.tag == "Health")
         {
-             if (healCooldown == 0)
-             {
-                gainHealth();
-             }
-         }
+            gainHealth();
+        }
 
     }
-
-
 
 }
