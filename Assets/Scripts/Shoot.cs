@@ -20,6 +20,7 @@ public class Shoot : MonoBehaviour
             //spawn bullet here
             GameObject bullet = Instantiate( bulletPrefab, position,Quaternion.identity );
             //make bullet fly forward
+            bullet.GetComponent<Projectile>().parent=gameObject;
         }
     }
 }
