@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 2701690532521974093}
   - component: {fileID: 510412581}
   - component: {fileID: 510412580}
-  - component: {fileID: 510412577}
+  - component: {fileID: 3707365223826663541}
   m_Layer: 0
   m_Name: Running Enemy
   m_TagString: Untagged
@@ -220,7 +220,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
---- !u!114 &510412577
+--- !u!114 &3707365223826663541
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -229,10 +229,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2701690532521974130}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 917c5c52accd5c64d8f0ad1b8f6060f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 5455211875cd3de4790ca6f9f3f59f37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed_enemy: 1
+  walldetectrange: 5
+  enemy_speed: 4
 --- !u!1 &2701690533540378103
 GameObject:
   m_ObjectHideFlags: 0

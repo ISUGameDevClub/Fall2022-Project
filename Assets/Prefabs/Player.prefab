@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2114353171}
   - component: {fileID: 2114353173}
-  - component: {fileID: 2114353172}
   - component: {fileID: 2114353174}
+  - component: {fileID: 8769685200964787622}
   m_Layer: 0
   m_Name: AimPoint
   m_TagString: Untagged
@@ -86,18 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2114353172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114353170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fad3fe90c4e058044a6d2e4cb2f06c96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2114353174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +99,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 3798674729731915158, guid: 66e7366d36713044ebb879ced77c8e88, type: 3}
+--- !u!114 &8769685200964787622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114353170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad3fe90c4e058044a6d2e4cb2f06c96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5200727663295268789
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,6 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 13.5
   jumpHeight: 14.5
+  jumpsAvailable: 1
 --- !u!212 &5200727663295268778
 SpriteRenderer:
   m_ObjectHideFlags: 0
