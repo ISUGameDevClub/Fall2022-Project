@@ -7,12 +7,12 @@ public class Health : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField] int maxHealth = 2;
-    [SerializeField] int maxCooldown = 60;
+    [SerializeField] int maxHealth;
+    [SerializeField] int maxCooldown;
     public int playerHealth = 2;
     public Text playerHealthText;
-    int damageCooldown;
-    int healCooldown;
+    float damageCooldown;
+    float healCooldown;
     private GameObject player;
 
     
@@ -54,8 +54,12 @@ public class Health : MonoBehaviour
     {
         if (playerHealth < maxHealth)
         {
-            playerHealth++;
-            healCooldown = maxCooldown;
+            if (healCooldown <= 0)
+            {
+                playerHealth++;
+                healCooldown = maxCooldown * Time.frameCount / Time.time;
+            }
+            
         }
     }
 
@@ -63,8 +67,12 @@ public class Health : MonoBehaviour
     //simple health loss method
     public void loseHealth()
     {
-        playerHealth--;
-        damageCooldown = maxCooldown;
+        if (damageCooldown <= 0)
+        {
+            playerHealth--;
+            damageCooldown = maxCooldown * Time.frameCount /Time.time;
+        }
+        
     }
 
     //lose all health method
@@ -74,7 +82,7 @@ public class Health : MonoBehaviour
     }
 
     //check for collision
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
