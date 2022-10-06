@@ -31,8 +31,8 @@ public class NewBehaviourScript : MonoBehaviour
     {
         //Need to get health method from other groups, want to destroy the hat pickup and change sprite to one to hat
 
-        gainHealth();
-        Destroy(gameObject.tag("HatPickup"));
+        //gainHealth();
+        //Destroy(gameObject.tag("HatPickup"));
     }
 
     
