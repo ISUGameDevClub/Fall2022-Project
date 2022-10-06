@@ -56,8 +56,8 @@ public class Health : MonoBehaviour
         {
             if (healCooldown <= 0)
             {
-                playerHealth = "a";
-                //this will be more fleshed out later. a is a test value
+                playerHealth = "Walter White";
+                //this will be more fleshed out later. Walter White is a test value
                 healCooldown = maxCooldown * Time.frameCount / Time.time;
             }
             
