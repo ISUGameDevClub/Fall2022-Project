@@ -7,9 +7,13 @@ public class PlayerMovement : MonoBehaviour
 
 
     [SerializeField]
-    [Range(1,15)]
+    [Range(13f,13.5f)]
     float speed;
+    [SerializeField]
+    [Range(14f, 14.5f)]
     public float jumpHeight;
+    public int jumpsAvailable = 1;
+    private int jumps = 0;
     Rigidbody2D playerRB;
     // Start is called before the first frame update
     void Start()
@@ -20,10 +24,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && jumpsAvailable != jumps)
         {
             playerRB.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
+            jumps++;
         }
+
+        if (playerRB.velocity.y == 0) jumps = 0;
     }
 
     // Update is called once per frame
