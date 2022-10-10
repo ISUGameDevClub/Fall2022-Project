@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class ItemPickup: MonoBehaviour
 {
     private bool hasHat;
-
+    public string pickupType;
     Rigidbody playerRB;
     Rigidbody hatPickup; 
 
