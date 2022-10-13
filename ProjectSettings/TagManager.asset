@@ -4,12 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
+  - Hat
+  - Heal
+  - Health
+  - HatOnCat
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 //Jonah && Milo
 
-public class aiming : MonoBehaviour
+public class Aiming : MonoBehaviour
 {
 
     // Start is called before the first frame update
