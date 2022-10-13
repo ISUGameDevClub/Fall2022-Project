@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     [SerializeField]
-    [Range(13f,13.5f)]
+    [Range(13f, 13.5f)]
     float speed;
     [SerializeField]
     [Range(14f, 14.5f)]
@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (playerRB.velocity.y == 0) jumps = 0;
+
     }
 
     // Update is called once per frame
@@ -39,4 +40,5 @@ public class PlayerMovement : MonoBehaviour
         Vector2 playerVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, 0) * Time.fixedDeltaTime;
         playerRB.position += playerVelocity;
     }
+
 }
