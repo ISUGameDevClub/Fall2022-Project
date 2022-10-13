@@ -57,7 +57,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 10}
+  m_Size: {x: 3, y: 10}
   m_EdgeRadius: 0
 --- !u!114 &65679327231119019
 MonoBehaviour:
@@ -84,6 +84,7 @@ GameObject:
   - component: {fileID: 65679327537039163}
   - component: {fileID: 65679327537039162}
   - component: {fileID: 65679327537039158}
+  - component: {fileID: 2849008933227751256}
   m_Layer: 0
   m_Name: SpiderThwomp
   m_TagString: Enemy
@@ -98,7 +99,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3516401259202817181}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.23, y: -3.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -218,12 +219,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4f43908715f71c4fa2c2bd2a5978e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDropping: 0
-  stop: 0
-  dropSpeed: 6
+  dropSpeed: 9
   raiseSpeed: 3
   maxDistance: 1
   restTime: 1.5
-  layerHit:
+  layerHitGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 72
+--- !u!114 &2849008933227751256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3516401259202817181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b2dcf50c55e7d444b2c230c82136d64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
