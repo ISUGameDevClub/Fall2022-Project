@@ -7,10 +7,10 @@ public class Health : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField] int maxHealth;
+    
     [SerializeField] int maxCooldown;
-    public int playerHealth = 2;
-    public Text playerHealthText;
+    public string playerHealth;
+    //public Text playerHealthText;
     float damageCooldown;
     float healCooldown;
     private GameObject player;
@@ -18,10 +18,10 @@ public class Health : MonoBehaviour
     
     void Start()
     {
-        playerHealth = maxHealth;
+        playerHealth = "";
         damageCooldown = 0;
         healCooldown = 0;
-        playerHealthText.text = playerHealth.ToString();
+        //playerHealthText.text = playerHealth;
         player = GameObject.Find("Player");
     }
 
@@ -40,22 +40,24 @@ public class Health : MonoBehaviour
         }
 
 
-     if (playerHealth <= 0)
+     if (playerHealth == null)
         {
             Destroy(gameObject);
         }
 
+        //playerHealthText.text = playerHealth;
 
     }
 
     //simple Health Gain method
     public void gainHealth()
     {
-        if (playerHealth < maxHealth)
+        if (playerHealth == "")
         {
             if (healCooldown <= 0)
             {
-                playerHealth++;
+                playerHealth = "Walter White";
+                //this will be more fleshed out later. Walter White is a test value
                 healCooldown = maxCooldown * Time.frameCount / Time.time;
             }
             
@@ -68,7 +70,14 @@ public class Health : MonoBehaviour
     {
         if (damageCooldown <= 0)
         {
-            playerHealth--;
+            if(playerHealth != "")
+            {
+                playerHealth = "";
+            }
+            else
+            {
+                playerHealth = null;
+            }
             damageCooldown = maxCooldown * Time.frameCount /Time.time;
         }
         
@@ -77,7 +86,7 @@ public class Health : MonoBehaviour
     //lose all health method
     public void die()
     {
-        playerHealth = 0;
+        playerHealth = null;
     }
 
     //check for collision
@@ -88,14 +97,9 @@ public class Health : MonoBehaviour
             loseHealth();
         }
 
-        if (collision.gameObject.tag == "Health")
+        if (collision.gameObject.tag == "Heal")
         {
             gainHealth();
-        }
-
-        if (collision.gameObject.tag == "Kill")
-        {
-            die();
         }
 
     }
