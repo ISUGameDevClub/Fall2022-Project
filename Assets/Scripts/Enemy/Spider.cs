@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 public class Spider : MonoBehaviour
 {
 
     private Rigidbody2D rb;
+    [SerializeField] Animator anim;
     [SerializeField] private bool isDropping;
     [SerializeField] private bool stop;
     [SerializeField] private int dropSpeed;
@@ -25,11 +27,13 @@ public class Spider : MonoBehaviour
 
         if (!stop && isDropping)
         {
+            anim.SetTrigger("fall");
             rb.MovePosition(transform.position += Vector3.down * dropSpeed * Time.deltaTime);
         }
 
         if (Physics2D.Raycast(transform.position, -transform.up, maxDistance, layerHit))
         {
+            anim.SetTrigger("idle");
             stop = true;
         }
         //   if (touching ground or player)
