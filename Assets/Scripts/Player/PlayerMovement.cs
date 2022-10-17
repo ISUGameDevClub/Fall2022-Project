@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     {
         //Retrieve Components
         playerRB = GetComponent<Rigidbody2D>();
+
+
     }
 
     private void Update()
