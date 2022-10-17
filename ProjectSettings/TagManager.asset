@@ -8,11 +8,8 @@ TagManager:
   - Heal
   - Health
   - HatOnCat
-<<<<<<< HEAD
-=======
   - Enemy
   - Kill
->>>>>>> main
   layers:
   - Default
   - TransparentFX

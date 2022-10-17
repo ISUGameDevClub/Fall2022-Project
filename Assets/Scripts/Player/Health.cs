@@ -45,10 +45,6 @@ public class Health : MonoBehaviour
             Destroy(gameObject);
         }
 
-<<<<<<< HEAD
-        //playerHealthText.text = playerHealth;
-=======
->>>>>>> main
 
     }
 
@@ -103,6 +99,11 @@ public class Health : MonoBehaviour
         if (collision.gameObject.tag == "Heal")
         {
             gainHealth();
+        }
+
+        if (collision.gameObject.tag == "Kill")
+        {
+            die();
         }
 
     }
