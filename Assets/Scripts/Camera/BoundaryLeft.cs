@@ -16,7 +16,7 @@ public class BoundaryLeft : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        screenBoundsLeft = Camera.main.ScreenToWorldPoint(new Vector2(0, 1));
+        screenBoundsLeft = Camera.main.ViewportToWorldPoint(new Vector3(0f, 0.5f, 0f));
         transform.position = new Vector3(screenBoundsLeft.x - 0.5f, screenBoundsLeft.y, 0);
     }
 }
