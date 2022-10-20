@@ -18,11 +18,7 @@ public class BirdEnemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.MovePosition(rb.position + new Vector2(-1, -1) * Time.deltaTime * enemy_speed);
-
         Create2DRay();
-
-
     }
 
     private void Create2DRay()
@@ -34,10 +30,14 @@ public class BirdEnemyMove : MonoBehaviour
         {
             rb.MovePosition(rb.position + new Vector2(-1, 0) * Time.deltaTime * enemy_speed);
         }
+        else
+        {
+            rb.MovePosition(rb.position + new Vector2(-1, -1) * Time.deltaTime * enemy_speed);
+        }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        Destroy(this.gameObject);
     }
 }

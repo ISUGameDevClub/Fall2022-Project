@@ -8,6 +8,8 @@ TagManager:
   - Heal
   - Health
   - HatOnCat
+  - Enemy
+  - Kill
   layers:
   - Default
   - TransparentFX
@@ -42,6 +44,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1207180077
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Enemies
+    uniqueID: 691333133
     locked: 0

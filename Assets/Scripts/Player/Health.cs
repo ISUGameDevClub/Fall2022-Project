@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    
+
     [SerializeField] int maxCooldown;
     public string playerHealth;
     //public Text playerHealthText;
@@ -15,7 +15,7 @@ public class Health : MonoBehaviour
     float healCooldown;
     private GameObject player;
 
-    
+
     void Start()
     {
         playerHealth = "";
@@ -45,7 +45,6 @@ public class Health : MonoBehaviour
             Destroy(gameObject);
         }
 
-        //playerHealthText.text = playerHealth;
 
     }
 
@@ -60,7 +59,7 @@ public class Health : MonoBehaviour
                 //this will be more fleshed out later. Walter White is a test value
                 healCooldown = maxCooldown * Time.frameCount / Time.time;
             }
-            
+
         }
     }
 
@@ -80,7 +79,7 @@ public class Health : MonoBehaviour
             }
             damageCooldown = maxCooldown * Time.frameCount /Time.time;
         }
-        
+
     }
 
     //lose all health method
@@ -100,6 +99,11 @@ public class Health : MonoBehaviour
         if (collision.gameObject.tag == "Heal")
         {
             gainHealth();
+        }
+
+        if (collision.gameObject.tag == "Kill")
+        {
+            die();
         }
 
     }
