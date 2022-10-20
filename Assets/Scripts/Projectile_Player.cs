@@ -4,23 +4,34 @@ using UnityEngine;
 
 public class Projectile_Player : MonoBehaviour
 {
+    enum weaponType
+    {
+        bullet,
+        grenade
+    }
+
     public float movement = .5f;
     public GameObject gun;
     private Vector2 aim; 
     public float range = 10; 
     Vector2 startPosition;
+    weaponType weapon;
 
     // Start is called before the first frame update
     void Start()
     {
-         aim = gun.transform.localPosition;
-        Vector2 startPosition = transform.position; 
+        aim = gun.transform.localPosition;
+        Vector2 startPosition = transform.position;
+
+        //needs to get type of projectile
+        weapon = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // transform.Translate(movement/10, 0, 0);
+        // needs to despawn bullets after distance
+        // needs to call grenade methods when nessary
        
         if (aim == new Vector2(1, 0))
         { 
@@ -28,7 +39,6 @@ public class Projectile_Player : MonoBehaviour
             transform.Translate(movement / 10, 0, 0);
             
         }
-
         else if (aim == new Vector2(0, 1))
         {
             //shoot up
@@ -70,15 +80,24 @@ public class Projectile_Player : MonoBehaviour
     //        Destroy(gameObject);
       //  }
     }
-  
+
+    //needs to throw the grenade far
+    private void throwGrenade(bool direction)
+    {
+
+    }
+
+    //need to roll grenade close
+    private void underhandGrenade(bool direction)
+    {
+
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("wanting to collided!");
         if (collision.gameObject != gun.transform.parent.gameObject)
         {
             Destroy(gameObject);
-            Debug.Log("colliding!");
         }
     }
 
