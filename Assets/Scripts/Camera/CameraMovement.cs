@@ -77,10 +77,5 @@ public class CameraMovement : MonoBehaviour
        
         transform.position = Vector3.Lerp(startPos, endPos, cameraSpeed * Time.deltaTime);
 
-        string print = (Camera.main.orthographicSize*2).ToString();
-        Debug.Log((print));
-        
-
-
     }
 }
