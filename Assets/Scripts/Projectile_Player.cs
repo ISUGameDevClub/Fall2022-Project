@@ -65,10 +65,10 @@ public class Projectile_Player : MonoBehaviour
             transform.Translate(-movement / 10, -movement / 10, 0);
         }
         //despawn bullet after distance
-        if (Vector2.Distance(startPosition, transform.position) > range) 
-        {
-            Destroy(gameObject);
-        }
+//        if (Vector2.Distance(startPosition, transform.position) > range) 
+  //      {
+    //        Destroy(gameObject);
+      //  }
     }
   
 
