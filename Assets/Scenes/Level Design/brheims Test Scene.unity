@@ -154,11 +154,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &981407172 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5200727663295268789, guid: 6dc785928619abb45be245872aa77d9e, type: 3}
-  m_PrefabInstance: {fileID: 1062852818}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1062852818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -166,6 +161,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 178533900369964824, guid: 6dc785928619abb45be245872aa77d9e, type: 3}
+      propertyPath: jumpsAvailable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5200727663295268777, guid: 6dc785928619abb45be245872aa77d9e, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -289,14 +288,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1353258434}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc359b0aae7eb474db2db6477c4bdc79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 981407172}
-  frequency: 3
-  limitOfSpawn: 10
+  obj: {fileID: 0}
+  frequency: 0
+  limitOfSpawn: 0
   distanceTillSpawn: 0
   unlimitedSpawn: 0
 --- !u!4 &1353258436
