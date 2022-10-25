@@ -49,18 +49,10 @@ public class Health : MonoBehaviour
     }
 
     //simple Health Gain method
-    public void gainHealth()
+    public void gainHealth(string powerup)
     {
-        if (playerHealth == "")
-        {
-            if (healCooldown <= 0)
-            {
-                playerHealth = "Walter White";
-                //this will be more fleshed out later. Walter White is a test value
-                healCooldown = maxCooldown * Time.frameCount / Time.time;
-            }
-
-        }
+        Debug.Log("gained health");
+        playerHealth = powerup;
     }
 
 
@@ -94,11 +86,6 @@ public class Health : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             loseHealth();
-        }
-
-        if (collision.gameObject.tag == "Hat")
-        {
-            gainHealth();
         }
 
         if (collision.gameObject.tag == "Kill")
