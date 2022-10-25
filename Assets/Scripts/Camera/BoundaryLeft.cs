@@ -2,22 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoundariesLeft : MonoBehaviour
+public class BoundaryLeft : MonoBehaviour
 {
+
     private Vector2 screenBoundsLeft;
 
     // Start is called before the first frame update
     void Start()
     {
-        screenBoundsLeft = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height + 0.5f, Camera.main.transform.position.z));
+        screenBoundsLeft = new Vector3(0, 0, 0);
     }
-
-
 
     // Update is called once per frame
     void LateUpdate()
     {
-        screenBoundsLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0.5f, Camera.main.transform.position.z));
+        screenBoundsLeft = Camera.main.ViewportToWorldPoint(new Vector3(0f, 0.5f, 0f));
         transform.position = new Vector3(screenBoundsLeft.x - 0.5f, screenBoundsLeft.y, 0);
     }
 }
