@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0892955ede99d8d49bca631566a2f59d
+guid: bad58286e41531543b2ced3b15adc56f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: police dog sheet_0
+      name: Protagonist Cat Legs and tail sprite sheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1152
-        width: 576
-        height: 576
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a813b861abeeb764ebc43af8641bd033
-      internalID: 1706862568
+      spriteID: 4b7840cac8353bf4384c0dfe4a2343af
+      internalID: 144257195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: police dog sheet_1
+      name: Protagonist Cat Legs and tail sprite sheet_1
       rect:
         serializedVersion: 2
-        x: 576
-        y: 1152
-        width: 576
-        height: 576
+        x: 96
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f552324cbbaf1e64c89a19f2062eee3a
-      internalID: 424046356
+      spriteID: a5ba1704b9b0975479649d975adcfe1b
+      internalID: 1061633631
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: police dog sheet_2
+      name: Protagonist Cat Legs and tail sprite sheet_2
       rect:
         serializedVersion: 2
-        x: 1152
-        y: 1152
-        width: 576
-        height: 576
+        x: 192
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b70d3ba5b2e4924498d40062a5bed6ae
-      internalID: -1845332109
+      spriteID: c6bd6c1ba43910c46a19fbdb903601b0
+      internalID: -1409796815
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: police dog sheet_3
+      name: Protagonist Cat Legs and tail sprite sheet_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 576
-        width: 576
-        height: 576
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,20 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81f4e7bfc58028945a400c09a63832fd
-      internalID: 110151191
+      spriteID: 4a4f9bb8bac96ad4fb0e532370a819fe
+      internalID: 403673947
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: police dog sheet_4
+      name: Protagonist Cat Legs and tail sprite sheet_4
       rect:
         serializedVersion: 2
-        x: 576
-        y: 576
-        width: 576
-        height: 576
+        x: 96
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,20 +202,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b11e1a109e4ba6a4ba8e228eea0b7c19
-      internalID: 1275490623
+      spriteID: 434f8a19a1b3ec944b95eaefd65e398e
+      internalID: -83431801
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: police dog sheet_5
+      name: Protagonist Cat Legs and tail sprite sheet_5
       rect:
         serializedVersion: 2
-        x: 1152
-        y: 576
-        width: 576
-        height: 576
+        x: 192
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,20 +223,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 633925f7e4384bb42b22a6b409e55abc
-      internalID: -17070582
+      spriteID: dc584bbb313a82a4c9daa759a835e692
+      internalID: -974882852
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: police dog sheet_6
+      name: Protagonist Cat Legs and tail sprite sheet_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 576
-        height: 576
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,8 +244,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcce28f70159e1d4e8dd060bbe9aaea5
-      internalID: -757645102
+      spriteID: 92b81e0e4c0e88343baf88716427f785
+      internalID: 1158672
       vertices: []
       indices: 
       edges: []
@@ -261,13 +261,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      police dog sheet_6: -757645102
-      police dog sheet_5: -17070582
-      police dog sheet_3: 110151191
-      police dog sheet_0: 1706862568
-      police dog sheet_2: -1845332109
-      police dog sheet_1: 424046356
-      police dog sheet_4: 1275490623
+      Protagonist Cat Legs and tail sprite sheet_6: 1158672
+      Protagonist Cat Legs and tail sprite sheet_2: -1409796815
+      Protagonist Cat Legs and tail sprite sheet_0: 144257195
+      Protagonist Cat Legs and tail sprite sheet_5: -974882852
+      Protagonist Cat Legs and tail sprite sheet_4: -83431801
+      Protagonist Cat Legs and tail sprite sheet_1: 1061633631
+      Protagonist Cat Legs and tail sprite sheet_3: 403673947
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

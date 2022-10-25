@@ -2,28 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMove : MonoBehaviour
+public class DogMovement : MonoBehaviour
 {
     private float direction = 1.0f;
     private Rigidbody2D rb;
+    [SerializeField] float fallSpeed;
     public float wallDetectRange = 5;
     public float enemySpeed = 4;
+    SpriteRenderer sR;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sR = GetComponentInChildren<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        // if (Rigidbody.position.x < -1.5)
-        // {
-        //     speed_enemy = speed_enemy * -1;
-        // }
-        rb.MovePosition(rb.position + new Vector2(-1, 0) * Time.deltaTime * direction * enemySpeed);
 
+    void FixedUpdate()
+    {
+        rb.velocity = Vector2.zero;
+        rb.MovePosition(rb.position + new Vector2(-1, 0) * Time.fixedDeltaTime * direction * enemySpeed + new Vector2(0, fallSpeed)*Time.fixedDeltaTime);
         Create2DRay();
     }
     private void Create2DRay()
@@ -34,6 +33,7 @@ public class EnemyMove : MonoBehaviour
         if (hit.collider != null)
         {
             direction = direction * -1;
+            sR.flipX = !sR.flipX;
         }
     }
 }

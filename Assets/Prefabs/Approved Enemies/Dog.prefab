@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 951416660085453506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.49, z: 0}
-  m_LocalScale: {x: 0.1847, y: 0.1847, z: 0.1847}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8849550592737582887}
@@ -74,12 +74,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1706862568, guid: 0892955ede99d8d49bca631566a2f59d, type: 3}
+  m_Sprite: {fileID: -1082906523, guid: ab8070e1e95012948a7c25557b470ee7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 3, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -155,8 +155,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: 0, y: 0.8}
+  m_Size: {x: 2, y: 3.25}
   m_Direction: 0
 --- !u!50 &8849550592737582882
 Rigidbody2D:
@@ -173,7 +173,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -191,7 +191,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5455211875cd3de4790ca6f9f3f59f37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallDetectRange: 5
+  fallSpeed: -5
+  wallDetectRange: 1.2
   enemySpeed: 4
 --- !u!114 &737509617805180028
 MonoBehaviour:
@@ -205,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2dcf50c55e7d444b2c230c82136d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 100
 --- !u!95 &6958280179132721496
 Animator:
   serializedVersion: 4
