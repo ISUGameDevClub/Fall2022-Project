@@ -5,19 +5,17 @@ using UnityEngine;
 
 public class Racoon : MonoBehaviour
 {
-    public float frequency = 2;
-    [SerializeField] private float rate = 0.005f;
+    [SerializeField] private float fireRate = 0.05f;
     [SerializeField] private float range = 10.0f;
     [SerializeField] private bool invulnerable = true;
     [SerializeField] private GameObject trashcan;
-    public int time;
-    public int invTime;
+    public int vunTime =30;
+    public int invTime = 10;
     public Animator anim;
     private BoxCollider2D collider;
     private SpriteRenderer renderer;
 
     private GameObject player;
-    public float movementProgress = 0.0f;
 
     void Start()
     {
@@ -31,46 +29,44 @@ public class Racoon : MonoBehaviour
     void Update()
     {
         // Range check
-        float distance = (player.transform.position - transform.position).sqrMagnitude;
-        invulnerable = !(distance < range * range);
-        movementProgress += Mathf.Clamp((invulnerable ? 1 : 0) - movementProgress, -rate, rate);
-
-        // Vulerable behavior
-        if (!invulnerable)
-        {
-            Vector2 direction = (player.transform.position - transform.position).normalized;
-        }
-
-        renderer.enabled = !invulnerable;
-        trashcan.GetComponent<SpriteRenderer>().enabled = invulnerable;
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        float distance = Vector2.Distance(transform.position,player.transform.position);
+        if(distance < range)
         {
             shoot();
         }
+        // Vulerable behavior
+        renderer.enabled = !invulnerable;
+        trashcan.GetComponent<SpriteRenderer>().enabled = invulnerable;
+        if(!invulnerable)
+        {
+            //Actual shooting
+
+        }
+
     }
 
     void shoot()
     {
-        StartCoroutine("RacoonShootWait");
-    }
-
-    void triggerShootAnim()
-    {
-        anim.SetTrigger("Shoot");
-
+        StartCoroutine("RacoonUpTime");
     }
     IEnumerator RacoonUpTime()
     {
-        yield return new WaitForSeconds(invTime);
         triggerShootAnim();
+        yield return new WaitForSeconds(40);
+        anim.SetTrigger("Idle");
     }
+    void triggerShootAnim()
+    {
+        anim.SetTrigger("Shoot");
+    }
+    
+    /* Unused as of now
     IEnumerator RacoonShootWait()
     {
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(invTime);
         StartCoroutine("RacoonUpTime");
         triggerShootAnim();
     }
-
+    */
 }
 

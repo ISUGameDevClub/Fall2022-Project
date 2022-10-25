@@ -2830,15 +2830,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 673ccab327aaa9e44a00f76067f41d0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frequency: 3
-  rate: 0.005
+  fireRate: 0.05
   range: 5
-  invulnerable: 0
+  invulnerable: 1
   trashcan: {fileID: 1824624230}
-  time: 0
+  vunTime: 0
   invTime: 0
   anim: {fileID: 0}
-  movementProgress: 0
 --- !u!61 &1564481136
 BoxCollider2D:
   m_ObjectHideFlags: 0
