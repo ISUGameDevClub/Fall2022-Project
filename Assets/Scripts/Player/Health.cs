@@ -96,7 +96,7 @@ public class Health : MonoBehaviour
             loseHealth();
         }
 
-        if (collision.gameObject.tag == "Heal")
+        if (collision.gameObject.tag == "Hat")
         {
             gainHealth();
         }
