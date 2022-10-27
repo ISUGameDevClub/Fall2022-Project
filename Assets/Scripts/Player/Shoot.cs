@@ -59,6 +59,10 @@ public class Shoot : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], position,Quaternion.identity );
             //make bullet fly forward
             bullet.GetComponent<Projectile_Player>().gun = gameObject;
+            if (bulletToSpawn == 3)
+            {
+                bullet.GetComponent<Projectile_Player>().gun = gameObject;
+            }
         }
     }
 }

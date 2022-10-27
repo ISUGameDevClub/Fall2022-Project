@@ -102,7 +102,10 @@ public class Health : MonoBehaviour
             loseHealth();
         }
 
-        if (collision.gameObject.tag == "Kill") ;
+        if (collision.gameObject.tag == "Kill")
+        {
+            die();
+        }
     }
 
 
