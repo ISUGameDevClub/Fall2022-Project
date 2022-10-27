@@ -6,6 +6,7 @@ public class BoundaryLeft : MonoBehaviour
 {
 
     private Vector2 screenBoundsLeft;
+    private GameObject player = GameObject.Find("Player");
 
     // Start is called before the first frame update
     void Start()
