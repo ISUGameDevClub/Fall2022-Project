@@ -7,18 +7,13 @@ public class ItemPickup: MonoBehaviour
     private bool hasHat;
     public string pickupType;
     Rigidbody playerRB;
-    Rigidbody hatPickup; 
-
+    Rigidbody hatPickup;
 
     // Start is called before the first frame update
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
         hatPickup = GetComponent<Rigidbody>();
-
-        
-
-
     }
 
     // Update is called once per frame
@@ -26,24 +21,20 @@ public class ItemPickup: MonoBehaviour
     {
         
     }
-
     void PickMeUp()
     {
-        //Need to get health method from other groups, want to destroy the hat pickup and change sprite to one to hat
-
-        //gainHealth();
-        //Destroy(gameObject.tag("HatPickup"));
+        Destroy(gameObject);
     }
 
-    
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player") 
+        if (collision.gameObject.GetComponent<Health>() != null) 
         {
+            collision.gameObject.GetComponent<Health>().gainHealth(pickupType);
             PickMeUp(); 
-           
         }
     }
 }
