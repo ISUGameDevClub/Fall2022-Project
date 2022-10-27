@@ -57,5 +57,18 @@ public class Aiming : MonoBehaviour
             //shoot bottom left
             transform.localPosition = new Vector2(-1, -1);
         }
+        else if(vert == 0 && horz == 0)
+        {
+            if( GetComponentInParent<PlayerMovement>(false).getFlipped() == true)
+            {
+                //shoot right
+                transform.localPosition = new Vector2(1, 0);
+            }
+            else
+            {
+                //shoot left
+                transform.localPosition = new Vector2(-1, 0);
+            }
+        }
     }
 }
