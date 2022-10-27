@@ -3,17 +3,24 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Hat
+  - Heal
+  - Health
+  - HatOnCat
+  - Enemy
+  - Kill
+  - OneWayDown
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Enemy/Projectile
   - 
   - 
   - 
@@ -38,6 +45,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1207180077
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Enemies
+    uniqueID: 691333133
+    locked: 0
+  - name: Player
+    uniqueID: 3241891211
     locked: 0
