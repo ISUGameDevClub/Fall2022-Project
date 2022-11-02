@@ -8,7 +8,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] GameObject[] bulletPrefab;
     Health playerHP;
 
-    public float shotDelayValue = .05f; 
+    public float shotDelayValue = .05f;
     private bool canShootNow;
 
     // Start is called before the first frame update
@@ -68,10 +68,14 @@ public class Shoot : MonoBehaviour
             StartCoroutine(shotDelay());
 
             //make bullet fly forward
-            bullet.GetComponent<Projectile_Player>().gun = gameObject;
-
-
-
+            if (bulletToSpawn == 0)
+            {
+                bullet.GetComponent<Projectile_Player>().gun = gameObject;
+            }
+            if (bulletToSpawn == 3)
+            {
+                bullet.GetComponent<GlitchGunProjectile>().gun = gameObject;
+            }
             if(bulletToSpawn == 9)
             {
                 bullet.GetComponent<Grenade_Player>().gun = gameObject;

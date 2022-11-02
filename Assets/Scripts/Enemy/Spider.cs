@@ -36,9 +36,9 @@ public class Spider : MonoBehaviour
             anim.SetTrigger("idle");
             stop = true;
         }
-        //   if (touching ground or player)
-        //       isDropping = false;
+   
     }
+
 
 
     public void spiderMoveDown()
