@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile_Player : MonoBehaviour
+public class Grenade_Player : MonoBehaviour
 {
 
     public float movement = .5f;
@@ -27,7 +27,6 @@ public class Projectile_Player : MonoBehaviour
         {
             //shoot right 
             transform.Translate(movement / 10, 0, 0);
-
         }
         else if (aim == new Vector2(0, 1))
         {

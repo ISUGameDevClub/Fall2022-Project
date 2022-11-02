@@ -7,17 +7,23 @@ public class Shoot : MonoBehaviour
 
     [SerializeField] GameObject[] bulletPrefab;
     Health playerHP;
+
+    public float shotDelayValue = .05f; 
+    private bool canShootNow;
+
     // Start is called before the first frame update
     void Start()
     {
         playerHP = transform.parent.GetComponent<Health>();
+        canShootNow = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButton(0) && canShootNow == true)
         {
+            canShootNow = false;
             Vector2 position = gameObject.transform.position;
             int bulletToSpawn = 0;
             if (playerHP.playerHealth.Equals("bouncer")){
@@ -55,10 +61,29 @@ public class Shoot : MonoBehaviour
             {
                 bulletToSpawn = 9;
             }
+
             //spawn bullet here
             GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], position,Quaternion.identity );
+
+            StartCoroutine(shotDelay());
+
             //make bullet fly forward
             bullet.GetComponent<Projectile_Player>().gun = gameObject;
+
+
+
+            if(bulletToSpawn == 9)
+            {
+                bullet.GetComponent<Grenade_Player>().gun = gameObject;
+            }
         }
+
+    }
+
+
+    private IEnumerator shotDelay()
+    {
+        yield return new WaitForSeconds(shotDelayValue);
+        canShootNow = true;
     }
 }
