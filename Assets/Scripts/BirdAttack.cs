@@ -12,8 +12,7 @@ public class BirdAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        coroutine = AttackWait(2.0f);
-        StartCoroutine(coroutine);
+        CanShoot = true;
     }
 
     // Update is called once per frame
@@ -25,19 +24,20 @@ public class BirdAttack : MonoBehaviour
     private void Create2DRay()
     {
         LayerMask mask = LayerMask.GetMask("Player");
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 5, mask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 10, mask);
 
-        if (hit.collider != null)
+        if (hit.collider.gameObject.GetComponent<Health>() != null && CanShoot)
         {
             Instantiate(birdeggPrefab, transform.position, Quaternion.identity);
+            CanShoot = false;
+            StartCoroutine(AttackWait(1f));
+            Debug.Log("Fired");
         }
     }
 
     private IEnumerator AttackWait(float waitTime)
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(waitTime);
-        }
+        yield return new WaitForSeconds(waitTime);
+        CanShoot = true;   
     }
 }
