@@ -23,7 +23,7 @@ public class Projectile_Player : MonoBehaviour
     {
         // needs to despawn bullets after distance
 
-        if (aim == new Vector2(1, 0))
+        if (aim == new Vector2(0.78f, 0.413f))
         {
             //shoot right 
             transform.Translate(movement / 10, 0, 0);
@@ -34,7 +34,7 @@ public class Projectile_Player : MonoBehaviour
             //shoot up
             transform.Translate(0, movement / 10, 0);
         }
-        else if (aim == new Vector2(-1, 0))
+        else if (aim == new Vector2(-0.78f, 0.413f))
         {
             //shoot left
             transform.Translate(-movement / 10, 0, 0);

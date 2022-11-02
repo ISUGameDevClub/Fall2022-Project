@@ -72,11 +72,39 @@ public class Shoot : MonoBehaviour
             {
                 bullet.GetComponent<Projectile_Player>().gun = gameObject;
             }
+            if (bulletToSpawn == 1)
+            {
+                bullet.GetComponent<Projectile_Player>().gun = gameObject;
+            }
+            if (bulletToSpawn == 2)
+            {
+                bullet.GetComponent<Projectile_Player>().gun = gameObject;
+            }
             if (bulletToSpawn == 3)
             {
                 bullet.GetComponent<GlitchGunProjectile>().gun = gameObject;
             }
-            if(bulletToSpawn == 9)
+            if (bulletToSpawn == 4)
+            {
+                bullet.GetComponent<Projectile_Player>().gun = gameObject;
+            }
+            if (bulletToSpawn == 5)
+            {
+                bullet.GetComponent<Projectile_Player>().gun = gameObject;
+            }
+            if (bulletToSpawn == 6)
+            {
+                bullet.GetComponent<Projectile_Player>().gun = gameObject;
+            }
+            if (bulletToSpawn == 7)
+            {
+                bullet.GetComponent<Projectile_Player>().gun = gameObject;
+            }
+            if (bulletToSpawn == 8)
+            {
+                bullet.GetComponent<Projectile_Player>().gun = gameObject;
+            }
+            if (bulletToSpawn == 9)
             {
                 bullet.GetComponent<Grenade_Player>().gun = gameObject;
             }
