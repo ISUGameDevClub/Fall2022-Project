@@ -303,6 +303,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5363307019101255829, guid: 6dc785928619abb45be245872aa77d9e, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363307019101255829, guid: 6dc785928619abb45be245872aa77d9e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363307019101255829, guid: 6dc785928619abb45be245872aa77d9e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dc785928619abb45be245872aa77d9e, type: 3}
 --- !u!1 &771933369
@@ -15438,7 +15450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3410402127536427509, guid: f07616a80e2e9984e80ebe28a2e8f2eb, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3410402127536427509, guid: f07616a80e2e9984e80ebe28a2e8f2eb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15852,6 +15864,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Yarn Hat
       objectReference: {fileID: 0}
+    - target: {fileID: 8086583612499613810, guid: 76749c2903e1a50468f8b08c46820a9a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76749c2903e1a50468f8b08c46820a9a, type: 3}
 --- !u!1001 &2145924439436679545
@@ -15908,6 +15924,10 @@ PrefabInstance:
     - target: {fileID: 2145924438031367517, guid: 8ab51f4654c3fee45b83ddc8ad834a0a, type: 3}
       propertyPath: m_Name
       value: SpiderThwomp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7821857489038302058, guid: 8ab51f4654c3fee45b83ddc8ad834a0a, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab51f4654c3fee45b83ddc8ad834a0a, type: 3}
@@ -15978,6 +15998,10 @@ PrefabInstance:
     - target: {fileID: 5062213104879150788, guid: 11aad0b22bacc214d975c830c74b5e41, type: 3}
       propertyPath: m_Name
       value: MOAB Hat
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062213104879150788, guid: 11aad0b22bacc214d975c830c74b5e41, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5062213104879150790, guid: 11aad0b22bacc214d975c830c74b5e41, type: 3}
       propertyPath: m_RootOrder
@@ -16137,6 +16161,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bouncer Hat
       objectReference: {fileID: 0}
+    - target: {fileID: 3560059176600438702, guid: 43389948ddc896f4c89b30734e94b5ad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43389948ddc896f4c89b30734e94b5ad, type: 3}
 --- !u!1001 &5482838166910115219
@@ -16194,6 +16222,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chill Out Hat
       objectReference: {fileID: 0}
+    - target: {fileID: 4291115873834359994, guid: f56d9b08493454347b1ea5431b6fa843, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f56d9b08493454347b1ea5431b6fa843, type: 3}
 --- !u!1001 &6599742968425153887
@@ -16206,6 +16238,10 @@ PrefabInstance:
     - target: {fileID: 3174211070205577509, guid: fc7abbf8a5825b9418ec7cfb3cc3e3b0, type: 3}
       propertyPath: m_Name
       value: Glitchgun Hat
+      objectReference: {fileID: 0}
+    - target: {fileID: 3174211070205577509, guid: fc7abbf8a5825b9418ec7cfb3cc3e3b0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3174211070205577511, guid: fc7abbf8a5825b9418ec7cfb3cc3e3b0, type: 3}
       propertyPath: m_RootOrder
@@ -16308,6 +16344,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Windbreaker Hat
       objectReference: {fileID: 0}
+    - target: {fileID: 1516257562628120451, guid: 826f9da80bdc45a44aafac5b72fbbecf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 826f9da80bdc45a44aafac5b72fbbecf, type: 3}
 --- !u!1001 &7426108295501495534
@@ -16320,6 +16360,10 @@ PrefabInstance:
     - target: {fileID: 1194924239120656457, guid: 1bd8129bb07d2a743a04a657078034fc, type: 3}
       propertyPath: m_Name
       value: Snowbomb Hat
+      objectReference: {fileID: 0}
+    - target: {fileID: 1194924239120656457, guid: 1bd8129bb07d2a743a04a657078034fc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1194924239120656459, guid: 1bd8129bb07d2a743a04a657078034fc, type: 3}
       propertyPath: m_RootOrder
@@ -16434,6 +16478,10 @@ PrefabInstance:
     - target: {fileID: 1773674534134991289, guid: c60ddf26845554b48be6b1f2e3e5f59e, type: 3}
       propertyPath: m_Name
       value: Candrew Hat
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773674534134991289, guid: c60ddf26845554b48be6b1f2e3e5f59e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1773674534134991291, guid: c60ddf26845554b48be6b1f2e3e5f59e, type: 3}
       propertyPath: m_RootOrder
