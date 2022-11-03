@@ -58,7 +58,23 @@ public class Shoot : MonoBehaviour
             //spawn bullet here
             GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], position,Quaternion.identity );
             //make bullet fly forward
-            bullet.GetComponent<Projectile_Player>().gun = gameObject;
+            if (bulletToSpawn==2)
+            {
+            
+                GameObject bullet2 = Instantiate(bulletPrefab[bulletToSpawn], position, Quaternion.identity );
+                GameObject bullet3 = Instantiate(bulletPrefab[bulletToSpawn], position,Quaternion.identity );
+                bullet.GetComponent<projectile_player_juggernaut>().gun = gameObject;
+                Quaternion.SetFromToRotation(new Vector2(1,1),new Vector2(1,-1));
+                bullet2.GetComponent<projectile_player_juggernaut>().gun = gameObject;
+                bullet3.GetComponent<projectile_player_juggernaut>().gun = gameObject;
+                bullet.GetComponent<projectile_player_juggernaut>().gun.transform.localPosition = new Vector2(1, 1); 
+                bullet2.GetComponent<projectile_player_juggernaut>().gun.transform.localPosition = new Vector2(1, 1);                
+                bullet3.GetComponent<projectile_player_juggernaut>().gun.transform.localPosition = new Vector2(1, 1);  
+            }
+            else if (bulletToSpawn==0)
+            {
+                bullet.GetComponent<Projectile_Player>().gun = gameObject;
+            }
         }
     }
 }
