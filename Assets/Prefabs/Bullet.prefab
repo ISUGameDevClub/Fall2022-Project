@@ -114,6 +114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c8eb66702ef020409d7786192f70ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: 1
+  movement: 5
   gun: {fileID: 0}
   range: 10

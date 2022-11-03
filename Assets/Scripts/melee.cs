@@ -5,6 +5,7 @@ using UnityEngine;
 public class melee : MonoBehaviour
 {
     public float cooldown;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class melee : MonoBehaviour
             if (transform.localPosition.x == 0)
             { 
                 transform.localPosition = new Vector2(-1, 0);  //stab left
+
             }
             else
             {
