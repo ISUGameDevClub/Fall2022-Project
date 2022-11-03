@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Projectile_Player : MonoBehaviour
 {
+
     public float movement = .5f;
     public GameObject gun;
     private Vector2 aim; 
@@ -13,28 +14,27 @@ public class Projectile_Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         aim = gun.transform.localPosition;
-        Vector2 startPosition = transform.position; 
+        aim = gun.transform.localPosition;
+        Vector2 startPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // transform.Translate(movement/10, 0, 0);
-       
-        if (aim == new Vector2(1, 0))
-        { 
+        // needs to despawn bullets after distance
+
+        if (aim == new Vector2(0.78f, 0.413f))
+        {
             //shoot right 
             transform.Translate(movement / 10, 0, 0);
-            
-        }
 
+        }
         else if (aim == new Vector2(0, 1))
         {
             //shoot up
-            transform.Translate(0, movement / 10, 0); 
+            transform.Translate(0, movement / 10, 0);
         }
-        else if (aim == new Vector2(-1, 0))
+        else if (aim == new Vector2(-0.78f, 0.413f))
         {
             //shoot left
             transform.Translate(-movement / 10, 0, 0);
@@ -42,12 +42,12 @@ public class Projectile_Player : MonoBehaviour
         else if (aim == new Vector2(0, -1))
         {
             //shoot down
-            transform.Translate(0, -movement / 10,  0);
+            transform.Translate(0, -movement / 10, 0);
         }
         else if (aim == new Vector2(1, 1))
         {
             //shoot top right
-            transform.Translate(movement/10, movement / 10, 0);
+            transform.Translate(movement / 10, movement / 10, 0);
         }
         else if (aim == new Vector2(-1, 1))
         {
@@ -64,21 +64,18 @@ public class Projectile_Player : MonoBehaviour
             //shoot bottom left
             transform.Translate(-movement / 10, -movement / 10, 0);
         }
-        //despawn bullet after distance
-//        if (Vector2.Distance(startPosition, transform.position) > range) 
-  //      {
-    //        Destroy(gameObject);
-      //  }
-    }
-  
 
+        //despawn bullet after distance
+        //        if (Vector2.Distance(startPosition, transform.position) > range) 
+        //      {
+        //        Destroy(gameObject);
+        //  }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("wanting to collided!");
         if (collision.gameObject != gun.transform.parent.gameObject)
         {
             Destroy(gameObject);
-            Debug.Log("colliding!");
         }
     }
 

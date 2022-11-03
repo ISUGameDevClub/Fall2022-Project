@@ -5,19 +5,19 @@ using UnityEngine;
 
 public class Racoon : MonoBehaviour
 {
-    public float frequency = 2;
-    [SerializeField] private float rate = 0.005f;
     [SerializeField] private float range = 10.0f;
     [SerializeField] private bool invulnerable = true;
     [SerializeField] private GameObject trashcan;
-    public int time;
-    public int invTime;
+    public float speed = 2.1f, fireRate = 1.0f, fireDelay = 0.0f;
+
     public Animator anim;
     private BoxCollider2D collider;
     private SpriteRenderer renderer;
 
+    public GameObject bullet; //The 'projectile' prefab
+    public Transform weapon; //the weapon the bullet is firing from
+
     private GameObject player;
-    public float movementProgress = 0.0f;
 
     void Start()
     {
@@ -31,46 +31,57 @@ public class Racoon : MonoBehaviour
     void Update()
     {
         // Range check
-        float distance = (player.transform.position - transform.position).sqrMagnitude;
-        invulnerable = !(distance < range * range);
-        movementProgress += Mathf.Clamp((invulnerable ? 1 : 0) - movementProgress, -rate, rate);
-
-        // Vulerable behavior
-        if (!invulnerable)
-        {
-            Vector2 direction = (player.transform.position - transform.position).normalized;
-        }
-
-        renderer.enabled = !invulnerable;
-        trashcan.GetComponent<SpriteRenderer>().enabled = invulnerable;
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        float distance = Vector2.Distance(transform.position,player.transform.position);
+        if(distance < range)
         {
             shoot();
         }
+        // Vulerable behavior
+        renderer.enabled = !invulnerable;
+        trashcan.GetComponent<SpriteRenderer>().enabled = invulnerable;
+        if(!invulnerable)
+        {
+            //Actual shooting
+            Fire();
+        }
+
     }
+
+    private void Fire()
+    {
+        if (Time.time > fireDelay)
+        {
+            fireDelay = Time.time + fireRate; //fireRate instantiates as making the enemy fire every 1 second.
+            Vector2 myPos = new Vector2(weapon.position.x, weapon.position.y);
+            GameObject projectile = Instantiate(bullet, myPos, Quaternion.identity);
+            Vector2 direction = (Vector2)player.transform.position - myPos; //get the direction of the player.
+            projectile.GetComponent<Rigidbody2D>().velocity = direction * speed; //shoot projectile
+        }
+    }
+
 
     void shoot()
     {
-        StartCoroutine("RacoonShootWait");
-    }
-
-    void triggerShootAnim()
-    {
-        anim.SetTrigger("Shoot");
-
+        StartCoroutine("RacoonUpTime");
     }
     IEnumerator RacoonUpTime()
     {
-        yield return new WaitForSeconds(invTime);
         triggerShootAnim();
+        yield return new WaitForSeconds(40);
+        anim.SetTrigger("Idle");
     }
+    void triggerShootAnim()
+    {
+        anim.SetTrigger("Shoot");
+    }
+    
+    /* Unused as of now
     IEnumerator RacoonShootWait()
     {
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(invTime);
         StartCoroutine("RacoonUpTime");
         triggerShootAnim();
     }
-
+    */
 }
 
