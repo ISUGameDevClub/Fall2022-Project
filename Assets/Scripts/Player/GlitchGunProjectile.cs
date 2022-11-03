@@ -45,7 +45,7 @@ public class GlitchGunProjectile : MonoBehaviour
         //needs to get type of projectile
         weapon = 0;
 
-        if (aim == new Vector2(1, 0))
+        if (aim == new Vector2(0.78f, 0.413f))
         {
             //shoot right 
             bulletSpeed = new Vector3(movement / 10, 0, 0);
@@ -56,7 +56,7 @@ public class GlitchGunProjectile : MonoBehaviour
             //shoot up
             bulletSpeed = new Vector3(0, movement / 10, 0);
         }
-        else if (aim == new Vector2(-1, 0))
+        else if (aim == new Vector2(-0.78f, 0.413f))
         {
             //shoot left
             bulletSpeed = new Vector3(-movement / 10, 0, 0);
