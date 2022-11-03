@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -8551080053436234011}
   - component: {fileID: 3729883786373235511}
   - component: {fileID: -8701506539200378560}
+  - component: {fileID: -3382367393070541508}
   m_Layer: 8
   m_Name: Bird Egg
   m_TagString: Untagged
@@ -136,3 +137,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-3382367393070541508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8808450532312349108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f2708f4b87182140b637a5f772cb8e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

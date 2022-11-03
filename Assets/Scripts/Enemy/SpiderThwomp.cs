@@ -66,7 +66,7 @@ public class SpiderThwomp : MonoBehaviour
 
 
 
-    IEnumerator rise()
+    private IEnumerator rise()
     {
         yield return new WaitForSeconds(restTime);
         raise = true;

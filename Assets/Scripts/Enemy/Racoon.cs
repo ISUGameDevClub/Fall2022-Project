@@ -5,15 +5,17 @@ using UnityEngine;
 
 public class Racoon : MonoBehaviour
 {
-    [SerializeField] private float fireRate = 0.05f;
     [SerializeField] private float range = 10.0f;
     [SerializeField] private bool invulnerable = true;
     [SerializeField] private GameObject trashcan;
-    public int vunTime =30;
-    public int invTime = 10;
+    public float speed = 2.1f, fireRate = 1.0f, fireDelay = 0.0f;
+
     public Animator anim;
     private BoxCollider2D collider;
     private SpriteRenderer renderer;
+
+    public GameObject bullet; //The 'projectile' prefab
+    public Transform weapon; //the weapon the bullet is firing from
 
     private GameObject player;
 
@@ -40,10 +42,23 @@ public class Racoon : MonoBehaviour
         if(!invulnerable)
         {
             //Actual shooting
-
+            Fire();
         }
 
     }
+
+    private void Fire()
+    {
+        if (Time.time > fireDelay)
+        {
+            fireDelay = Time.time + fireRate; //fireRate instantiates as making the enemy fire every 1 second.
+            Vector2 myPos = new Vector2(weapon.position.x, weapon.position.y);
+            GameObject projectile = Instantiate(bullet, myPos, Quaternion.identity);
+            Vector2 direction = (Vector2)player.transform.position - myPos; //get the direction of the player.
+            projectile.GetComponent<Rigidbody2D>().velocity = direction * speed; //shoot projectile
+        }
+    }
+
 
     void shoot()
     {
