@@ -8,7 +8,11 @@ public class Racoon : MonoBehaviour
     [SerializeField] private float range = 10.0f;
     [SerializeField] private bool invulnerable = true;
     [SerializeField] private GameObject trashcan;
-    public float speed = 2.1f, fireRate = 1.0f, fireDelay = 0.0f;
+
+    private bool canShootNow;
+
+    public float shotDelayValue = 1f;
+    public float bulletSpeed = 2.1f;
 
     public Animator anim;
     private BoxCollider2D collider;
@@ -26,6 +30,8 @@ public class Racoon : MonoBehaviour
         renderer = GetComponent<SpriteRenderer>();
 
         player = GameObject.FindWithTag("Player");
+
+        canShootNow = true;
     }
 
     void Update()
@@ -41,7 +47,7 @@ public class Racoon : MonoBehaviour
         trashcan.GetComponent<SpriteRenderer>().enabled = invulnerable;
         if(!invulnerable)
         {
-            //Actual shooting
+           //Actual shooting
             Fire();
         }
 
@@ -49,16 +55,23 @@ public class Racoon : MonoBehaviour
 
     private void Fire()
     {
-        if (Time.time > fireDelay)
+        if (canShootNow)
         {
-            fireDelay = Time.time + fireRate; //fireRate instantiates as making the enemy fire every 1 second.
+            canShootNow = false;
             Vector2 myPos = new Vector2(weapon.position.x, weapon.position.y);
             GameObject projectile = Instantiate(bullet, myPos, Quaternion.identity);
             Vector2 direction = (Vector2)player.transform.position - myPos; //get the direction of the player.
-            projectile.GetComponent<Rigidbody2D>().velocity = direction * speed; //shoot projectile
+            projectile.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed; //shoot projectile
+
+            StartCoroutine(shotDelay());
         }
     }
 
+    private IEnumerator shotDelay()
+    {
+        yield return new WaitForSeconds(shotDelayValue);
+        canShootNow = true;
+    }
 
     void shoot()
     {
