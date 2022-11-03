@@ -118,7 +118,7 @@ MonoBehaviour:
   timeBeforeTurnAround: 1.5
   turnAroundAcceleration: 0.2
   matchTurnAroundSpeed: 0
-  movement: 0.15
+  movement: 0.5
   gun: {fileID: 0}
   range: 10
 --- !u!50 &-1356916268378932261
