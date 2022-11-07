@@ -7,10 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 21894246, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
-      propertyPath: pickupType
-      value: glitchgun
-      objectReference: {fileID: 0}
     - target: {fileID: 8618745532429111452, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
       propertyPath: m_Name
       value: Glitchgun Hat Variant
@@ -21,11 +17,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8618745532429111454, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 25.34
       objectReference: {fileID: 0}
     - target: {fileID: 8618745532429111454, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 25.08
       objectReference: {fileID: 0}
     - target: {fileID: 8618745532429111454, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
       propertyPath: m_LocalPosition.z
