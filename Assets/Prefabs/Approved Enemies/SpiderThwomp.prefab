@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1226178530156124289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6447233282430054342}
+  m_Layer: 7
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6447233282430054342
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226178530156124289}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.23, z: 0}
+  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3507879544816753928}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3507879544185148378
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,6 +124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3507879544816753928}
+  - component: {fileID: 3231816502520115000}
   - component: {fileID: 3507879544816753930}
   - component: {fileID: 3507879544816753931}
   - component: {fileID: 3507879544816754422}
@@ -115,10 +147,34 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3507879545358972170}
+  - {fileID: 6447233282430054342}
   m_Father: {fileID: 3507879545725067317}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3231816502520115000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3507879544816753933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4f43908715f71c4fa2c2bd2a5978e62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  webby: {fileID: 3507879544185148378}
+  webbyBase: {fileID: 3507879545087873789}
+  anim: {fileID: 3507879544816753930}
+  dropSpeed: 5
+  raiseSpeed: 3
+  maxDistance: 1
+  restTime: 1.5
+  layerHitGround:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!95 &3507879544816753930
 Animator:
   serializedVersion: 4
@@ -199,7 +255,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3507879544816753933}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -211,7 +267,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!61 &3507879544816753929
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -349,11 +405,11 @@ Transform:
   m_GameObject: {fileID: 3507879545358972173}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3507879545725067317}
-  m_RootOrder: 3
+  m_Father: {fileID: 3507879544816753928}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &3507879545358972168
 BoxCollider2D:
@@ -402,8 +458,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3507879545725067317}
-  - component: {fileID: 3507879545725067316}
-  - component: {fileID: 3507879545725067319}
   m_Layer: 7
   m_Name: SpiderThwomp
   m_TagString: Untagged
@@ -426,48 +480,6 @@ Transform:
   - {fileID: 3507879544185148379}
   - {fileID: 3507879545087873786}
   - {fileID: 3507879544816753928}
-  - {fileID: 3507879545358972170}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3507879545725067316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3507879545725067318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f43908715f71c4fa2c2bd2a5978e62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 3507879544816753930}
-  dropSpeed: 5
-  raiseSpeed: 3
-  maxDistance: 1
-  restTime: 1.5
-  layerHitGround:
-    serializedVersion: 2
-    m_Bits: 8
---- !u!50 &3507879545725067319
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3507879545725067318}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 3
