@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grenade_Player : MonoBehaviour
+public class MOAB_Player : MonoBehaviour
 {
 
     public float throwForce = .5f;
-    public float despawnTime = .5f;
+    //public float despawnTime = .5f;
     public GameObject gun;
     private Vector2 aim; 
     Vector2 startPosition;
@@ -15,7 +15,7 @@ public class Grenade_Player : MonoBehaviour
     void Start()
     {
 
-        Destroy(gameObject, despawnTime);
+        //Destroy(gameObject, despawnTime);
         aim = gun.transform.localPosition;
         Vector2 startPosition = transform.position;
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -60,7 +60,7 @@ public class Grenade_Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+   
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
