@@ -80,7 +80,7 @@ public class Shoot : MonoBehaviour
             {
                 bullet.GetComponent<Projectile_Player>().gun = gameObject;
             }
-            if (bulletToSpawn==2)
+            if (bulletToSpawn == 2)
             {
                 GameObject bullet2 = Instantiate(bulletPrefab[bulletToSpawn], position, Quaternion.identity );
                 GameObject bullet3 = Instantiate(bulletPrefab[bulletToSpawn], position,Quaternion.identity );
