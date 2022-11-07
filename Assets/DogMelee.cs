@@ -21,9 +21,16 @@ public class DogMelee : MonoBehaviour
         
         if (cooldown <= 0.0f)
         {
-            
             GameObject mel = Instantiate(dogMel, transform);
-            mel.transform.localPosition = new Vector2(1, 0);
+            
+            if(transform.localScale.x == 1)
+            {
+                mel.transform.localPosition = new Vector2(-1, 0);
+            }
+            else
+            {
+                mel.transform.localPosition = new Vector2(-1, 0);
+            }
             GameObject.Destroy(mel, 1.0f);
             stab = true;
             cooldown = 2.0f;

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 96193691545990195}
   - component: {fileID: 1608029932442161445}
   - component: {fileID: -7940606482709243296}
-  - component: {fileID: 340810856908286075}
+  - component: {fileID: 3905046760236421994}
   m_Layer: 0
   m_Name: juggernaut_projectile
   m_TagString: Untagged
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 45142403e05c1984cabb8ef2fd07fca3, type: 3}
-  m_Color: {r: 0.4339623, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.5566038, g: 0.36605474, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,7 +102,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &340810856908286075
+--- !u!114 &3905046760236421994
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,9 +111,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3798674729731915158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c8eb66702ef020409d7786192f70ce1, type: 3}
+  m_Script: {fileID: 11500000, guid: d8efa533cb35bac46be527ffe1f2663b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: 1
+  movement: 0.5
   gun: {fileID: 0}
   range: 10
+  shotOrder: 

@@ -7,6 +7,12 @@ public class Platform : MonoBehaviour
     private GameObject player;
     private bool playerOnPlatform;
 
+    [SerializeField]
+    private bool platformBreak;
+
+    [SerializeField]
+    private float platfromBreakTime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,18 +30,32 @@ public class Platform : MonoBehaviour
         Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>(), false);
     }
 
+    private IEnumerator PlatformBreakTimer()
+    {
+        yield return new WaitForSeconds(platfromBreakTime);
+        Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>(), true);
+        StartCoroutine(EnableCollider());
+        
+    }
+
 
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-
+            
             if (Input.GetAxisRaw("Vertical") < 0)
             {
                 Debug.Log("Working");
                 Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>(), true);
                 StartCoroutine(EnableCollider());
             }
+            
+            if (platformBreak && player.transform.position.y > transform.position.y)
+            {
+                StartCoroutine(PlatformBreakTimer());
+            }
+            
         }
     }
 

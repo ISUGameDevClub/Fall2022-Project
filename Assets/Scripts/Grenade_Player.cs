@@ -5,70 +5,62 @@ using UnityEngine;
 public class Grenade_Player : MonoBehaviour
 {
 
-    public float movement = .5f;
+    public float throwForce = .5f;
+    public float despawnTime = .5f;
     public GameObject gun;
     private Vector2 aim; 
-    public float range = 10; 
     Vector2 startPosition;
-
+    Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
+
+        Destroy(gameObject, despawnTime);
         aim = gun.transform.localPosition;
         Vector2 startPosition = transform.position;
+        rb = gameObject.GetComponent<Rigidbody2D>();
+
+
+
+        if (aim == new Vector2(0.78f, 0.413f) ||
+            aim == new Vector2(1, 1))
+        {
+            //throw right 
+            rb.AddForce(new Vector2(throwForce, throwForce));
+        }
+        else if (aim == new Vector2(1, -1))
+        {
+            //underhand right
+            rb.AddForce(new Vector2(throwForce, throwForce / 2));
+        }
+        else if (aim == new Vector2(-0.78f, 0.413f) ||
+            aim == new Vector2(-1, 1))
+        {
+            //throw left
+            rb.AddForce(new Vector2(-throwForce, throwForce));
+        }
+        else if (aim == new Vector2(-1, -1))
+        {
+            //underhand left
+            rb.AddForce(new Vector2(-throwForce, throwForce / 2));
+        }
+        else if (aim == new Vector2(0, -1))
+        {
+            //drop at feet
+            rb.AddForce(new Vector2(0, 0));
+        }
+        else if (aim == new Vector2(0, 1))
+        {
+            //throw straight up
+            rb.AddForce(new Vector2(0, throwForce));
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        // needs to despawn bullets after distance
 
-        if (aim == new Vector2(1, 0))
-        {
-            //shoot right 
-            transform.Translate(movement / 10, 0, 0);
-        }
-        else if (aim == new Vector2(0, 1))
-        {
-            //shoot up
-            transform.Translate(0, movement / 10, 0);
-        }
-        else if (aim == new Vector2(-1, 0))
-        {
-            //shoot left
-            transform.Translate(-movement / 10, 0, 0);
-        }
-        else if (aim == new Vector2(0, -1))
-        {
-            //shoot down
-            transform.Translate(0, -movement / 10, 0);
-        }
-        else if (aim == new Vector2(1, 1))
-        {
-            //shoot top right
-            transform.Translate(movement / 10, movement / 10, 0);
-        }
-        else if (aim == new Vector2(-1, 1))
-        {
-            //shoot top left
-            transform.Translate(-movement / 10, movement / 10, 0);
-        }
-        else if (aim == new Vector2(1, -1))
-        {
-            //shoot bottom right
-            transform.Translate(movement / 10, -movement / 10, 0);
-        }
-        else if (aim == new Vector2(-1, -1))
-        {
-            //shoot bottom left
-            transform.Translate(-movement / 10, -movement / 10, 0);
-        }
-
-        //despawn bullet after distance
-        //        if (Vector2.Distance(startPosition, transform.position) > range) 
-        //      {
-        //        Destroy(gameObject);
-        //  }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
