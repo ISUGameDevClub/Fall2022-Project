@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Aiming : MonoBehaviour
 {
-
+    [SerializeField] Sprite[] aimingSprites;
+    [SerializeField] SpriteRenderer torsoSprite;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,41 +21,50 @@ public class Aiming : MonoBehaviour
         if (vert > 0 && horz == 0)
         {
             //shoot up
+            torsoSprite.sprite = aimingSprites[0];
             transform.localPosition = new Vector2(0, 1);
         }
         else if(vert == 0 && horz > 0)
         {
             //shoot right
-            transform.localPosition = new Vector2(1, 0);
+            torsoSprite.sprite = aimingSprites[2];
+            transform.localPosition = new Vector2(0.78f, 0.413f);
         }
         else if (vert == 0 && horz < 0)
         {
             //shoot left
-            transform.localPosition = new Vector2(-1, 0);
+            torsoSprite.sprite = aimingSprites[2];
+            transform.localPosition = new Vector2(-0.78f, 0.413f);
         }
         else if (vert < 0 && horz ==0)
         {
             //shoot down
+
+            torsoSprite.sprite = aimingSprites[4];
             transform.localPosition = new Vector2(0, -1);
         }
         else if(vert > 0 && horz > 0)
         {
             //shoot top right
+            torsoSprite.sprite = aimingSprites[1];
             transform.localPosition = new Vector2(1, 1);
         }
         else if (vert > 0 && horz < 0)
         {
             //shoot top left
+            torsoSprite.sprite = aimingSprites[1];
             transform.localPosition = new Vector2(-1, 1);
         }
         else if (vert < 0 && horz > 0)
         {
             //shoot bottom right
+            torsoSprite.sprite = aimingSprites[3];
             transform.localPosition = new Vector2(1, -1);
         }
         else if (vert < 0 && horz < 0)
         {
             //shoot bottom left
+            torsoSprite.sprite = aimingSprites[3];
             transform.localPosition = new Vector2(-1, -1);
         }
         else if(vert == 0 && horz == 0)
@@ -62,12 +72,14 @@ public class Aiming : MonoBehaviour
             if( GetComponentInParent<PlayerMovement>(false).getFlipped() == true)
             {
                 //shoot right
-                transform.localPosition = new Vector2(1, 0);
+                torsoSprite.sprite = aimingSprites[2];
+                transform.localPosition = new Vector2(0.78f, 0.413f);
             }
             else
             {
                 //shoot left
-                transform.localPosition = new Vector2(-1, 0);
+                torsoSprite.sprite = aimingSprites[2];
+                transform.localPosition = new Vector2(-0.78f, 0.413f);
             }
         }
     }
