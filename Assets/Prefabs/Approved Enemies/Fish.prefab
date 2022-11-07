@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3485903284388114308}
   - component: {fileID: 3485903284388114307}
   - component: {fileID: 3485903284388114306}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fish
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,5 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishprojectilePrefab: {fileID: 2688712039996539345, guid: cf116e941c815ff47ba00b1b4cec8a91, type: 3}
+  facingRight: 0
   attackCooldown: 1
-  speed: 5
+  speed: 10
