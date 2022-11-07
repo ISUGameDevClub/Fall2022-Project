@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class FishProjectileMove : MonoBehaviour
 {
-    public bool left;
+    public bool right;
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,16 +15,13 @@ public class FishProjectileMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
-        if (!left)
+        if (right)
         {
-            transform.Translate(new Vector2(1, 0) * Time.deltaTime);
+            transform.Translate(new Vector2(1, 0) * Time.deltaTime * speed);
         }
-
         else
         {
-            transform.Translate(new Vector2(-1, 0) * Time.deltaTime);
+            transform.Translate(new Vector2(-1, 0) * Time.deltaTime * speed);
         }
     }
 
