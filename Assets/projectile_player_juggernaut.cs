@@ -164,29 +164,7 @@ public class projectile_player_juggernaut : MonoBehaviour
             }
 
         }
-        //despawn bullet after distance
-//        if (Vector2.Distance(startPosition, transform.position) > range) 
-  //      {
-    //        Destroy(gameObject);
-      //  }
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.GetComponent<EnemyHealth>() != null)
-        {
-            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage();
-            Destroy(gameObject);
-        }
-        else
-        {
-            if (collision.gameObject.tag != "Player")
-            {
-                Destroy(gameObject);
-            }
-        }
-    }
-
 }
 
 

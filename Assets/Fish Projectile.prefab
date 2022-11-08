@@ -93,12 +93,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4228974284777436418}
+  - component: {fileID: -9189445334986381346}
+  - component: {fileID: -3355577688604961586}
   - component: {fileID: 6583691599241678275}
   - component: {fileID: -4687898568944800627}
-  - component: {fileID: -9189445334986381346}
   m_Layer: 8
   m_Name: Fish Projectile
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,6 +120,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-9189445334986381346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2688712039996539345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39c5800cabe87b1448494ec2bb054093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  right: 0
+  speed: 0
+--- !u!114 &-3355577688604961586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2688712039996539345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f48905f509273cb4ea7af475322aec7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPiercing: 0
+  wallPiercing: 0
 --- !u!58 &6583691599241678275
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -156,17 +185,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-9189445334986381346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2688712039996539345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39c5800cabe87b1448494ec2bb054093, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  right: 0
-  speed: 0

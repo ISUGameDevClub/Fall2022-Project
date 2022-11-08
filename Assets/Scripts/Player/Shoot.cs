@@ -7,9 +7,6 @@ public class Shoot : MonoBehaviour
 
     [SerializeField] GameObject[] bulletPrefab;
     Health playerHP;
-
-    public float shotDelayValue = .05f;
-    public float specialShotDelayValue = 1;
     private bool canShootNow;
     private bool specialCanShootNow;
 
@@ -69,18 +66,18 @@ public class Shoot : MonoBehaviour
             //spawn bullet here
             GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], position,Quaternion.identity );
 
-            StartCoroutine(shotDelay());
+            StartCoroutine(shotDelay(bullet.GetComponent<Attack>().attackCooldown));
 
             //make bullet fly forward
             if (bulletToSpawn == 0)
             {
                 bullet.GetComponent<Projectile_Player>().gun = gameObject;
             }
-            if (bulletToSpawn == 1)
+            else if (bulletToSpawn == 1)
             {
                 bullet.GetComponent<Projectile_Player>().gun = gameObject;
             }
-            if (bulletToSpawn == 2)
+            else if (bulletToSpawn == 2)
             {
                 GameObject bullet2 = Instantiate(bulletPrefab[bulletToSpawn], position, Quaternion.identity );
                 GameObject bullet3 = Instantiate(bulletPrefab[bulletToSpawn], position,Quaternion.identity );
@@ -90,31 +87,31 @@ public class Shoot : MonoBehaviour
                 bullet3.GetComponent<projectile_player_juggernaut>().gun = gameObject;
                 bullet3.GetComponent<projectile_player_juggernaut>().shotOrder = "Bottom";
             }
-            if (bulletToSpawn == 3)
+            else if (bulletToSpawn == 3)
             {
                 bullet.GetComponent<GlitchGunProjectile>().gun = gameObject;
             }
-            if (bulletToSpawn == 4)
+            else if (bulletToSpawn == 4)
             {
                 bullet.GetComponent<Projectile_Player>().gun = gameObject;
             }
-            if (bulletToSpawn == 5)
+            else if (bulletToSpawn == 5)
             {
                 bullet.GetComponent<Projectile_Player>().gun = gameObject;
             }
-            if (bulletToSpawn == 6)
+            else if (bulletToSpawn == 6)
             {
                 bullet.GetComponent<Projectile_Player>().gun = gameObject;
             }
-            if (bulletToSpawn == 7)
+            else if (bulletToSpawn == 7)
             {
                 bullet.GetComponent<Projectile_Player>().gun = gameObject;
             }
-            if (bulletToSpawn == 8)
+            else if (bulletToSpawn == 8)
             {
                 bullet.GetComponent<Projectile_Player>().gun = gameObject;
             }
-            if (bulletToSpawn == 9)
+            else if (bulletToSpawn == 9)
             {
                 bullet.GetComponent<Grenade_Player>().gun = gameObject;
             }
@@ -166,46 +163,46 @@ public class Shoot : MonoBehaviour
             //spawn bullet here
             GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], position, Quaternion.identity);
 
-            StartCoroutine(specialShotDelay());
+            StartCoroutine(specialShotDelay(bullet.GetComponent<Attack>().attackCooldown));
 
             //make bullet fly forward
             if (bulletToSpawn == 10)
             {
                 bullet.GetComponent<Projectile_Player>().gun = gameObject;
             }
-            if (bulletToSpawn == 11)
+            else if (bulletToSpawn == 11)
             {
                 bullet.GetComponent<Projectile_Player>().gun = gameObject;
             }
-            if (bulletToSpawn == 12)
+            else if (bulletToSpawn == 12)
             {
                 bullet.GetComponent<Projectile_Player>().gun = gameObject;
             }
-            if (bulletToSpawn == 13)
+            else if (bulletToSpawn == 13)
             {
                 bullet.GetComponent<GlitchGunProjectile>().gun = gameObject;
             }
-            if (bulletToSpawn == 14)
+            else if (bulletToSpawn == 14)
             {
                 bullet.GetComponent<Projectile_Player>().gun = gameObject;
             }
-            if (bulletToSpawn == 15)
+            else if (bulletToSpawn == 15)
             {
                 bullet.GetComponent<Projectile_Player>().gun = gameObject;
             }
-            if (bulletToSpawn == 16)
+            else if (bulletToSpawn == 16)
             {
                 bullet.GetComponent<Projectile_Player>().gun = gameObject;
             }
-            if (bulletToSpawn == 17)
+            else if (bulletToSpawn == 17)
             {
                 bullet.GetComponent<Projectile_Player>().gun = gameObject;
             }
-            if (bulletToSpawn == 18)
+            else if (bulletToSpawn == 18)
             {
                 bullet.GetComponent<Projectile_Player>().gun = gameObject;
             }
-            if (bulletToSpawn == 19)
+            else if (bulletToSpawn == 19)
             {
                 bullet.GetComponent<Grenade_Player>().gun = gameObject;
             }
@@ -214,15 +211,15 @@ public class Shoot : MonoBehaviour
     }
 
 
-    private IEnumerator shotDelay()
+    private IEnumerator shotDelay(float cooldown)
     {
-        yield return new WaitForSeconds(shotDelayValue);
+        yield return new WaitForSeconds(cooldown);
         canShootNow = true;
     }
 
-    private IEnumerator specialShotDelay()
+    private IEnumerator specialShotDelay(float cooldown)
     {
-        yield return new WaitForSeconds(specialShotDelayValue);
+        yield return new WaitForSeconds(cooldown);
         specialCanShootNow = true;
     }
 }

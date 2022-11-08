@@ -53,7 +53,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 playerVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, 0) * Time.fixedDeltaTime;
         playerRB.position += playerVelocity;
-
     }
 
     public bool getFlipped()

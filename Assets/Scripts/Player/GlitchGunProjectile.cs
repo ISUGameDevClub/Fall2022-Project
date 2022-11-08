@@ -203,21 +203,6 @@ public class GlitchGunProjectile : MonoBehaviour
 
         
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.GetComponent<EnemyHealth>() != null)
-        {
-            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage();
-            Destroy(gameObject);
-        }
-        else
-        {
-            if (collision.gameObject.tag != "Player")
-            {
-                Destroy(gameObject);
-            }
-        }
-    }
 
     private IEnumerator timeAfterShoot()
     {

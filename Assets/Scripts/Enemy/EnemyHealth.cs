@@ -11,9 +11,9 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth = health;
     }
-    public void TakeDamage()
+    public void TakeDamage(int dmg)
     {
-        currentHealth--;
+        currentHealth-=dmg;
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
