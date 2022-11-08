@@ -68,9 +68,17 @@ public class Projectile_Player : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject != gun.transform.parent.gameObject)
+        if (collision.gameObject.GetComponent<EnemyHealth>() != null)
         {
+            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage();
             Destroy(gameObject);
+        }
+        else
+        {
+            if (collision.gameObject.tag != "Player")
+            {
+                Destroy(gameObject);
+            }
         }
     }
 

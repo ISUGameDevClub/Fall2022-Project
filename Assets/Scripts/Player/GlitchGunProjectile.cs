@@ -112,7 +112,6 @@ public class GlitchGunProjectile : MonoBehaviour
 
         if (turnAround)
         {      
-
             if (matchTurnAroundSpeed)
             {
                 if (bulletStartSpeed.x > 0)
@@ -204,24 +203,19 @@ public class GlitchGunProjectile : MonoBehaviour
 
         
     }
-
-    //needs to throw the grenade far
-    private void throwGrenade(bool direction)
-    {
-
-    }
-
-    //need to roll grenade close
-    private void underhandGrenade(bool direction)
-    {
-
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject != gun.transform.parent.gameObject)
+        if (collision.gameObject.GetComponent<EnemyHealth>() != null)
         {
+            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage();
             Destroy(gameObject);
+        }
+        else
+        {
+            if (collision.gameObject.tag != "Player")
+            {
+                Destroy(gameObject);
+            }
         }
     }
 

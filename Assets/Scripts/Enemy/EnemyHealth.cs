@@ -11,17 +11,12 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth = health;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void TakeDamage()
     {
-        if (collision.gameObject.GetComponent<Projectile_Player>())
+        currentHealth--;
+        if (currentHealth <= 0)
         {
-            Destroy(collision.gameObject);
-            currentHealth--;
-            if (currentHealth <= 0)
-            {
-
-                Destroy(gameObject);
-            }
+            Destroy(gameObject);
         }
     }
 }

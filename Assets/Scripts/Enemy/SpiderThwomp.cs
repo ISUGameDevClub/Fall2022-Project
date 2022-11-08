@@ -61,7 +61,13 @@ public class SpiderThwomp : MonoBehaviour
             }
         }
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Health>() != null)
+        {
+            collision.GetComponent<Health>().loseHealth();
+        }
+    }
 
     public void spiderMoveDown()
     {
