@@ -83,25 +83,14 @@ public class Health : MonoBehaviour
     //check for collision
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            loseHealth();
-        }
-
         if (collision.gameObject.tag == "Kill")
         {
             die();
         }
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            loseHealth();
-        }
-
+    { 
         if (collision.gameObject.tag == "Kill")
         {
             die();

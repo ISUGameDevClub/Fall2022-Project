@@ -112,7 +112,6 @@ public class GlitchGunProjectile : MonoBehaviour
 
         if (turnAround)
         {      
-
             if (matchTurnAroundSpeed)
             {
                 if (bulletStartSpeed.x > 0)
@@ -203,26 +202,6 @@ public class GlitchGunProjectile : MonoBehaviour
         transform.Translate(bulletSpeed);
 
         
-    }
-
-    //needs to throw the grenade far
-    private void throwGrenade(bool direction)
-    {
-
-    }
-
-    //need to roll grenade close
-    private void underhandGrenade(bool direction)
-    {
-
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject != gun.transform.parent.gameObject)
-        {
-            Destroy(gameObject);
-        }
     }
 
     private IEnumerator timeAfterShoot()

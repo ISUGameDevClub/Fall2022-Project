@@ -62,7 +62,6 @@ public class SpiderThwomp : MonoBehaviour
         }
     }
 
-
     public void spiderMoveDown()
     {
         isDropping = true;
