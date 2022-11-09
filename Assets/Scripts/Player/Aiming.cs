@@ -56,28 +56,28 @@ public class Aiming : MonoBehaviour
             //shoot top right
             torsoSprite.sprite = aimingSprites[1];
             transform.localPosition = new Vector2(1, 1);
-            aimDirection = new Vector2(1, 1);
+            aimDirection = new Vector2(1, 1).normalized;
         }
         else if (vert > 0 && horz < 0)
         {
             //shoot top left
             torsoSprite.sprite = aimingSprites[1];
             transform.localPosition = new Vector2(-1, 1);
-            aimDirection = new Vector2(-1, 1);
+            aimDirection = new Vector2(-1, 1).normalized;
         }
         else if (vert < 0 && horz > 0)
         {
             //shoot bottom right
             torsoSprite.sprite = aimingSprites[3];
             transform.localPosition = new Vector2(1, -1);
-            aimDirection = new Vector2(1, -1);
+            aimDirection = new Vector2(1, -1).normalized;
         }
         else if (vert < 0 && horz < 0)
         {
             //shoot bottom left
             torsoSprite.sprite = aimingSprites[3];
             transform.localPosition = new Vector2(-1, -1);
-            aimDirection = new Vector2(-1, -1);
+            aimDirection = new Vector2(-1, -1).normalized;
         }
         else if(vert == 0 && horz == 0)
         {

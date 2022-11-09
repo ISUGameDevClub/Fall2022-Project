@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 0.35
+  moveDirection: {x: 0, y: 0}
 --- !u!114 &5280543485666821201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,12 +147,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a2bef7671287874f9c6b4f310dbc383, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeTurnAround: 0.1
-  turnAroundAcceleration: 0.3
-  matchTurnAroundSpeed: 0
-  movement: 1.25
+  timeBeforeTurnAround: 1
+  turnAroundAcceleration: 5
   gun: {fileID: 0}
-  range: 10
+  movement: 20
 --- !u!50 &-1356916268378932261
 Rigidbody2D:
   serializedVersion: 4
@@ -160,7 +159,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5280543485666821194}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
