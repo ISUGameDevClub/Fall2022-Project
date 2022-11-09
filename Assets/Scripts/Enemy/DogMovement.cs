@@ -33,6 +33,6 @@ public class DogMovement : MonoBehaviour
         {
             direction = direction * -1;
             sR.flipX = !sR.flipX;
-        }
+        }   
     }
 }
