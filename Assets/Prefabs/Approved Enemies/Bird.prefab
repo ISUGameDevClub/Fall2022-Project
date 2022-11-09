@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 5632686388252561166}
   - component: {fileID: 8944185307376279926}
   - component: {fileID: -3015801975973257773}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bird
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,6 +50,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  hurtPrefab: {fileID: 0}
+  diePrefab: {fileID: 0}
 --- !u!212 &4840113082145045385
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -177,3 +179,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  hurtPrefab: {fileID: 0}
+  diePrefab: {fileID: 0}
