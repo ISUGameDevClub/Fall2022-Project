@@ -31,12 +31,6 @@ public class FishShoot : MonoBehaviour
             isShooting = true;
             StartCoroutine(AttackWait(attackCooldown));
         }
-
-        if(Vector2.Distance(this.transform.position, playerTransform.position) > activateDistance + 5 && isShooting)
-        {
-            isShooting = false;
-            StopCoroutine(AttackWait(attackCooldown));
-        }
     }
 
     private IEnumerator AttackWait(float waitTime)
