@@ -5,55 +5,30 @@ using UnityEngine.UI;
 
 public class FishShoot : MonoBehaviour
 {
-   // public GameObject fishprojectileleftPrefab;
-   // public GameObject fishprojectilerightPrefab;
     public GameObject fishprojectilePrefab;
     public bool facingRight;
+    public float activateDistance;
+    private Transform playerTransform;
+    private bool isShooting;
     [SerializeField] float attackCooldown = 1f;
     [SerializeField] float speed = 5f;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(AttackWait(attackCooldown));
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Create2DRayLeft();
-        //Create2DRayRight();
-    }
-
-    /*private void Create2DRayLeft()
-    {
-        LayerMask mask = LayerMask.GetMask("Player");
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left, 5, mask);
-
-        if (hit.collider.gameObject.GetComponent<Health>() != null && CanShoot)
+        if(Vector2.Distance(this.transform.position, playerTransform.position) < activateDistance && !isShooting)
         {
-            GameObject fishProj = Instantiate(fishprojectilePrefab, transform.position, Quaternion.identity);
-            fishProj.GetComponent<FishProjectileMove>().left = true;
-            CanShoot = false;
-            StartCoroutine(AttackWait(1f));
+            isShooting = true;
+            StartCoroutine(AttackWait(attackCooldown));
         }
     }
 
-    private void Create2DRayRight()
-    {
-        LayerMask mask = LayerMask.GetMask("Player");
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, 5, mask);
-
-        if (hit.collider.gameObject.GetComponent<Health>() != null && CanShoot)
-        {
-            Debug.Log("Right");
-            GameObject fishProj = Instantiate(fishprojectilePrefab, transform.position, Quaternion.identity);
-            fishProj.GetComponent<FishProjectileMove>().left = false;
-            CanShoot = false;
-            StartCoroutine(AttackWait(1f));
-        }
-    }
-    */
     private IEnumerator AttackWait(float waitTime)
     {
         while(waitTime > 0)
