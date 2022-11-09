@@ -150,8 +150,9 @@ MonoBehaviour:
   shootPrefab: {fileID: 7337934333778476695, guid: d78915da603343d44b2f1ce80d3291e5, type: 3}
   fishprojectilePrefab: {fileID: 2688712039996539345, guid: cf116e941c815ff47ba00b1b4cec8a91, type: 3}
   facingRight: 0
-  attackCooldown: 1
-  speed: 10
+  activateDistance: 15
+  attackCooldown: 1.5
+  speed: 25
 --- !u!70 &8022032699547102493
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
