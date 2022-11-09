@@ -18,8 +18,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     [Range(14f, 14.5f)]
         public float jumpHeight;
-        public int jumpsAvailable = 1;
-        private int jumps = 0;
         private bool flipped = true;
         Rigidbody2D playerRB;
     [SerializeField] 
@@ -42,10 +40,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && jumpsAvailable != jumps && !(Input.GetKey(KeyCode.LeftShift) && grounded))
+        if (Input.GetKeyDown(KeyCode.Space) && grounded && !(Input.GetKey(KeyCode.LeftShift) && grounded))
         {
             playerRB.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
-            jumps++;
             Instantiate(jumpPrefab, transform.position, Quaternion.identity);
         }
         if (Input.GetAxisRaw("Horizontal") != 0 && !(Input.GetKey(KeyCode.LeftShift) && grounded)) 
@@ -64,7 +61,6 @@ public class PlayerMovement : MonoBehaviour
         {
             if (playerRB.velocity.y <= 0)
             {
-                jumps = 0;
                 grounded = true;
             }
             playerRB.velocity = new Vector2(0, playerRB.velocity.y);
