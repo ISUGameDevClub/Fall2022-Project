@@ -40,13 +40,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && jumpsAvailable != jumps)
+        if (Input.GetKeyDown(KeyCode.Space) && jumpsAvailable != jumps && !Input.GetKey(KeyCode.LeftShift))
         {
             playerRB.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
             jumps++;
             Instantiate(jumpPrefab, transform.position, Quaternion.identity);
         }
-        if (Input.GetAxisRaw("Horizontal") != 0) 
+        if (Input.GetAxisRaw("Horizontal") != 0 && !Input.GetKey(KeyCode.LeftShift)) 
         {
             lowerBodyAnim.SetBool("walking", true);
         }
@@ -62,8 +62,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector2 playerVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, 0) * Time.fixedDeltaTime;
-        playerRB.position += playerVelocity;
+        if (!Input.GetKey(KeyCode.LeftShift))
+        {
+            Vector2 playerVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, 0) * Time.fixedDeltaTime;
+            playerRB.position += playerVelocity;
+        }
     }
 
     public bool getFlipped()
