@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1361003751}
   - component: {fileID: 1361003752}
   - component: {fileID: 1361003753}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HurtBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 2377072617159654603}
   - component: {fileID: 7296008831428847604}
   - component: {fileID: 6792767879782021221}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DogSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 8849550592737582882}
   - component: {fileID: 8849550592737582883}
   - component: {fileID: 737509617805180028}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Dog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
