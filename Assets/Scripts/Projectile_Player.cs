@@ -8,8 +8,6 @@ public class Projectile_Player : MonoBehaviour
     public float movement = .5f;
     public float despawnTime = .5f;
     public GameObject gun;
-    private Vector2 aim; 
-    Vector2 startPosition;
     private Rigidbody2D rb;
     private Attack atk;
 
@@ -19,8 +17,6 @@ public class Projectile_Player : MonoBehaviour
         atk = GetComponent<Attack>();
         rb = GetComponent<Rigidbody2D>();
         Destroy(gameObject, despawnTime);
-        aim = gun.transform.localPosition;
-        Vector2 startPosition = transform.position;
     }
 
     // Update is called once per frame

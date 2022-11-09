@@ -12,36 +12,34 @@ public class GlitchGunProjectile : MonoBehaviour
 
     private bool turnAround;
 
-    public GameObject gun;
     public float movement = .5f;
-    private float bulletSpeed;
-    private float endSpeed;
+    private float endMovement;
+    public float despawnTime = .5f;
+    public GameObject gun;
     private Rigidbody2D rb;
     private Attack atk;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         atk = GetComponent<Attack>();
-        turnAround = false;
-        bulletSpeed = movement;
-        endSpeed = -bulletSpeed;
+        rb = GetComponent<Rigidbody2D>();
+        Destroy(gameObject, despawnTime);
 
+        endMovement = -movement;
         StartCoroutine(timeAfterShoot());
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (turnAround && bulletSpeed > endSpeed)
+        if (turnAround && movement > endMovement)
         {
-            bulletSpeed -= turnAroundAcceleration * Time.deltaTime;
+            movement -= turnAroundAcceleration * Time.deltaTime;
         }
 
-        rb.MovePosition(bulletSpeed * atk.moveDirection * Time.deltaTime);
+        rb.MovePosition((Vector2)transform.position + movement * atk.moveDirection * Time.deltaTime);
     }
-
 
     private IEnumerator timeAfterShoot()
     {
