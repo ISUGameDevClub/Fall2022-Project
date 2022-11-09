@@ -146,10 +146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a2bef7671287874f9c6b4f310dbc383, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeTurnAround: 0.75
-  turnAroundAcceleration: 0.25
+  timeBeforeTurnAround: 0.1
+  turnAroundAcceleration: 0.3
   matchTurnAroundSpeed: 0
-  movement: 0.5
+  movement: 1.25
   gun: {fileID: 0}
   range: 10
 --- !u!50 &-1356916268378932261
