@@ -5,23 +5,26 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] int health;
+    [SerializeField] GameObject hurtPrefab;
+    [SerializeField] GameObject diePrefab;
     private int currentHealth;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = health;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void TakeDamage(int dmg)
     {
-        if (collision.gameObject.GetComponent<Projectile_Player>())
-        {
-            Destroy(collision.gameObject);
-            currentHealth--;
-            if (currentHealth <= 0)
-            {
 
-                Destroy(gameObject);
-            }
+        currentHealth-=dmg;
+        if (currentHealth <= 0)
+        {
+            Instantiate(diePrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+        else 
+        { 
+            Instantiate(hurtPrefab, transform.position, Quaternion.identity); 
         }
     }
 }

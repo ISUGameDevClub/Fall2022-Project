@@ -64,16 +64,7 @@ public class Projectile_Player : MonoBehaviour
             //shoot bottom left
             transform.Translate(-movement / 10, -movement / 10, 0);
         }
-
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject != gun.transform.parent.gameObject)
-        {
-            Destroy(gameObject);
-        }
-    }
-
 }
 
 

@@ -9,8 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5280543485666821198}
+  - component: {fileID: 1472468002204131626}
   - component: {fileID: 5280543485666821199}
   - component: {fileID: 5280543485666821196}
+  - component: {fileID: -3945586146333660654}
   - component: {fileID: 5280543485666821201}
   - component: {fileID: -1356916268378932261}
   m_Layer: 0
@@ -35,6 +37,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1472468002204131626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5280543485666821194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 875a813cbdb972d4087b3a3a4b691f9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPiercing: 0
+  wallPiercing: 0
+  damage: 25
 --- !u!212 &5280543485666821199
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -103,6 +120,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-3945586146333660654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5280543485666821194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76f541341c4ee5b4488db83bff38156e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 0.5
 --- !u!114 &5280543485666821201
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,44 +5,23 @@ using UnityEngine.UI;
 
 public class FishShoot : MonoBehaviour
 {
-   // public GameObject fishprojectileleftPrefab;
-   // public GameObject fishprojectilerightPrefab;
+    // public GameObject fishprojectileleftPrefab;
+    // public GameObject fishprojectilerightPrefab;
+    [SerializeField] GameObject shootPrefab;
     public GameObject fishprojectilePrefab;
-    private IEnumerator coroutine;
-    private bool CanShoot;
-    private GameObject player;
-    private bool facingRight;
-    private float direction;
+    public bool facingRight;
     [SerializeField] float attackCooldown = 1f;
     [SerializeField] float speed = 5f;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
-        CanShoot = true;
+        StartCoroutine(AttackWait(attackCooldown));
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(player.transform.position.x > transform.position.x)
-        {
-            facingRight = true;
-        }
-        else if (player.transform.position.x <= transform.position.x)
-        {
-            facingRight = false;
-        }
-
-        if (CanShoot)
-        {
-            GameObject tempBul = Instantiate(fishprojectilePrefab);
-            tempBul.GetComponent<FishProjectileMove>().right = facingRight;
-            tempBul.GetComponent<FishProjectileMove>().speed = speed;
-            CanShoot = false;
-            StartCoroutine(AttackWait(attackCooldown));
-        }
         //Create2DRayLeft();
         //Create2DRayRight();
     }
@@ -78,7 +57,13 @@ public class FishShoot : MonoBehaviour
     */
     private IEnumerator AttackWait(float waitTime)
     {
-        yield return new WaitForSeconds(waitTime);
-        CanShoot = true;
+        while(waitTime > 0)
+        {
+            GameObject tempBul = Instantiate(fishprojectilePrefab, transform.position, Quaternion.identity);
+            Instantiate(shootPrefab, transform.position, Quaternion.identity);
+            tempBul.GetComponent<FishProjectileMove>().right = facingRight;
+            tempBul.GetComponent<FishProjectileMove>().speed = speed;
+            yield return new WaitForSeconds(waitTime);
+        }
     }
 }

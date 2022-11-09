@@ -164,33 +164,7 @@ public class projectile_player_juggernaut : MonoBehaviour
             }
 
         }
-        //despawn bullet after distance
-//        if (Vector2.Distance(startPosition, transform.position) > range) 
-  //      {
-    //        Destroy(gameObject);
-      //  }
     }
-
-    //needs to throw the grenade far
-    private void throwGrenade(bool direction)
-    {
-
-    }
-
-    //need to roll grenade close
-    private void underhandGrenade(bool direction)
-    {
-
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject != gun.transform.parent.gameObject)
-        {
-            Destroy(gameObject);
-        }
-    }
-
 }
 
 

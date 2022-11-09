@@ -28,12 +28,11 @@ public class DogMovement : MonoBehaviour
     private void Create2DRay()
     {
         LayerMask mask = LayerMask.GetMask("Ground");
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left * direction, wallDetectRange, mask);
-
+        RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(0,1f,0), Vector2.left * direction, wallDetectRange, mask);
         if (hit.collider != null)
         {
             direction = direction * -1;
             sR.flipX = !sR.flipX;
-        }
+        }   
     }
 }

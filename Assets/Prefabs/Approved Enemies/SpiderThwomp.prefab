@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1226178530156124289
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6447233282430054342}
-  m_Layer: 7
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6447233282430054342
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1226178530156124289}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.23, z: 0}
-  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3507879544816753928}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3507879544185148378
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,6 +98,8 @@ GameObject:
   - component: {fileID: 3507879544816753931}
   - component: {fileID: 3507879544816754422}
   - component: {fileID: 3507879544816753929}
+  - component: {fileID: 5415953189851415363}
+  - component: {fileID: 235672928}
   m_Layer: 7
   m_Name: SpiderSprite
   m_TagString: Enemy
@@ -147,11 +118,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3507879545358972170}
-  - {fileID: 6447233282430054342}
+  m_Children: []
   m_Father: {fileID: 3507879545725067317}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3231816502520115000
 MonoBehaviour:
@@ -165,10 +134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4f43908715f71c4fa2c2bd2a5978e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropPrefab: {fileID: 7337934333778476695, guid: ceeb6b6204b8ae942b63774406f1cfdd, type: 3}
   webby: {fileID: 3507879544185148378}
   webbyBase: {fileID: 3507879545087873789}
   anim: {fileID: 3507879544816753930}
-  dropSpeed: 5
+  dropSpeed: 15
   raiseSpeed: 3
   maxDistance: 1
   restTime: 1.5
@@ -294,6 +264,35 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &5415953189851415363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3507879544816753933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f48905f509273cb4ea7af475322aec7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPiercing: 1
+  wallPiercing: 1
+--- !u!114 &235672928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3507879544816753933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b2dcf50c55e7d444b2c230c82136d64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 75
+  hurtPrefab: {fileID: 7337934333778476695, guid: a26d8a5b053dca0488cf09d00233d2a0, type: 3}
+  diePrefab: {fileID: 7337934333778476695, guid: fbcea5123aa8cde4e9d6c95322ff922f, type: 3}
 --- !u!1 &3507879545087873789
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,7 +389,7 @@ GameObject:
   - component: {fileID: 3507879545358972168}
   - component: {fileID: 3507879545358972171}
   m_Layer: 7
-  m_Name: SpiderDummy
+  m_Name: PlayerDetection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -405,11 +404,11 @@ Transform:
   m_GameObject: {fileID: 3507879545358972173}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3507879544816753928}
-  m_RootOrder: 0
+  m_Father: {fileID: 3507879545725067317}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &3507879545358972168
 BoxCollider2D:
@@ -449,6 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 074e5ad1135f68d419243d1cebd87a9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spiderMovement: {fileID: 3231816502520115000}
 --- !u!1 &3507879545725067318
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,6 +479,7 @@ Transform:
   m_Children:
   - {fileID: 3507879544185148379}
   - {fileID: 3507879545087873786}
+  - {fileID: 3507879545358972170}
   - {fileID: 3507879544816753928}
   m_Father: {fileID: 0}
   m_RootOrder: 0
