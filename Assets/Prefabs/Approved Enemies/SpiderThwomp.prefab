@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4f43908715f71c4fa2c2bd2a5978e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropPrefab: {fileID: 7337934333778476695, guid: ceeb6b6204b8ae942b63774406f1cfdd, type: 3}
   webby: {fileID: 3507879544185148378}
   webbyBase: {fileID: 3507879545087873789}
   anim: {fileID: 3507879544816753930}
@@ -290,6 +291,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 75
+  hurtPrefab: {fileID: 7337934333778476695, guid: a26d8a5b053dca0488cf09d00233d2a0, type: 3}
+  diePrefab: {fileID: 7337934333778476695, guid: fbcea5123aa8cde4e9d6c95322ff922f, type: 3}
 --- !u!1 &3507879545087873789
 GameObject:
   m_ObjectHideFlags: 0

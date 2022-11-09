@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class FishShoot : MonoBehaviour
 {
-   // public GameObject fishprojectileleftPrefab;
-   // public GameObject fishprojectilerightPrefab;
+    // public GameObject fishprojectileleftPrefab;
+    // public GameObject fishprojectilerightPrefab;
+    [SerializeField] GameObject shootPrefab;
     public GameObject fishprojectilePrefab;
     public bool facingRight;
     [SerializeField] float attackCooldown = 1f;
@@ -59,6 +60,7 @@ public class FishShoot : MonoBehaviour
         while(waitTime > 0)
         {
             GameObject tempBul = Instantiate(fishprojectilePrefab, transform.position, Quaternion.identity);
+            Instantiate(shootPrefab, transform.position, Quaternion.identity);
             tempBul.GetComponent<FishProjectileMove>().right = facingRight;
             tempBul.GetComponent<FishProjectileMove>().speed = speed;
             yield return new WaitForSeconds(waitTime);

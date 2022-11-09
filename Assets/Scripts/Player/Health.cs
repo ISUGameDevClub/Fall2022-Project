@@ -9,6 +9,10 @@ public class Health : MonoBehaviour
 
 
     [SerializeField] int maxCooldown;
+    [SerializeField] SpriteRenderer hatSprite;
+    [SerializeField] GameObject hurtPrefab;
+    [SerializeField] GameObject powerDownPrefab;
+    [SerializeField] GameObject powerUpPrefab;
     public string playerHealth;
     //public Text playerHealthText;
     float damageCooldown;
@@ -51,8 +55,11 @@ public class Health : MonoBehaviour
     //simple Health Gain method
     public void gainHealth(string powerup)
     {
+
+        Instantiate(powerUpPrefab, transform.position, Quaternion.identity);
         Debug.Log("gained health");
         playerHealth = powerup;
+        hatSprite.enabled = true;
     }
 
 
@@ -61,9 +68,13 @@ public class Health : MonoBehaviour
     {
         if (damageCooldown <= 0)
         {
-            if(playerHealth != "")
+            Instantiate(hurtPrefab, transform.position, Quaternion.identity);
+            if (playerHealth != "")
             {
+                //rethink powerdown
+                //Instantiate(powerDownPrefab, transform.position, Quaternion.identity);
                 playerHealth = "";
+                hatSprite.enabled = false;
             }
             else
             {

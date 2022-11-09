@@ -6,6 +6,7 @@ public class Shoot : MonoBehaviour
 {
 
     [SerializeField] GameObject[] bulletPrefab;
+    [SerializeField] GameObject[] shootSounds;
     Health playerHP;
     private bool canShootNow;
     private bool specialCanShootNow;
@@ -66,6 +67,7 @@ public class Shoot : MonoBehaviour
             //spawn bullet here
             GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], position,Quaternion.identity );
 
+            Instantiate(shootSounds[bulletToSpawn], transform.position, Quaternion.identity);
             StartCoroutine(shotDelay(bullet.GetComponent<Attack>().attackCooldown));
 
             //make bullet fly forward
