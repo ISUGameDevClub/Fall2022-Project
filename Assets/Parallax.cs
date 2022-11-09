@@ -6,7 +6,10 @@ public class Parallax : MonoBehaviour
 {
     [SerializeField] GameObject[] layers;
     [SerializeField] float[] speeds;
-
+    private void Start()
+    {
+        Sprite sprite = GetComponent<SpriteRenderer>().sprite;
+    }
     private void Update()
     {
         for(int i = 0; i<layers.Length; i++)
