@@ -92,7 +92,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1142830183
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 45142403e05c1984cabb8ef2fd07fca3, type: 3}
   m_Color: {r: 0, g: 0.46226418, b: 0.021352103, a: 1}
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76f541341c4ee5b4488db83bff38156e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 0.35
+  attackCooldown: 0.3
   moveDirection: {x: 1, y: 0}
 --- !u!50 &-1356916268378932261
 Rigidbody2D:
@@ -168,9 +168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a2bef7671287874f9c6b4f310dbc383, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeTurnAround: 0.1
-  turnAroundAcceleration: 40
-  movement: 30
+  timeBeforeTurnAround: 0.15
+  turnAroundAcceleration: 80
+  movement: 35
   despawnTime: 6
   gun: {fileID: 0}
 --- !u!1 &5772804338130820350
@@ -245,7 +245,7 @@ TrailRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1142830183
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: -1
   m_Time: 0.075
   m_Parameters:

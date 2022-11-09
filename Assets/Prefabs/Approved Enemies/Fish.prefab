@@ -152,7 +152,7 @@ MonoBehaviour:
   facingRight: 0
   activateDistance: 18
   attackCooldown: 1.5
-  speed: 20
+  speed: 120
 --- !u!70 &8022032699547102493
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

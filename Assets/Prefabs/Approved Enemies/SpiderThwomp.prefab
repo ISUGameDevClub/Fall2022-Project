@@ -139,7 +139,7 @@ MonoBehaviour:
   webbyBase: {fileID: 3507879545087873789}
   anim: {fileID: 3507879544816753930}
   dropSpeed: 15
-  raiseSpeed: 3
+  raiseSpeed: 10
   maxDistance: 1
   restTime: 1.5
   layerHitGround:
@@ -204,7 +204,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 691333133
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -188512024, guid: c425ad8bd5ab23245a8fd87cc331e45f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
