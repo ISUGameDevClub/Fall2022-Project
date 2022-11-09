@@ -235,8 +235,8 @@ GameObject:
   - component: {fileID: 4228974284777436418}
   - component: {fileID: -9189445334986381346}
   - component: {fileID: -3355577688604961586}
-  - component: {fileID: 6583691599241678275}
   - component: {fileID: -4687898568944800627}
+  - component: {fileID: 1329347704724223258}
   m_Layer: 8
   m_Name: Fish Projectile
   m_TagString: Untagged
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   right: 0
-  speed: 0
+  speed: 120
 --- !u!114 &-3355577688604961586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,22 +289,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPiercing: 0
   wallPiercing: 0
---- !u!58 &6583691599241678275
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2688712039996539345}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.1, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.15
 --- !u!50 &-4687898568944800627
 Rigidbody2D:
   serializedVersion: 4
@@ -313,7 +297,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2688712039996539345}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -326,3 +310,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!70 &1329347704724223258
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2688712039996539345}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.34, y: 0.5}
+  m_Direction: 1

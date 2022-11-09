@@ -14,7 +14,6 @@ public class FishShoot : MonoBehaviour
     private Transform playerTransform;
     private bool isShooting;
     [SerializeField] float attackCooldown = 1f;
-    [SerializeField] float speed = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +39,6 @@ public class FishShoot : MonoBehaviour
             GameObject tempBul = Instantiate(fishprojectilePrefab, transform.position, Quaternion.identity);
             Instantiate(shootPrefab, transform.position, Quaternion.identity);
             tempBul.GetComponent<FishProjectileMove>().right = facingRight;
-            tempBul.GetComponent<FishProjectileMove>().speed = speed;
             yield return new WaitForSeconds(waitTime);
         }
     }
