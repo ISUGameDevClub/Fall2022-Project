@@ -105,7 +105,10 @@ public class PlayerMovement : MonoBehaviour
     }
     public void StepSound()
     {
-        if(jumps==0) Instantiate(stepPrefab,transform.position,Quaternion.identity);
+        if (grounded)
+        {
+            Instantiate(stepPrefab, transform.position, Quaternion.identity);
+        }
     }
     private void doWeFlip()
     {
