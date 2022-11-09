@@ -132,7 +132,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2dcf50c55e7d444b2c230c82136d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 75
+  hurtPrefab: {fileID: 7337934333778476695, guid: a26d8a5b053dca0488cf09d00233d2a0, type: 3}
+  diePrefab: {fileID: 7337934333778476695, guid: 440eacae6cf93bb4796a19247ae31556, type: 3}
 --- !u!114 &3485903284388114306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,11 +147,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168303f50f1f5a24aa76b5da27aa8865, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootPrefab: {fileID: 7337934333778476695, guid: d78915da603343d44b2f1ce80d3291e5, type: 3}
   fishprojectilePrefab: {fileID: 2688712039996539345, guid: cf116e941c815ff47ba00b1b4cec8a91, type: 3}
   facingRight: 0
-  activateDistance: 20
-  attackCooldown: 2
-  speed: 20
+  attackCooldown: 1
+  speed: 10
 --- !u!70 &8022032699547102493
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
