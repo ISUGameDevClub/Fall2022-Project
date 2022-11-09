@@ -19,6 +19,7 @@ public class FishProjectileMove : MonoBehaviour
     {
         if (right)
         {
+            GetComponentInChildren<SpriteRenderer>().flipX = true;
             rb.MovePosition((Vector2)transform.position + speed * Vector2.right * Time.deltaTime);
         }
         else

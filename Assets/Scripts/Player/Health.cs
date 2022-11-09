@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
 
 
-    [SerializeField] int maxCooldown;
+    [SerializeField] float maxCooldown;
     [SerializeField] SpriteRenderer hatSprite;
     [SerializeField] GameObject hurtPrefab;
     [SerializeField] GameObject powerDownPrefab;

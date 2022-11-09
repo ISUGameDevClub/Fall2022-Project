@@ -105,6 +105,7 @@ MonoBehaviour:
   - {fileID: 389931924, guid: 639af655296392b4cb016ffc81c9067e, type: 3}
   - {fileID: -1034256217, guid: 639af655296392b4cb016ffc81c9067e, type: 3}
   torsoSprite: {fileID: 5363307019069175099}
+  aimDirection: {x: 0, y: 0}
 --- !u!114 &5363307017638086244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,7 +213,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1053076085
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 144257195, guid: bad58286e41531543b2ced3b15adc56f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -330,7 +331,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1053076085
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1627607895, guid: 639af655296392b4cb016ffc81c9067e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -469,7 +470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7643fc15f51f8294eb9789971756239e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCooldown: 3
+  maxCooldown: 1.25
   hatSprite: {fileID: 5363307019206883104}
   hurtPrefab: {fileID: 7337934333778476695, guid: f05cddef8fc1c53458f836acfbf4d554, type: 3}
   powerDownPrefab: {fileID: 7337934333778476695, guid: f0c76b1cafe477246b73f93346b0f4e6, type: 3}
@@ -546,7 +547,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1053076085
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 2c779930c2b4e1540b5995beed2b2805, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
