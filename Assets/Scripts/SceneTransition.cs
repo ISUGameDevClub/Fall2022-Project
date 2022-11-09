@@ -30,4 +30,10 @@ public class SceneTransition : MonoBehaviour
     {
         SceneManager.LoadScene(newScene);
     }
+
+    public void RestartScene()
+    {
+        anim.SetTrigger("Scene End");
+        newScene = SceneManager.GetActiveScene().name;
+    }
 }
