@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 5280543485666821199}
   - component: {fileID: 5280543485666821196}
   - component: {fileID: -3945586146333660654}
-  - component: {fileID: 5280543485666821201}
   - component: {fileID: -1356916268378932261}
+  - component: {fileID: 4697216392783388506}
   m_Layer: 0
   m_Name: glitchgun_projectile
   m_TagString: Untagged
@@ -134,7 +134,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 0.35
---- !u!114 &5280543485666821201
+  moveDirection: {x: 1, y: 0}
+--- !u!50 &-1356916268378932261
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5280543485666821194}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &4697216392783388506
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,32 +169,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeTurnAround: 0.1
-  turnAroundAcceleration: 0.3
-  matchTurnAroundSpeed: 0
-  movement: 1.25
+  turnAroundAcceleration: 40
+  movement: 30
+  despawnTime: 6
   gun: {fileID: 0}
-  range: 10
---- !u!50 &-1356916268378932261
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5280543485666821194}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
 --- !u!1 &5772804338130820350
 GameObject:
   m_ObjectHideFlags: 0

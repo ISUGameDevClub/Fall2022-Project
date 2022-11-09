@@ -24,7 +24,6 @@ public class KillBoundaryLeft : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("Enemy Kill!");

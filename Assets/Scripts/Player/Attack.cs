@@ -5,4 +5,5 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     public float attackCooldown;
+    public Vector2 moveDirection;
 }

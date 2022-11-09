@@ -42,13 +42,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && jumpsAvailable != jumps && (!Input.GetKey(KeyCode.LeftShift) || !grounded))
+        if (Input.GetKeyDown(KeyCode.Space) && jumpsAvailable != jumps && !(Input.GetKey(KeyCode.LeftShift) && grounded))
         {
             playerRB.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
             jumps++;
             Instantiate(jumpPrefab, transform.position, Quaternion.identity);
         }
-        if (Input.GetAxisRaw("Horizontal") != 0 && (!Input.GetKey(KeyCode.LeftShift) || !grounded)) 
+        if (Input.GetAxisRaw("Horizontal") != 0 && !(Input.GetKey(KeyCode.LeftShift) && grounded)) 
         {
             lowerBodyAnim.SetBool("walking", true);
         }
@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         LayerMask mask = LayerMask.GetMask("Ground");
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.1f, mask);
 
-        if (LayerMask.LayerToName(hit.collider.gameObject.layer) == "Ground")
+        if (hit.collider != null && LayerMask.LayerToName(hit.collider.gameObject.layer) == "Ground")
         {
             if (playerRB.velocity.y <= 0)
             {
@@ -80,10 +80,26 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if ((!Input.GetKey(KeyCode.LeftShift) || !grounded))
+        if (!(Input.GetKey(KeyCode.LeftShift) && grounded))
         {
             Vector2 playerVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, 0) * Time.fixedDeltaTime;
             playerRB.position += playerVelocity;
+        }
+
+        if(playerRB.velocity.y > 0)
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                playerRB.gravityScale = 2.4f;
+            }
+            else
+            {
+                playerRB.gravityScale = 4.8f;
+            }
+        }
+        else
+        {
+            playerRB.gravityScale = 4.8f;
         }
     }
 
