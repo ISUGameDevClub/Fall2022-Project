@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - Kill
   - OneWayDown
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -45,15 +46,30 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
+  - name: Background/Background
     uniqueID: 1207180077
+    locked: 0
+  - name: Background/Buildings
+    uniqueID: 3994648473
+    locked: 0
+  - name: Background/Clouds
+    uniqueID: 4176834527
+    locked: 0
+  - name: Background/Midground
+    uniqueID: 3697143241
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 1442576427
     locked: 0
   - name: Enemies
     uniqueID: 691333133
     locked: 0
   - name: Player
     uniqueID: 3241891211
+    locked: 0
+  - name: Projectile
+    uniqueID: 3152137113
     locked: 0

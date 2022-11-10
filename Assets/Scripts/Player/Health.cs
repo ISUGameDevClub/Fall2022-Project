@@ -8,7 +8,11 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
 
 
-    [SerializeField] int maxCooldown;
+    [SerializeField] float maxCooldown;
+    [SerializeField] SpriteRenderer hatSprite;
+    [SerializeField] GameObject hurtPrefab;
+    [SerializeField] GameObject powerDownPrefab;
+    [SerializeField] GameObject powerUpPrefab;
     public string playerHealth;
     //public Text playerHealthText;
     float damageCooldown;
@@ -51,8 +55,11 @@ public class Health : MonoBehaviour
     //simple Health Gain method
     public void gainHealth(string powerup)
     {
+
+        Instantiate(powerUpPrefab, transform.position, Quaternion.identity);
         Debug.Log("gained health");
         playerHealth = powerup;
+        hatSprite.enabled = true;
     }
 
 
@@ -61,12 +68,17 @@ public class Health : MonoBehaviour
     {
         if (damageCooldown <= 0)
         {
-            if(playerHealth != "")
+            Instantiate(hurtPrefab, transform.position, Quaternion.identity);
+            if (playerHealth != "")
             {
+                //rethink powerdown
+                //Instantiate(powerDownPrefab, transform.position, Quaternion.identity);
                 playerHealth = "";
+                hatSprite.enabled = false;
             }
             else
             {
+                FindObjectOfType<SceneTransition>().RestartScene();
                 playerHealth = null;
             }
             damageCooldown = maxCooldown * Time.frameCount /Time.time;
@@ -83,25 +95,14 @@ public class Health : MonoBehaviour
     //check for collision
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            loseHealth();
-        }
-
         if (collision.gameObject.tag == "Kill")
         {
             die();
         }
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            loseHealth();
-        }
-
+    { 
         if (collision.gameObject.tag == "Kill")
         {
             die();

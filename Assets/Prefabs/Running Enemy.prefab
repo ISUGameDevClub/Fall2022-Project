@@ -113,7 +113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2701690532521974130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.25, y: 7, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -232,8 +232,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5455211875cd3de4790ca6f9f3f59f37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walldetectrange: 5
-  enemy_speed: 4
+  fallSpeed: 0
+  wallDetectRange: 5
+  enemySpeed: 4
 --- !u!1 &2701690533540378103
 GameObject:
   m_ObjectHideFlags: 0
