@@ -455,7 +455,6 @@ MonoBehaviour:
   stepPrefab: {fileID: 7337934333778476695, guid: 28b0876704ee1c04398bdf66236cddb0, type: 3}
   speed: 13.5
   jumpHeight: 14.5
-  jumpsAvailable: 1
   lowerBodyAnim: {fileID: 5363307018702865326}
   upperBodyAnim: {fileID: 0}
 --- !u!114 &5363307019101255825
