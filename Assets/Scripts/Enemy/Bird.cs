@@ -24,7 +24,7 @@ public class Bird : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
        
         Create2DRay();
@@ -37,11 +37,11 @@ public class Bird : MonoBehaviour
 
         if (hit.collider != null)
         {
-            rb.MovePosition(rb.position + new Vector2(-1, 0) * Time.deltaTime * enemy_speed);
+            rb.MovePosition(rb.position + new Vector2(-1, 0) * Time.deltaTime * enemy_speed * direction);
         }
         else
         {
-            rb.MovePosition(rb.position + new Vector2(-1, -1) * Time.deltaTime * enemy_speed);
+            rb.MovePosition(rb.position + new Vector2(-1, -1) * Time.deltaTime * enemy_speed * direction);
         }
     }
     private void Create2DForwardRay()

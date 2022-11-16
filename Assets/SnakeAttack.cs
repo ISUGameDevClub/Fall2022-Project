@@ -63,11 +63,9 @@ public class SnakeAttack : MonoBehaviour
     {
         hurtBox.SetActive(true);
         anim.SetBool("ReadyEmerge", false);
-        anim.SetBool("ReadyIdle", true);
     }
     public void BurrowSnake()
     {
-        anim.SetBool("ReadyIdle", false);
         anim.SetBool("ReadyBurrow", true);
         snakeOut = false;
     }
@@ -77,7 +75,7 @@ public class SnakeAttack : MonoBehaviour
         {
             hurtBox.SetActive(false);
             isAttacking = true;
-            anim.SetBool("Attacking", true);
+            anim.SetTrigger("Attacking");
             StartCoroutine(AttackWait(attackCooldown));
         }
     }
@@ -87,7 +85,6 @@ public class SnakeAttack : MonoBehaviour
         {
             yield return new WaitForSeconds(waitTime);
             isAttacking = false;
-            anim.SetBool("Attacking", false);
             hurtBox.SetActive(false);
         }
     }

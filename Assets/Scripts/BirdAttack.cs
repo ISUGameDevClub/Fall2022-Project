@@ -24,7 +24,7 @@ public class BirdAttack : MonoBehaviour
     private void Create2DRay()
     {
         LayerMask mask = LayerMask.GetMask("Player");
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 10, mask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 50, mask);
 
         if (hit.collider.gameObject.GetComponent<Health>() != null && CanShoot)
         {
