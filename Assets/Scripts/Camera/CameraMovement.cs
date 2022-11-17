@@ -59,7 +59,7 @@ public class CameraMovement : MonoBehaviour
         endPos.z = -1;
         if (player.transform.position.x + posOffset.x < transform.position.x)
         {
-            endPos.x = transform.position.x;
+       //     endPos.x = transform.position.x;
         }
         if (endPos.x <= minX)
             endPos.x = minX;

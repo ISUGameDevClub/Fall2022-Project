@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5262317914465671258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5262317914465671252}
+  m_Layer: 0
+  m_Name: Raccoon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5262317914465671252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5262317914465671258}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.81, y: 1.89, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2261322257955788733}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &7558443697794843668
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5262317914465671252}
+    m_Modifications:
+    - target: {fileID: 8612334822032511912, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1203931668, guid: 5ded00f94e4470547b2c7dbb782a4f1a, type: 3}
+    - target: {fileID: 8612334822032511912, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612334822032511912, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 691333133
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612334822032511913, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612334822032511913, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612334822032511913, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612334822032511913, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612334822032511913, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612334822032511913, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612334822032511913, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612334822032511913, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612334822032511913, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612334822032511913, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612334822032511913, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612334822032511914, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612334822032511914, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.1875
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612334822032511914, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.1875
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612334822032511924, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+      propertyPath: m_Name
+      value: RaccoonSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612334822032511925, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+      propertyPath: range
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612334822032511925, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 1260506417258750844, guid: d2e4b7e3fc8bb8746884581fa9867d2d, type: 3}
+    - target: {fileID: 8612334822032511925, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+      propertyPath: trashcan
+      value: 
+      objectReference: {fileID: 1444062113715875750, guid: 59708a091ae50064981074bbe5617823, type: 3}
+    - target: {fileID: 8612334822032511925, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+      propertyPath: shotDelayValue
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+--- !u!4 &2261322257955788733 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8612334822032511913, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+  m_PrefabInstance: {fileID: 7558443697794843668}
+  m_PrefabAsset: {fileID: 0}
