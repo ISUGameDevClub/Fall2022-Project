@@ -78,8 +78,8 @@ public class Health : MonoBehaviour
             }
             else
             {
-                FindObjectOfType<SceneTransition>().RestartScene();
                 playerHealth = null;
+                FindObjectOfType<SceneTransition>().RestartScene();
             }
             damageCooldown = maxCooldown * Time.frameCount /Time.time;
         }

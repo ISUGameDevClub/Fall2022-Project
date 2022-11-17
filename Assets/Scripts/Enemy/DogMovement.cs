@@ -25,6 +25,10 @@ public class DogMovement : MonoBehaviour
         rb.MovePosition(rb.position + new Vector2(-1, 0) * Time.fixedDeltaTime * direction * enemySpeed + new Vector2(0, fallSpeed)*Time.fixedDeltaTime);
         Create2DRay();
     }
+    public float GetDirection()
+    {
+        return direction;
+    }
     private void Create2DRay()
     {
         LayerMask mask = LayerMask.GetMask("Ground");
