@@ -29,6 +29,9 @@ public class PlayerMovement : MonoBehaviour
 
     private bool grounded;
 
+    private float yoteTime = 1.2f;
+    private float yoteTimeCounter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,11 +43,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && grounded && !(Input.GetKey(KeyCode.LeftShift) && grounded))
+        
+
+        if (Input.GetKeyDown(KeyCode.Space) && yoteTimeCounter > 0f && !(Input.GetKey(KeyCode.LeftShift)))
         {
             playerRB.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
             Instantiate(jumpPrefab, transform.position, Quaternion.identity);
+            yoteTimeCounter = 0f;
         }
+
         if (Input.GetAxisRaw("Horizontal") != 0 && !(Input.GetKey(KeyCode.LeftShift) && grounded)) 
         {
             lowerBodyAnim.SetBool("walking", true);
@@ -65,10 +72,20 @@ public class PlayerMovement : MonoBehaviour
                 grounded = true;
             }
             playerRB.velocity = new Vector2(0, playerRB.velocity.y);
+            
         }
         else
         {
             grounded = false;
+        }
+
+        if (grounded)
+        {
+            yoteTimeCounter = yoteTime;
+        }
+        else
+        {
+            yoteTimeCounter -= Time.deltaTime;
         }
 
         doWeFlip();
@@ -77,6 +94,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
+
         if (!(Input.GetKey(KeyCode.LeftShift) && grounded))
         {
             Vector2 playerVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, 0) * Time.fixedDeltaTime;
