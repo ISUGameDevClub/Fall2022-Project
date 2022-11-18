@@ -7,10 +7,11 @@ public class BoxSpawner : MonoBehaviour
     public GameObject enemyToSpawn;
     private GameObject player;
     public float distanceTrigger;
-    public float spawnWaitTime = 1.5f;
+    public float spawnWaitTime = 2.5f;
     private Animator boxAnimator;
     private bool isSpawning;
     private ParticleSystem particleSystem;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class BoxSpawner : MonoBehaviour
         boxAnimator = GetComponent<Animator>();
         isSpawning = false;
         particleSystem = GetComponentInChildren<ParticleSystem>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -43,6 +45,7 @@ public class BoxSpawner : MonoBehaviour
     private void SpawnEnemy()
     {
         particleSystem.Play();
+        audioSource.Play();
         Instantiate(enemyToSpawn, new Vector3(transform.position.x - 2, transform.position.y, transform.position.z), Quaternion.identity);
     }
 }
