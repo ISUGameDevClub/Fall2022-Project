@@ -26,21 +26,21 @@ public class Aiming : MonoBehaviour
         {
             //shoot up
             torsoSprite.sprite = aimingSprites[0];
-            transform.localPosition = new Vector2(0, 1);
+            transform.localPosition = Vector2.up;
             aimDirection = Vector2.up;
         }
         else if(vert == 0 && horz > 0)
         {
             //shoot right
             torsoSprite.sprite = aimingSprites[2];
-            transform.localPosition = new Vector2(0.78f, 0.413f);
+            transform.localPosition = Vector2.right;
             aimDirection = Vector2.right;
         }
         else if (vert == 0 && horz < 0)
         {
             //shoot left
             torsoSprite.sprite = aimingSprites[2];
-            transform.localPosition = new Vector2(-0.78f, 0.413f);
+            transform.localPosition = Vector2.left;
             aimDirection = Vector2.left;
         }
         else if (vert < 0 && horz ==0)
@@ -48,35 +48,35 @@ public class Aiming : MonoBehaviour
             //shoot down
 
             torsoSprite.sprite = aimingSprites[4];
-            transform.localPosition = new Vector2(0, -1);
+            transform.localPosition = Vector2.down;
             aimDirection = Vector2.down;
         }
         else if(vert > 0 && horz > 0)
         {
             //shoot top right
             torsoSprite.sprite = aimingSprites[1];
-            transform.localPosition = new Vector2(1, 1);
+            transform.localPosition = new Vector2(1, 1).normalized;
             aimDirection = new Vector2(1, 1).normalized;
         }
         else if (vert > 0 && horz < 0)
         {
             //shoot top left
             torsoSprite.sprite = aimingSprites[1];
-            transform.localPosition = new Vector2(-1, 1);
+            transform.localPosition = new Vector2(-1, 1).normalized;
             aimDirection = new Vector2(-1, 1).normalized;
         }
         else if (vert < 0 && horz > 0)
         {
             //shoot bottom right
             torsoSprite.sprite = aimingSprites[3];
-            transform.localPosition = new Vector2(1, -1);
+            transform.localPosition = new Vector2(1, -1).normalized;
             aimDirection = new Vector2(1, -1).normalized;
         }
         else if (vert < 0 && horz < 0)
         {
             //shoot bottom left
             torsoSprite.sprite = aimingSprites[3];
-            transform.localPosition = new Vector2(-1, -1);
+            transform.localPosition = new Vector2(-1, -1).normalized;
             aimDirection = new Vector2(-1, -1).normalized;
         }
         else if(vert == 0 && horz == 0)
@@ -85,14 +85,14 @@ public class Aiming : MonoBehaviour
             {
                 //shoot right
                 torsoSprite.sprite = aimingSprites[2];
-                transform.localPosition = new Vector2(0.78f, 0.413f);
+                transform.localPosition = Vector2.right;
                 aimDirection = Vector2.right;
             }
             else
             {
                 //shoot left
                 torsoSprite.sprite = aimingSprites[2];
-                transform.localPosition = new Vector2(-0.78f, 0.413f);
+                transform.localPosition = Vector2.left;
                 aimDirection = Vector2.left;
             }
         }
