@@ -7,11 +7,16 @@ public class PlayerHurtBox : MonoBehaviour
     [SerializeField] bool enemyPiercing;
     [SerializeField] bool wallPiercing;
     [SerializeField] int damage;
+    [SerializeField] bool defects;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<EnemyHealth>() != null)
         {
-            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+            if (damage > 0)
+            {
+                collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+            }
+
             if (!enemyPiercing) 
             {
                 Destroy(gameObject);
@@ -23,6 +28,10 @@ public class PlayerHurtBox : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+        }
+        else if(defects && collision.gameObject.tag == "Projectile")
+        {
+            Destroy(collision.gameObject);
         }
     }
 }
