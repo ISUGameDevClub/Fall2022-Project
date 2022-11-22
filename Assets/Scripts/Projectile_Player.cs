@@ -10,6 +10,7 @@ public class Projectile_Player : MonoBehaviour
 
     public bool bounces;
     public bool homing;
+    public bool startOutwards;
 
     private Rigidbody2D rb;
     private Attack atk;
@@ -20,6 +21,12 @@ public class Projectile_Player : MonoBehaviour
     {
         atk = GetComponent<Attack>();
         rb = GetComponent<Rigidbody2D>();
+
+        if (startOutwards)
+        {
+            transform.position = (Vector2)FindObjectOfType<PlayerMovement>().gameObject.transform.position + ((GetComponent<SpriteRenderer>().size.x / 2) * atk.moveDirection);
+            transform.right = (Vector2)transform.position - (Vector2)FindObjectOfType<PlayerMovement>().gameObject.transform.position;
+        }
 
         if(homing)
         {
