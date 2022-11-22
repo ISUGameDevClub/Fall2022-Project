@@ -21,9 +21,12 @@ public class DogMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = Vector2.zero;
-        rb.MovePosition(rb.position + new Vector2(-1, 0) * Time.fixedDeltaTime * direction * enemySpeed + new Vector2(0, fallSpeed)*Time.fixedDeltaTime);
-        Create2DRay();
+        if (GetComponent<EnemyHealth>().frozen <= 0)
+        {
+            rb.velocity = Vector2.zero;
+            rb.MovePosition(rb.position + new Vector2(-1, 0) * Time.fixedDeltaTime * direction * enemySpeed + new Vector2(0, fallSpeed) * Time.fixedDeltaTime);
+            Create2DRay();
+        }
     }
     public float GetDirection()
     {

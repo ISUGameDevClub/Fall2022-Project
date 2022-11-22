@@ -34,35 +34,38 @@ public class SpiderThwomp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        webby.transform.position = new Vector3(webby.transform.position.x, (webbyBase.transform.position.y + .75f) + (((transform.position.y + .23f) - (webbyBase.transform.position.y + .75f)) /2), webby.transform.position.z);
-        webby.transform.localScale = new Vector3(webby.transform.localScale.x, Vector2.Distance(webbyBase.transform.position + new Vector3(0, .75f, 0), transform.position + new Vector3(0, .23f, 0)), webby.transform.localScale.z);
-        if (!stop && isDropping)
+        if (GetComponent<EnemyHealth>().frozen <= 0)
         {
-            if (!dropSounding)
+            webby.transform.position = new Vector3(webby.transform.position.x, (webbyBase.transform.position.y + .75f) + (((transform.position.y + .23f) - (webbyBase.transform.position.y + .75f)) / 2), webby.transform.position.z);
+            webby.transform.localScale = new Vector3(webby.transform.localScale.x, Vector2.Distance(webbyBase.transform.position + new Vector3(0, .75f, 0), transform.position + new Vector3(0, .23f, 0)), webby.transform.localScale.z);
+            if (!stop && isDropping)
             {
-                Instantiate(dropPrefab, transform.position, Quaternion.identity);
-                dropSounding = true;
-            }
-            anim.SetTrigger("fall");
-            rb.MovePosition(transform.position += Vector3.down * dropSpeed * Time.deltaTime);
-            if (Physics2D.Raycast(transform.position, -transform.up, maxDistance, layerHitGround))
+                if (!dropSounding)
+                {
+                    Instantiate(dropPrefab, transform.position, Quaternion.identity);
+                    dropSounding = true;
+                }
+                anim.SetTrigger("fall");
+                rb.MovePosition(transform.position += Vector3.down * dropSpeed * Time.deltaTime);
+                if (Physics2D.Raycast(transform.position, -transform.up, maxDistance, layerHitGround))
                 {
                     stop = true;
                     anim.SetTrigger("idle");
                     StartCoroutine(rise());
                 }
-        }
+            }
 
-        if (raise)
-        {
-            anim.SetTrigger("climb");
-            rb.MovePosition(transform.position += Vector3.up * raiseSpeed * Time.deltaTime);
-            if (transform.position.y >= yPos)
+            if (raise)
             {
-                anim.SetTrigger("idle");
-                raise = false;
-                stop = false;
-                isDropping = false;
+                anim.SetTrigger("climb");
+                rb.MovePosition(transform.position += Vector3.up * raiseSpeed * Time.deltaTime);
+                if (transform.position.y >= yPos)
+                {
+                    anim.SetTrigger("idle");
+                    raise = false;
+                    stop = false;
+                    isDropping = false;
+                }
             }
         }
     }

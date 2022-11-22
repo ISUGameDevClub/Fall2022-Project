@@ -9,6 +9,8 @@ public class PlayerHurtBox : MonoBehaviour
     [SerializeField] int damage;
     [SerializeField] bool defects;
     [SerializeField] float freezes;
+    [SerializeField] GameObject freeze;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<EnemyHealth>() != null)
@@ -20,6 +22,8 @@ public class PlayerHurtBox : MonoBehaviour
 
             if(freezes > 0)
             {
+                Icecube ic = Instantiate(freeze).GetComponent<Icecube>();
+                ic.eh = collision.gameObject.GetComponent<EnemyHealth>();
                 collision.gameObject.GetComponent<EnemyHealth>().frozen += freezes;
             }
 

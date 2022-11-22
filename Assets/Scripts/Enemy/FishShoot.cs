@@ -25,10 +25,13 @@ public class FishShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(this.transform.position, playerTransform.position) < activateDistance && !isShooting)
+        if (GetComponent<EnemyHealth>().frozen <= 0)
         {
-            isShooting = true;
-            StartCoroutine(AttackWait(attackCooldown));
+            if (Vector2.Distance(this.transform.position, playerTransform.position) < activateDistance && !isShooting)
+            {
+                isShooting = true;
+                StartCoroutine(AttackWait(attackCooldown));
+            }
         }
     }
 
@@ -36,9 +39,12 @@ public class FishShoot : MonoBehaviour
     {
         while(waitTime > 0)
         {
-            GameObject tempBul = Instantiate(fishprojectilePrefab, transform.position, Quaternion.identity);
-            Instantiate(shootPrefab, transform.position, Quaternion.identity);
-            tempBul.GetComponent<FishProjectileMove>().right = facingRight;
+            if (GetComponent<EnemyHealth>().frozen <= 0)
+            {
+                GameObject tempBul = Instantiate(fishprojectilePrefab, transform.position, Quaternion.identity);
+                Instantiate(shootPrefab, transform.position, Quaternion.identity);
+                tempBul.GetComponent<FishProjectileMove>().right = facingRight;
+            }
             yield return new WaitForSeconds(waitTime);
         }
     }

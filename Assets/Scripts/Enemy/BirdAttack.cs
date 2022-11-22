@@ -18,7 +18,8 @@ public class BirdAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Create2DRay();
+        if (GetComponent<EnemyHealth>().frozen <= 0)
+            Create2DRay();
     }
 
     private void Create2DRay()
