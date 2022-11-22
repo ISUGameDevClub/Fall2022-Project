@@ -8,6 +8,7 @@ public class PlayerHurtBox : MonoBehaviour
     [SerializeField] bool wallPiercing;
     [SerializeField] int damage;
     [SerializeField] bool defects;
+    [SerializeField] float freezes;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<EnemyHealth>() != null)
@@ -15,6 +16,11 @@ public class PlayerHurtBox : MonoBehaviour
             if (damage > 0)
             {
                 collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+            }
+
+            if(freezes > 0)
+            {
+                collision.gameObject.GetComponent<EnemyHealth>().frozen += freezes;
             }
 
             if (!enemyPiercing) 
