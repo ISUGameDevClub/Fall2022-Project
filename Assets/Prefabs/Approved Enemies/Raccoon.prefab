@@ -111,6 +111,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: RaccoonSprite
       objectReference: {fileID: 0}
+    - target: {fileID: 8612334822032511924, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612334822032511924, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8612334822032511925, guid: 7e02d4fb36d1d3f49bcb55ba5ba067a2, type: 3}
       propertyPath: range
       value: 20

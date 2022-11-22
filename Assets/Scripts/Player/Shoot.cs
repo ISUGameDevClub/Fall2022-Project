@@ -34,6 +34,21 @@ public class Shoot : MonoBehaviour
             else if (playerHP.playerHealth.Equals("juggernaut"))
             {
                 bulletToSpawn = 2;
+                GameObject bul1 = Instantiate(bulletPrefab[bulletToSpawn], transform.position, Quaternion.identity);
+                bul1.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
+
+                float ang1 = Vector2.SignedAngle(Vector2.right, bul1.GetComponent<Attack>().moveDirection);
+                ang1 += 20;
+                bul1.GetComponent<Attack>().moveDirection = (Vector2)(Quaternion.Euler(0, 0, ang1) * Vector2.right);
+                Debug.Log(ang1);
+
+                GameObject bul2 = Instantiate(bulletPrefab[bulletToSpawn], transform.position, Quaternion.identity);
+                bul2.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
+
+                float ang2 = Vector2.SignedAngle(Vector2.right, bul2.GetComponent<Attack>().moveDirection); 
+                ang2 -= 20;
+                bul2.GetComponent<Attack>().moveDirection = (Vector2)(Quaternion.Euler(0, 0, ang2) * Vector2.right);
+                Debug.Log(ang2);
             }
             else if (playerHP.playerHealth.Equals("glitchgun"))
             {
@@ -79,8 +94,8 @@ public class Shoot : MonoBehaviour
             int bulletToSpawn = 10;
             if (playerHP.playerHealth.Equals("bouncer"))
             {
-                StartCoroutine(BouncerShots(11));
                 bulletToSpawn = 11;
+                StartCoroutine(BouncerShots(bulletToSpawn));
             }
             else if (playerHP.playerHealth.Equals("juggernaut"))
             {

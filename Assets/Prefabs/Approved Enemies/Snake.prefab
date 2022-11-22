@@ -205,9 +205,9 @@ GameObject:
   - component: {fileID: 7459986777589709341}
   - component: {fileID: 1897147354421159693}
   - component: {fileID: 398193078}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SnakeSprite
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

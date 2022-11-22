@@ -4969,7 +4969,7 @@ GameObject:
   - component: {fileID: 790751103814953551}
   - component: {fileID: 790751103814953550}
   - component: {fileID: 3033305848734920301}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BoxSpawner
   m_TagString: Enemy
   m_Icon: {fileID: 0}

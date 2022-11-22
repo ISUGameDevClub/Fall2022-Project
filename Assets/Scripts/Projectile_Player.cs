@@ -9,16 +9,40 @@ public class Projectile_Player : MonoBehaviour
     public float despawnTime = .5f;
 
     public bool bounces;
+    public bool homing;
 
     private Rigidbody2D rb;
     private Attack atk;
+    private GameObject closestEnemy;
 
     // Start is called before the first frame update
     void Start()
     {
         atk = GetComponent<Attack>();
         rb = GetComponent<Rigidbody2D>();
+
+        if(homing)
+        {
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            float closest = Mathf.Infinity;
+            foreach(GameObject enemy in enemies)
+            {
+                if(Vector2.Distance(transform.position, enemy.transform.position) < closest){
+                    closest = Vector2.Distance(transform.position, enemy.transform.position);
+                    closestEnemy = enemy;
+                }
+            }
+        }
+
         Destroy(gameObject, despawnTime);
+    }
+
+    private void Update()
+    {
+        if (homing)
+        {
+            atk.moveDirection = closestEnemy.transform.position - transform.position;
+        }
     }
 
     // Update is called once per frame
@@ -32,7 +56,6 @@ public class Projectile_Player : MonoBehaviour
             hits[1] = Physics2D.Raycast(transform.position, Vector2.right, .75f, mask);
             hits[2] = Physics2D.Raycast(transform.position, Vector2.down, .75f, mask);
             hits[3] = Physics2D.Raycast(transform.position, Vector2.left, .75f, mask);
-
 
             if (hits[0].collider != null)
             {
@@ -52,7 +75,7 @@ public class Projectile_Player : MonoBehaviour
             }
         }
 
-        rb.MovePosition((Vector2)transform.position + movement * atk.moveDirection * Time.deltaTime);
+        rb.MovePosition((Vector2)transform.position + movement * atk.moveDirection.normalized * Time.deltaTime);
     }
 }
 
