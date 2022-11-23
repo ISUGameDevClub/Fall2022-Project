@@ -80,11 +80,14 @@ public class Shoot : MonoBehaviour
             }
 
             //spawn bullet here
-            GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], position,Quaternion.identity );
-            bullet.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
+            if (bulletPrefab[bulletToSpawn] != null)
+            {
+                GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], position, Quaternion.identity);
+                bullet.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
 
-            Instantiate(shootSounds[bulletToSpawn], transform.position, Quaternion.identity);
-            StartCoroutine(shotDelay(bullet.GetComponent<Attack>().attackCooldown));
+                Instantiate(shootSounds[bulletToSpawn], transform.position, Quaternion.identity);
+                StartCoroutine(shotDelay(bullet.GetComponent<Attack>().attackCooldown));
+            }
         }
 
         //Right Click
@@ -116,6 +119,28 @@ public class Shoot : MonoBehaviour
             else if (playerHP.playerHealth.Equals("yarnwhip"))
             {
                 bulletToSpawn = 16;
+                GameObject player = FindObjectOfType<PlayerMovement>().gameObject;
+                LayerMask mask = LayerMask.GetMask("Ground");
+
+                Vector2 dir;
+                if (GetComponentInParent<PlayerMovement>(false).getFlipped() == true)
+                {
+                    dir = Vector2.right;
+                }
+                else
+                {
+                    dir = Vector2.left;
+                }
+
+                RaycastHit2D hit = Physics2D.Raycast(player.transform.position, dir, 4, mask);
+                if(hit.collider == null)
+                {
+                    player.transform.position = (Vector2)player.transform.position + dir * 4;
+                }
+                else
+                {
+                    player.transform.position = hit.point;
+                }
             }
             else if (playerHP.playerHealth.Equals("moab"))
             {
@@ -130,12 +155,15 @@ public class Shoot : MonoBehaviour
                 bulletToSpawn = 19;
             }
 
-            //spawn bullet here
-            GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], transform.position, Quaternion.identity);
-            bullet.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
+            if (bulletPrefab[bulletToSpawn] != null)
+            {
+                //spawn bullet here
+                GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], transform.position, Quaternion.identity);
+                bullet.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
 
-            //Instantiate(shootSounds[bulletToSpawn], transform.position, Quaternion.identity);
-            StartCoroutine(specialShotDelay(bullet.GetComponent<Attack>().attackCooldown));
+                //Instantiate(shootSounds[bulletToSpawn], transform.position, Quaternion.identity);
+                StartCoroutine(specialShotDelay(bullet.GetComponent<Attack>().attackCooldown));
+            }
         }
     }
 

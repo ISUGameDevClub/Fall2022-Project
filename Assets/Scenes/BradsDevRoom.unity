@@ -706,34 +706,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5363307017638086244, guid: 6dc785928619abb45be245872aa77d9e, type: 3}
-      propertyPath: bulletPrefab.Array.size
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 5363307017638086244, guid: 6dc785928619abb45be245872aa77d9e, type: 3}
-      propertyPath: bulletPrefab.Array.data[4]
-      value: 
-      objectReference: {fileID: 3798674729731915158, guid: e4fcf1f2fa9d5aa4da96e1b505f30206, type: 3}
-    - target: {fileID: 5363307017638086244, guid: 6dc785928619abb45be245872aa77d9e, type: 3}
-      propertyPath: bulletPrefab.Array.data[5]
-      value: 
-      objectReference: {fileID: 3798674729731915158, guid: 3a2f16e6540db114887688e6920fa1bf, type: 3}
-    - target: {fileID: 5363307017638086244, guid: 6dc785928619abb45be245872aa77d9e, type: 3}
-      propertyPath: bulletPrefab.Array.data[12]
-      value: 
-      objectReference: {fileID: 3798674729731915158, guid: cc145ea7773fe244a9d1389200722f85, type: 3}
-    - target: {fileID: 5363307017638086244, guid: 6dc785928619abb45be245872aa77d9e, type: 3}
-      propertyPath: bulletPrefab.Array.data[13]
-      value: 
-      objectReference: {fileID: 3798674729731915158, guid: ee82a78ef5a0b624a9a2d565625d33a2, type: 3}
-    - target: {fileID: 5363307017638086244, guid: 6dc785928619abb45be245872aa77d9e, type: 3}
-      propertyPath: bulletPrefab.Array.data[14]
-      value: 
-      objectReference: {fileID: 3798674729731915158, guid: b1c026e1241b7844cb88dcc70a1794b6, type: 3}
-    - target: {fileID: 5363307017638086244, guid: 6dc785928619abb45be245872aa77d9e, type: 3}
-      propertyPath: bulletPrefab.Array.data[15]
-      value: 
-      objectReference: {fileID: 3798674729731915158, guid: 22bbe282f424d064aaee08f7a5a5f519, type: 3}
     - target: {fileID: 5363307019101255826, guid: 6dc785928619abb45be245872aa77d9e, type: 3}
       propertyPath: m_Name
       value: Player
