@@ -34,6 +34,21 @@ public class Shoot : MonoBehaviour
             else if (playerHP.playerHealth.Equals("juggernaut"))
             {
                 bulletToSpawn = 2;
+                GameObject bul1 = Instantiate(bulletPrefab[bulletToSpawn], transform.position, Quaternion.identity);
+                bul1.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
+
+                float ang1 = Vector2.SignedAngle(Vector2.right, bul1.GetComponent<Attack>().moveDirection);
+                ang1 += 20;
+                bul1.GetComponent<Attack>().moveDirection = (Vector2)(Quaternion.Euler(0, 0, ang1) * Vector2.right);
+                Debug.Log(ang1);
+
+                GameObject bul2 = Instantiate(bulletPrefab[bulletToSpawn], transform.position, Quaternion.identity);
+                bul2.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
+
+                float ang2 = Vector2.SignedAngle(Vector2.right, bul2.GetComponent<Attack>().moveDirection); 
+                ang2 -= 20;
+                bul2.GetComponent<Attack>().moveDirection = (Vector2)(Quaternion.Euler(0, 0, ang2) * Vector2.right);
+                Debug.Log(ang2);
             }
             else if (playerHP.playerHealth.Equals("glitchgun"))
             {
@@ -65,58 +80,13 @@ public class Shoot : MonoBehaviour
             }
 
             //spawn bullet here
-            GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], position,Quaternion.identity );
-            bullet.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
+            if (bulletPrefab[bulletToSpawn] != null)
+            {
+                GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], position, Quaternion.identity);
+                bullet.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
 
-            Instantiate(shootSounds[bulletToSpawn], transform.position, Quaternion.identity);
-            StartCoroutine(shotDelay(bullet.GetComponent<Attack>().attackCooldown));
-
-            //make bullet fly forward
-            if (bulletToSpawn == 0)
-            {
-                bullet.GetComponent<Projectile_Player>().gun = gameObject;
-            }
-            else if (bulletToSpawn == 1)
-            {
-                bullet.GetComponent<Projectile_Player>().gun = gameObject;
-            }
-            else if (bulletToSpawn == 2)
-            {
-                GameObject bullet2 = Instantiate(bulletPrefab[bulletToSpawn], position, Quaternion.identity );
-                GameObject bullet3 = Instantiate(bulletPrefab[bulletToSpawn], position,Quaternion.identity );
-                bullet.GetComponent<projectile_player_juggernaut>().gun = gameObject;
-                bullet2.GetComponent<projectile_player_juggernaut>().gun = gameObject;
-                bullet2.GetComponent<projectile_player_juggernaut>().shotOrder = "Top";
-                bullet3.GetComponent<projectile_player_juggernaut>().gun = gameObject;
-                bullet3.GetComponent<projectile_player_juggernaut>().shotOrder = "Bottom";
-            }
-            else if (bulletToSpawn == 3)
-            {
-                bullet.GetComponent<GlitchGunProjectile>().gun = gameObject;
-            }
-            else if (bulletToSpawn == 4)
-            {
-                bullet.GetComponent<Projectile_Player>().gun = gameObject;
-            }
-            else if (bulletToSpawn == 5)
-            {
-                bullet.GetComponent<Projectile_Player>().gun = gameObject;
-            }
-            else if (bulletToSpawn == 6)
-            {
-                bullet.GetComponent<Projectile_Player>().gun = gameObject;
-            }
-            else if (bulletToSpawn == 7)
-            {
-                bullet.GetComponent<Projectile_Player>().gun = gameObject;
-            }
-            else if (bulletToSpawn == 8)
-            {
-                bullet.GetComponent<Projectile_Player>().gun = gameObject;
-            }
-            else if (bulletToSpawn == 9)
-            {
-                bullet.GetComponent<Grenade_Player>().gun = gameObject;
+                Instantiate(shootSounds[bulletToSpawn], transform.position, Quaternion.identity);
+                StartCoroutine(shotDelay(bullet.GetComponent<Attack>().attackCooldown));
             }
         }
 
@@ -124,11 +94,11 @@ public class Shoot : MonoBehaviour
         if (Input.GetMouseButton(1) && specialCanShootNow == true)
         {
             specialCanShootNow = false;
-            Vector2 position = gameObject.transform.position;
             int bulletToSpawn = 10;
             if (playerHP.playerHealth.Equals("bouncer"))
             {
                 bulletToSpawn = 11;
+                StartCoroutine(BouncerShots(bulletToSpawn));
             }
             else if (playerHP.playerHealth.Equals("juggernaut"))
             {
@@ -149,6 +119,28 @@ public class Shoot : MonoBehaviour
             else if (playerHP.playerHealth.Equals("yarnwhip"))
             {
                 bulletToSpawn = 16;
+                GameObject player = FindObjectOfType<PlayerMovement>().gameObject;
+                LayerMask mask = LayerMask.GetMask("Ground");
+
+                Vector2 dir;
+                if (GetComponentInParent<PlayerMovement>(false).getFlipped() == true)
+                {
+                    dir = Vector2.right;
+                }
+                else
+                {
+                    dir = Vector2.left;
+                }
+
+                RaycastHit2D hit = Physics2D.Raycast(player.transform.position, dir, 4, mask);
+                if(hit.collider == null)
+                {
+                    player.transform.position = (Vector2)player.transform.position + dir * 4;
+                }
+                else
+                {
+                    player.transform.position = hit.point;
+                }
             }
             else if (playerHP.playerHealth.Equals("moab"))
             {
@@ -163,56 +155,29 @@ public class Shoot : MonoBehaviour
                 bulletToSpawn = 19;
             }
 
-            //spawn bullet here
-            GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], position, Quaternion.identity);
+            if (bulletPrefab[bulletToSpawn] != null)
+            {
+                //spawn bullet here
+                GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], transform.position, Quaternion.identity);
+                bullet.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
 
-            StartCoroutine(specialShotDelay(bullet.GetComponent<Attack>().attackCooldown));
-
-            //make bullet fly forward
-            if (bulletToSpawn == 10)
-            {
-                bullet.GetComponent<Projectile_Player>().gun = gameObject;
-            }
-            else if (bulletToSpawn == 11)
-            {
-                bullet.GetComponent<Projectile_Player>().gun = gameObject;
-            }
-            else if (bulletToSpawn == 12)
-            {
-                bullet.GetComponent<Projectile_Player>().gun = gameObject;
-            }
-            else if (bulletToSpawn == 13)
-            {
-                bullet.GetComponent<GlitchGunProjectile>().gun = gameObject;
-            }
-            else if (bulletToSpawn == 14)
-            {
-                bullet.GetComponent<Projectile_Player>().gun = gameObject;
-            }
-            else if (bulletToSpawn == 15)
-            {
-                bullet.GetComponent<Projectile_Player>().gun = gameObject;
-            }
-            else if (bulletToSpawn == 16)
-            {
-                bullet.GetComponent<Projectile_Player>().gun = gameObject;
-            }
-            else if (bulletToSpawn == 17)
-            {
-                bullet.GetComponent<Projectile_Player>().gun = gameObject;
-            }
-            else if (bulletToSpawn == 18)
-            {
-                bullet.GetComponent<Projectile_Player>().gun = gameObject;
-            }
-            else if (bulletToSpawn == 19)
-            {
-                bullet.GetComponent<Grenade_Player>().gun = gameObject;
+                //Instantiate(shootSounds[bulletToSpawn], transform.position, Quaternion.identity);
+                StartCoroutine(specialShotDelay(bullet.GetComponent<Attack>().attackCooldown));
             }
         }
-
     }
 
+    private IEnumerator BouncerShots(int bulletToSpawn)
+    {
+        yield return new WaitForSeconds(.1f);
+        GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], transform.position, Quaternion.identity);
+        bullet.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
+        //Instantiate(shootSounds[bulletToSpawn], transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(.1f);
+        GameObject bullet2 = Instantiate(bulletPrefab[bulletToSpawn], transform.position, Quaternion.identity);
+        bullet2.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
+        //Instantiate(shootSounds[bulletToSpawn], transform.position, Quaternion.identity);
+    }
 
     private IEnumerator shotDelay(float cooldown)
     {

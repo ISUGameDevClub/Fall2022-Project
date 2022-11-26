@@ -26,11 +26,13 @@ public class Bird : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-       
-        Create2DRay();
-        Create2DForwardRay();
-    }
-    private void Create2DRay()
+        if (GetComponent<EnemyHealth>().frozen <= 0)
+        {
+            Create2DRay();
+            Create2DForwardRay();
+        }
+        }
+        private void Create2DRay()
     {
         LayerMask mask = LayerMask.GetMask("Ground");
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, height, mask);

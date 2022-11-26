@@ -12,6 +12,7 @@ TagManager:
   - Kill
   - OneWayDown
   - Ground
+  - Projectile
   layers:
   - Default
   - TransparentFX

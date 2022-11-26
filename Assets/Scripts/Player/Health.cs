@@ -55,9 +55,7 @@ public class Health : MonoBehaviour
     //simple Health Gain method
     public void gainHealth(string powerup)
     {
-
         Instantiate(powerUpPrefab, transform.position, Quaternion.identity);
-        Debug.Log("gained health");
         playerHealth = powerup;
         hatSprite.enabled = true;
     }

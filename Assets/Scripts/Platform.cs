@@ -46,7 +46,6 @@ public class Platform : MonoBehaviour
             
             if (Input.GetAxisRaw("Vertical") < 0)
             {
-                Debug.Log("Working");
                 Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>(), true);
                 StartCoroutine(EnableCollider());
             }

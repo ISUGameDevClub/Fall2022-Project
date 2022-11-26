@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5280543485666821198}
   - component: {fileID: 1472468002204131626}
   - component: {fileID: 5280543485666821199}
-  - component: {fileID: 5280543485666821196}
   - component: {fileID: -3945586146333660654}
-  - component: {fileID: -1356916268378932261}
   - component: {fileID: 4697216392783388506}
+  - component: {fileID: 5280543485666821196}
+  - component: {fileID: -1356916268378932261}
   m_Layer: 0
   m_Name: glitchgun_projectile
   m_TagString: Untagged
@@ -92,7 +92,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1142830183
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 45142403e05c1984cabb8ef2fd07fca3, type: 3}
   m_Color: {r: 0, g: 0.46226418, b: 0.021352103, a: 1}
@@ -105,6 +105,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-3945586146333660654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5280543485666821194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76f541341c4ee5b4488db83bff38156e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 0.3
+  moveDirection: {x: 1, y: 0}
+--- !u!114 &4697216392783388506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5280543485666821194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a2bef7671287874f9c6b4f310dbc383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBeforeTurnAround: 0.15
+  turnAroundAcceleration: 80
+  movement: 35
+  despawnTime: 6
 --- !u!58 &5280543485666821196
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -121,20 +151,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
---- !u!114 &-3945586146333660654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5280543485666821194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76f541341c4ee5b4488db83bff38156e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackCooldown: 0.3
-  moveDirection: {x: 1, y: 0}
 --- !u!50 &-1356916268378932261
 Rigidbody2D:
   serializedVersion: 4
@@ -156,23 +172,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4697216392783388506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5280543485666821194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a2bef7671287874f9c6b4f310dbc383, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBeforeTurnAround: 0.15
-  turnAroundAcceleration: 80
-  movement: 35
-  despawnTime: 6
-  gun: {fileID: 0}
 --- !u!1 &5772804338130820350
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,7 +244,7 @@ TrailRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1142830183
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: -1
   m_Time: 0.075
   m_Parameters:

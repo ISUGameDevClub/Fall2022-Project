@@ -7,11 +7,27 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] int health;
     [SerializeField] GameObject hurtPrefab;
     [SerializeField] GameObject diePrefab;
+
+    [HideInInspector]
+    public float frozen;
+
     private int currentHealth;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = health;
+    }
+
+    private void Update()
+    {
+        if(frozen > 0)
+        {
+            frozen -= Time.deltaTime;
+        }
+        else
+        {
+            frozen = 0;
+        }
     }
     public void TakeDamage(int dmg)
     {
