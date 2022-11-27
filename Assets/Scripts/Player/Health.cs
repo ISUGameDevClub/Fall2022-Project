@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Health : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Health : MonoBehaviour
     [SerializeField] GameObject powerUpPrefab;
     [SerializeField] Animator topSprite;
     [SerializeField] Animator bottomSprite;
+    [SerializeField] GameObject powerupText;
     public string playerHealth;
     //public Text playerHealthText;
     private GameObject player;
@@ -31,14 +33,10 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
-
-
-     if (playerHealth == null)
+        if (playerHealth == null)
         {
             Destroy(gameObject);
         }
-
-
     }
 
     //simple Health Gain method
@@ -47,9 +45,23 @@ public class Health : MonoBehaviour
         Instantiate(powerUpPrefab, transform.position, Quaternion.identity);
         playerHealth = powerup;
         hatSprite.enabled = true;
+        PowerupPause();
+        topSprite.SetTrigger("Power");
+        bottomSprite.SetTrigger("Power");
     }
-
-
+    public void PowerupPause()
+    {
+        Time.timeScale = 0;
+        powerupText.GetComponent<TMP_Text>().text = playerHealth.ToString().ToUpper();
+        powerupText.SetActive(true);
+        StartCoroutine(PowerupWait());
+    }
+    private IEnumerator PowerupWait()
+    {
+        yield return new WaitForSecondsRealtime(3f);
+        Time.timeScale = 1;
+        powerupText.SetActive(false);
+    }
     //simple health loss method
     public void loseHealth()
     {
