@@ -59,7 +59,7 @@ public class Racoon : MonoBehaviour
             GameObject projectile = Instantiate(bullet, myPos, Quaternion.identity);
 
             float direction = 1;//get the direction of the player.
-            if(player.transform.position.x - myPos.x < 0f)
+            if(player.transform.position.x < myPos.x)
             {
                 direction = -1;
             }

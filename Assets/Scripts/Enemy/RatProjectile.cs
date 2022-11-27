@@ -12,7 +12,6 @@ public class RatProjectile : MonoBehaviour
     {
         rB = GetComponent<Rigidbody2D>();
         dM = GetComponent<DogMovement>();
-        dM.enabled = false;
     }
     public void SetDirection(int dir)
     {

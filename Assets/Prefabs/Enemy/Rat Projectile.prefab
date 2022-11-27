@@ -298,6 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPiercing: 1
   wallPiercing: 1
+  knockbackForce: 0
 --- !u!50 &-4687898568944800627
 Rigidbody2D:
   serializedVersion: 4
