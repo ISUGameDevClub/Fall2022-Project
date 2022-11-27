@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5363307019101255824, guid: 6dc785928619abb45be245872aa77d9e, type: 3}
+      propertyPath: coyoteTime
+      value: 2.01
+      objectReference: {fileID: 0}
     - target: {fileID: 5363307019101255826, guid: 6dc785928619abb45be245872aa77d9e, type: 3}
       propertyPath: m_Name
       value: Player
