@@ -273,4 +273,5 @@ MonoBehaviour:
   health: 75
   hurtPrefab: {fileID: 7337934333778476695, guid: a26d8a5b053dca0488cf09d00233d2a0, type: 3}
   diePrefab: {fileID: 7337934333778476695, guid: e2c586fe32a44b448b770e9781794fd0, type: 3}
+  enemyAnimator: {fileID: 6792767879782021221}
   frozen: 0

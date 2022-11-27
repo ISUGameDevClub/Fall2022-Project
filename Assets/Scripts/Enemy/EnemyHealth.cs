@@ -7,7 +7,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] int health;
     [SerializeField] GameObject hurtPrefab;
     [SerializeField] GameObject diePrefab;
-
+    [SerializeField] Animator enemyAnimator;
     [HideInInspector]
     public float frozen;
 
@@ -40,7 +40,8 @@ public class EnemyHealth : MonoBehaviour
         }
         else 
         { 
-            Instantiate(hurtPrefab, transform.position, Quaternion.identity); 
+            Instantiate(hurtPrefab, transform.position, Quaternion.identity);
+            enemyAnimator.SetTrigger("Hurt");
         }
     }
 }
