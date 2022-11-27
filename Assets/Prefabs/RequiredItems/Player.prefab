@@ -597,12 +597,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7643fc15f51f8294eb9789971756239e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCooldown: 1.25
   hatSprite: {fileID: 5363307019206883104}
   hurtPrefab: {fileID: 7337934333778476695, guid: f05cddef8fc1c53458f836acfbf4d554, type: 3}
   powerDownPrefab: {fileID: 7337934333778476695, guid: f0c76b1cafe477246b73f93346b0f4e6, type: 3}
   powerUpPrefab: {fileID: 7337934333778476695, guid: 4c765ef2a2f0fc04183571516c66f981, type: 3}
+  topSprite: {fileID: 352921590}
+  bottomSprite: {fileID: 5363307018702865326}
   playerHealth: 
+  invincibleFrames: 1.25
 --- !u!70 &5363307019101255830
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

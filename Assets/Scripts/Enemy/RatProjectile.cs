@@ -24,6 +24,9 @@ public class RatProjectile : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        dM.enabled = true;
+        if (collision.gameObject.tag == "Ground")
+        {
+            dM.enabled = true;
+        }
     }
 }

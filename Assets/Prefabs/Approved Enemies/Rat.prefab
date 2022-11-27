@@ -158,6 +158,7 @@ MonoBehaviour:
   health: 50
   hurtPrefab: {fileID: 7337934333778476695, guid: a26d8a5b053dca0488cf09d00233d2a0, type: 3}
   diePrefab: {fileID: 7337934333778476695, guid: 440eacae6cf93bb4796a19247ae31556, type: 3}
+  frozen: 0
 --- !u!70 &8415360035797970845
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -225,6 +226,7 @@ MonoBehaviour:
   fishprojectilePrefab: {fileID: 2688712039996539345, guid: 405d481be83f7384480fd1da317ff296, type: 3}
   facingRight: 0
   activateDistance: 10
+  launchForce: 500
   attackCooldown: 1
 --- !u!1 &8625857852996117114
 GameObject:

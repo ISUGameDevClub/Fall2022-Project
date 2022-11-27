@@ -7,41 +7,30 @@ public class Health : MonoBehaviour
 {
     // Start is called before the first frame update
 
-
-    [SerializeField] float maxCooldown;
     [SerializeField] SpriteRenderer hatSprite;
     [SerializeField] GameObject hurtPrefab;
     [SerializeField] GameObject powerDownPrefab;
     [SerializeField] GameObject powerUpPrefab;
+    [SerializeField] Animator topSprite;
+    [SerializeField] Animator bottomSprite;
     public string playerHealth;
     //public Text playerHealthText;
-    float damageCooldown;
-    float healCooldown;
     private GameObject player;
+    bool invincible;
+    [SerializeField] float invincibleFrames;
+
 
 
     void Start()
     {
         playerHealth = "";
-        damageCooldown = 0;
-        healCooldown = 0;
         //playerHealthText.text = playerHealth;
         player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
     void Update()
-    {
-
-        if (damageCooldown > 0)
-        {
-            damageCooldown--;
-        }
-
-        if (healCooldown > 0)
-        {
-            healCooldown--;
-        }
+    { 
 
 
      if (playerHealth == null)
@@ -64,7 +53,9 @@ public class Health : MonoBehaviour
     //simple health loss method
     public void loseHealth()
     {
-        if (damageCooldown <= 0)
+        topSprite.SetBool("isHurt", true);
+        bottomSprite.SetBool("isHurt", true);
+        if (!invincible)
         {
             Instantiate(hurtPrefab, transform.position, Quaternion.identity);
             if (playerHealth != "")
@@ -79,11 +70,23 @@ public class Health : MonoBehaviour
                 playerHealth = null;
                 FindObjectOfType<SceneTransition>().RestartScene();
             }
-            damageCooldown = maxCooldown * Time.frameCount /Time.time;
+            invincible = true;
+            StartCoroutine(InvincibleFrames());
         }
 
     }
-
+    private IEnumerator InvincibleFrames()
+    {
+        yield return new WaitForSeconds(invincibleFrames);
+        invincible = false;
+        topSprite.SetBool("isHurt", false);
+        bottomSprite.SetBool("isHurt", false);
+    }
+    public void ClearInvincible()
+    {
+        topSprite.SetBool("isHurt", false);
+        bottomSprite.SetBool("isHurt", false);
+    }
     //lose all health method
     public void die()
     {
