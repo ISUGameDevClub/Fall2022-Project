@@ -11,7 +11,7 @@ public class RatShoot : MonoBehaviour
     public float activateDistance = 10;
     private Transform playerTransform;
     private bool isShooting;
-    [SerializeField] float launchForce;
+    [SerializeField] float throwForce;
     [SerializeField] float attackCooldown = 1f;
 
     // Start is called before the first frame update
@@ -37,7 +37,7 @@ public class RatShoot : MonoBehaviour
         {
             GameObject tempBul = Instantiate(fishprojectilePrefab, transform.position, Quaternion.identity);
             tempBul.GetComponent<RatProjectile>().SetDirection((int)GetComponent<DogMovement>().GetDirection());
-            tempBul.GetComponent<RatProjectile>().Launch(launchForce);
+            tempBul.GetComponent<RatProjectile>().Launch(throwForce);
             yield return new WaitForSeconds(waitTime);
         }
     }

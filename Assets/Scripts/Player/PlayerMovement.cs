@@ -20,6 +20,10 @@ public class PlayerMovement : MonoBehaviour
         public float jumpHeight;
         private bool flipped = true;
         Rigidbody2D playerRB;
+    [SerializeField]
+    [Range(1.2f,3f)]
+    float
+        coyoteTime;
     [SerializeField] 
     Animator 
         lowerBodyAnim;
@@ -29,8 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool grounded;
 
-    private float yoteTime = 1.2f;
-    private float yoteTimeCounter;
+
 
     // Start is called before the first frame update
     void Start()
@@ -45,11 +48,11 @@ public class PlayerMovement : MonoBehaviour
     {
         
 
-        if (Input.GetKeyDown(KeyCode.Space) && yoteTimeCounter > 0f && !(Input.GetKey(KeyCode.LeftShift)))
+        if (Input.GetKeyDown(KeyCode.Space) && grounded && !(Input.GetKey(KeyCode.LeftShift)))
         {
             playerRB.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
             Instantiate(jumpPrefab, transform.position, Quaternion.identity);
-            yoteTimeCounter = 0f;
+
         }
 
         if (Input.GetAxisRaw("Horizontal") != 0 && !(Input.GetKey(KeyCode.LeftShift) && grounded)) 
@@ -62,9 +65,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         LayerMask[] masks = new LayerMask[2] {LayerMask.GetMask("Ground"), LayerMask.GetMask("Enemy")};
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.1f,masks[0]);
-        RaycastHit2D hitToo = Physics2D.Raycast(transform.position, Vector2.down, 1.1f, masks[1]);
-
+        //RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.1f,masks[0]);
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position,1f, Vector2.down, 1.1f, masks[0]);
         if (hit.collider != null && (LayerMask.LayerToName(hit.collider.gameObject.layer) == "Ground" || LayerMask.LayerToName(hit.collider.gameObject.layer) == "Enemy"))
         {
             if (playerRB.velocity.y <= 0)
@@ -77,15 +79,6 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             grounded = false;
-        }
-
-        if (grounded)
-        {
-            yoteTimeCounter = yoteTime;
-        }
-        else
-        {
-            yoteTimeCounter -= Time.deltaTime;
         }
 
         doWeFlip();
