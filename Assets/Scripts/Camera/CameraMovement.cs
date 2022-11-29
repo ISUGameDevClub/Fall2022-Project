@@ -51,9 +51,9 @@ public class CameraMovement : MonoBehaviour
     {
         //cameras current pos
         Vector3 startPos = transform.position;
-
         //cameras current pos
         Vector3 endPos = player.transform.position;
+        
         endPos.x += posOffset.x;
         endPos.y += posOffset.y;
         endPos.z = -1;

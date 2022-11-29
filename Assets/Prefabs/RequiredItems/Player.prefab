@@ -743,6 +743,7 @@ MonoBehaviour:
   topSprite: {fileID: 352921590}
   bottomSprite: {fileID: 5363307018702865326}
   powerupText: {fileID: 4462753610218389811}
+  powerupWaitTime: 1.5
   playerHealth: 
   invincibleFrames: 1.25
 --- !u!70 &5363307019101255830
