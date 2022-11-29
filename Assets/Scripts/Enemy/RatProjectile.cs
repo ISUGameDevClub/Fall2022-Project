@@ -12,7 +12,6 @@ public class RatProjectile : MonoBehaviour
     {
         rB = GetComponent<Rigidbody2D>();
         dM = GetComponent<DogMovement>();
-        dM.enabled = false;
     }
     public void SetDirection(int dir)
     {
@@ -24,6 +23,9 @@ public class RatProjectile : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        dM.enabled = true;
+        if (collision.gameObject.tag == "Ground")
+        {
+            dM.enabled = true;
+        }
     }
 }

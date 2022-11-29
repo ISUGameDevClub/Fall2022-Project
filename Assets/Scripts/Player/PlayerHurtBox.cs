@@ -10,6 +10,7 @@ public class PlayerHurtBox : MonoBehaviour
     [SerializeField] bool defects;
     [SerializeField] float freezes;
     [SerializeField] GameObject freeze;
+    public GameObject spawnOnDeath;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -29,6 +30,11 @@ public class PlayerHurtBox : MonoBehaviour
 
             if (!enemyPiercing) 
             {
+                if (spawnOnDeath != null)
+                {
+                    Instantiate(spawnOnDeath, transform.position, Quaternion.identity);
+                }
+
                 Destroy(gameObject);
             }
         }
@@ -36,6 +42,11 @@ public class PlayerHurtBox : MonoBehaviour
         {
             if (!wallPiercing)
             {
+                if(spawnOnDeath != null)
+                {
+                    Instantiate(spawnOnDeath, transform.position, Quaternion.identity);
+                }
+
                 Destroy(gameObject);
             }
         }

@@ -204,7 +204,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 691333133
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -188512024, guid: c425ad8bd5ab23245a8fd87cc331e45f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -278,6 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPiercing: 1
   wallPiercing: 1
+  knockbackForce: 0
 --- !u!114 &235672928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,6 +294,8 @@ MonoBehaviour:
   health: 45
   hurtPrefab: {fileID: 7337934333778476695, guid: a26d8a5b053dca0488cf09d00233d2a0, type: 3}
   diePrefab: {fileID: 7337934333778476695, guid: fbcea5123aa8cde4e9d6c95322ff922f, type: 3}
+  enemyAnimator: {fileID: 3507879544816753930}
+  frozen: 0
 --- !u!1 &3507879545087873789
 GameObject:
   m_ObjectHideFlags: 0

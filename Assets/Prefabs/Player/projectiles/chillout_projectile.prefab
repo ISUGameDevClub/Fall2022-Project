@@ -105,6 +105,8 @@ MonoBehaviour:
   wallPiercing: 1
   damage: 35
   defects: 0
+  freezes: 0
+  freeze: {fileID: 0}
 --- !u!114 &340810856908286075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: 0
-  despawnTime: 0.4
+  despawnTime: 0.3
   bounces: 0
   homing: 0
   startOutwards: 1

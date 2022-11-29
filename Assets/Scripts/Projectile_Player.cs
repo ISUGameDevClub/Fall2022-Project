@@ -10,8 +10,15 @@ public class Projectile_Player : MonoBehaviour
 
     public bool bounces;
     public bool homing;
+    public bool delayedHoming;
     public bool startOutwards;
     public bool startInwards;
+
+    public bool drops;
+    public float verticalLaunch;
+    public float gradualVerticalDrop;
+
+    public bool sticky;
 
     private Rigidbody2D rb;
     private Attack atk;
@@ -44,6 +51,11 @@ public class Projectile_Player : MonoBehaviour
                     closestEnemy = enemy;
                 }
             }
+        }
+
+        if(delayedHoming)
+        {
+            StartCoroutine(DelayedHomingEnum());
         }
 
         Destroy(gameObject, despawnTime);
@@ -87,7 +99,48 @@ public class Projectile_Player : MonoBehaviour
             }
         }
 
-        rb.MovePosition((Vector2)transform.position + movement * atk.moveDirection.normalized * Time.deltaTime);
+        Vector2 vertLaunch = new Vector2(0, verticalLaunch);
+        if (drops)
+            verticalLaunch -= gradualVerticalDrop * Time.fixedDeltaTime;
+
+        rb.MovePosition((Vector2)transform.position + vertLaunch + movement * atk.moveDirection.normalized * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(sticky && collision.gameObject.tag == "Ground")
+        {
+            movement = 0;
+            drops = false;
+            verticalLaunch = 0;
+            StartCoroutine(ExplodeAfterTime());
+        }
+    }
+
+    private IEnumerator ExplodeAfterTime()
+    {
+        yield return new WaitForSeconds(1);
+        Instantiate(GetComponent<PlayerHurtBox>().spawnOnDeath, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }    
+    
+    private IEnumerator DelayedHomingEnum()
+    {
+        yield return new WaitForSeconds(.75f);
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        float closest = Mathf.Infinity;
+        foreach (GameObject enemy in enemies)
+        {
+            if (Vector2.Distance(transform.position, enemy.transform.position) < closest)
+            {
+                closest = Vector2.Distance(transform.position, enemy.transform.position);
+                closestEnemy = enemy;
+            }
+        }
+
+        homing = true;
+        drops = false;
+        verticalLaunch = 0;
     }
 }
 

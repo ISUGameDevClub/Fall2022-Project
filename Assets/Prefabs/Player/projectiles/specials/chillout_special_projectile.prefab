@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: 0
-  despawnTime: 0.4
+  despawnTime: 0.3
   bounces: 0
   homing: 0
   startOutwards: 1
