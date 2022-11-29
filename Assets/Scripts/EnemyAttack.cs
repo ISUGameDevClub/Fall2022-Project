@@ -21,26 +21,23 @@ public class EnemyAttack : MonoBehaviour
 
     void Start()
     {
-    }
 
+    }
     // Update is called once per frame
     void Update()
     {
-        Fire();
+        Attack();
     }
-
-    private void Fire()
+    private void Attack()
     {
-        if(Time.time > fireDelay)
+        if(!canAttack)
         {
-            fireDelay = Time.time + fireRate; //fireRate instantiates as making the enemy fire every 1 second.
             Vector2 myPos = new Vector2(weapon.position.x, weapon.position.y);
             GameObject projectile = Instantiate(bullet, myPos, Quaternion.identity);
             Vector2 direction = (Vector2)player.position - myPos; //get the direction of the player.
             projectile.GetComponent<Rigidbody2D>().velocity = direction * speed; //shoot projectile
         }
     }
-
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Player")
@@ -48,5 +45,4 @@ public class EnemyAttack : MonoBehaviour
             Fire();
         }
     }
-
 }

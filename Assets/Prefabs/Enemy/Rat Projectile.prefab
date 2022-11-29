@@ -254,12 +254,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4228974284777436418}
+  - component: {fileID: 1171068819361490308}
   - component: {fileID: -3355577688604961586}
+  - component: {fileID: 4560484712337829511}
   - component: {fileID: -4687898568944800627}
   - component: {fileID: 4282911866968439561}
   - component: {fileID: 1329347704724223258}
-  - component: {fileID: 1171068819361490308}
-  - component: {fileID: 4560484712337829511}
   m_Layer: 8
   m_Name: Rat Projectile
   m_TagString: Untagged
@@ -284,6 +284,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1171068819361490308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2688712039996539345}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5455211875cd3de4790ca6f9f3f59f37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallSpeed: -9.3
+  wallDetectRange: 5
+  enemySpeed: 4
 --- !u!114 &-3355577688604961586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,6 +314,18 @@ MonoBehaviour:
   playerPiercing: 1
   wallPiercing: 1
   knockbackForce: 0
+--- !u!114 &4560484712337829511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2688712039996539345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5da2221216762154a9b384190aa4cebb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &-4687898568944800627
 Rigidbody2D:
   serializedVersion: 4
@@ -307,7 +334,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2688712039996539345}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -352,30 +379,3 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.945587, y: 0.3999801}
   m_Direction: 1
---- !u!114 &1171068819361490308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2688712039996539345}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5455211875cd3de4790ca6f9f3f59f37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallSpeed: -9.3
-  wallDetectRange: 5
-  enemySpeed: 4
---- !u!114 &4560484712337829511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2688712039996539345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5da2221216762154a9b384190aa4cebb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
