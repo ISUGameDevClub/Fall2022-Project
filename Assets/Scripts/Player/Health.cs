@@ -12,6 +12,7 @@ public class Health : MonoBehaviour
     [SerializeField] GameObject hurtPrefab;
     [SerializeField] GameObject powerDownPrefab;
     [SerializeField] GameObject powerUpPrefab;
+    [SerializeField] GameObject hatAnimPrefab;
     [SerializeField] Animator topSprite;
     [SerializeField] Animator bottomSprite;
     [SerializeField] GameObject powerupText;
@@ -73,6 +74,10 @@ public class Health : MonoBehaviour
             Instantiate(hurtPrefab, transform.position, Quaternion.identity);
             if (playerHealth != "")
             {
+                Sprite hatSpriteCopy = hatSprite.sprite;
+                GameObject hatSpriteAnim = Instantiate(hatAnimPrefab, transform.position, Quaternion.identity);
+                hatSpriteAnim.GetComponent<SpriteRenderer>().sprite = hatSpriteCopy;
+                Destroy(hatSpriteAnim, 5f);
                 //rethink powerdown
                 //Instantiate(powerDownPrefab, transform.position, Quaternion.identity);
                 playerHealth = "";
