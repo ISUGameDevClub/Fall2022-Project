@@ -9,6 +9,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] GameObject diePrefab;
     [SerializeField] Animator enemyAnimator;
     [HideInInspector]
+    public bool invincible;
+    [HideInInspector]
     public float frozen;
 
     private int currentHealth;
@@ -31,17 +33,19 @@ public class EnemyHealth : MonoBehaviour
     }
     public void TakeDamage(int dmg)
     {
-
-        currentHealth-=dmg;
-        if (currentHealth <= 0)
+        if(!invincible)
         {
-            Instantiate(diePrefab, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-        }
-        else 
-        { 
-            Instantiate(hurtPrefab, transform.position, Quaternion.identity);
-            enemyAnimator.SetTrigger("Hurt");
+            currentHealth -= dmg;
+            if (currentHealth <= 0 && diePrefab != null)
+            {
+                Instantiate(diePrefab, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
+            else if(hurtPrefab != null)
+            {
+                Instantiate(hurtPrefab, transform.position, Quaternion.identity);
+                enemyAnimator.SetTrigger("Hurt");
+            }
         }
     }
 }

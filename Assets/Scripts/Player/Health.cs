@@ -15,6 +15,7 @@ public class Health : MonoBehaviour
     [SerializeField] Animator topSprite;
     [SerializeField] Animator bottomSprite;
     [SerializeField] GameObject powerupText;
+    [SerializeField] float powerupWaitTime = 1.5f;
     public string playerHealth;
     //public Text playerHealthText;
     private GameObject player;
@@ -58,7 +59,7 @@ public class Health : MonoBehaviour
     }
     private IEnumerator PowerupWait()
     {
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSecondsRealtime(powerupWaitTime);
         Time.timeScale = 1;
         powerupText.SetActive(false);
     }

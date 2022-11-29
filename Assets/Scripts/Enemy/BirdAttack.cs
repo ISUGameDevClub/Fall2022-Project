@@ -27,7 +27,7 @@ public class BirdAttack : MonoBehaviour
         LayerMask mask = LayerMask.GetMask("Player");
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 50, mask);
 
-        if (hit.collider.gameObject.GetComponent<Health>() != null && CanShoot)
+        if (hit.collider != null && hit.collider.gameObject.GetComponent<Health>() != null && CanShoot)
         {
             Instantiate(birdeggPrefab, transform.position, Quaternion.identity);
             CanShoot = false;

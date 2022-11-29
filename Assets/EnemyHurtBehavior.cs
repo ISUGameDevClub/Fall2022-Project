@@ -7,6 +7,7 @@ public class EnemyHurtBehavior : MonoBehaviour
     [SerializeField] bool playerPiercing;
     [SerializeField] bool wallPiercing;
     [SerializeField] float knockbackForce;
+    [SerializeField] GameObject spawnOnDeath;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Vector2 direction = collision.transform.position - transform.position;
@@ -34,6 +35,10 @@ public class EnemyHurtBehavior : MonoBehaviour
         {
             if (!wallPiercing)
             {
+                if(spawnOnDeath != null)
+                {
+                    Instantiate(spawnOnDeath, transform.position, Quaternion.identity);
+                }
                 Destroy(gameObject);
             }
         }

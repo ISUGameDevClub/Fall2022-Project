@@ -11,12 +11,16 @@ public class RatShoot : MonoBehaviour
     public float activateDistance = 10;
     private Transform playerTransform;
     private bool isShooting;
-    [SerializeField] float throwForce;
     [SerializeField] float attackCooldown = 1f;
 
     // Start is called before the first frame update
     void Start()
     {
+        SpriteRenderer sR = GetComponentInChildren<SpriteRenderer>();
+        if (facingRight)
+        {
+            sR.flipX = true;
+        }
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         isShooting = false;
     }
@@ -24,6 +28,7 @@ public class RatShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Vector2.Distance(this.transform.position, playerTransform.position) < activateDistance && !isShooting)
         {
             isShooting = true;
@@ -36,8 +41,13 @@ public class RatShoot : MonoBehaviour
         while (waitTime > 0)
         {
             GameObject tempBul = Instantiate(fishprojectilePrefab, transform.position, Quaternion.identity);
-            tempBul.GetComponent<RatProjectile>().SetDirection((int)GetComponent<DogMovement>().GetDirection());
-            tempBul.GetComponent<RatProjectile>().Launch(throwForce);
+            if (facingRight)
+            {
+                tempBul.GetComponent<Attack>().moveDirection = new Vector2(1, 0);
+            }else
+            {
+                tempBul.GetComponent<Attack>().moveDirection = new Vector2(-1, 0);
+            }
             yield return new WaitForSeconds(waitTime);
         }
     }
