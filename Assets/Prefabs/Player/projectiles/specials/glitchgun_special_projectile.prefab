@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76f541341c4ee5b4488db83bff38156e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 2
+  attackCooldown: 0.75
   moveDirection: {x: 0, y: 0}
 --- !u!114 &340810856908286075
 MonoBehaviour:
@@ -119,6 +119,13 @@ MonoBehaviour:
   despawnTime: 1.5
   bounces: 0
   homing: 1
+  delayedHoming: 0
+  startOutwards: 0
+  startInwards: 0
+  drops: 0
+  verticalLaunch: 0
+  gradualVerticalDrop: 0
+  sticky: 0
 --- !u!114 &-2986969676362738965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,7 +140,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPiercing: 0
   wallPiercing: 0
-  damage: 25
+  damage: 10
+  defects: 0
+  freezes: 0
+  freeze: {fileID: 0}
+  spawnOnDeath: {fileID: 0}
 --- !u!58 &-7940606482709243296
 CircleCollider2D:
   m_ObjectHideFlags: 0
