@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] int health;
     [SerializeField] GameObject hurtPrefab;
     [SerializeField] GameObject diePrefab;
+    [SerializeField] GameObject transformPrefab;
     [SerializeField] Animator enemyAnimator;
     [HideInInspector]
     public bool invincible;
@@ -38,7 +39,14 @@ public class EnemyHealth : MonoBehaviour
             currentHealth -= dmg;
             if (currentHealth <= 0 && diePrefab != null)
             {
-                Instantiate(diePrefab, transform.position, Quaternion.identity);
+                if (transformPrefab != null)
+                {
+                    Instantiate(transformPrefab, transform.position, Quaternion.identity);
+                }
+                else
+                {
+                    Instantiate(diePrefab, transform.position, Quaternion.identity);
+                }
                 Destroy(gameObject);
             }
             else if(hurtPrefab != null)

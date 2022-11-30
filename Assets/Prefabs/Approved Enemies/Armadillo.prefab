@@ -115,6 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4527607946271850127}
   - component: {fileID: 5582410535627259764}
+  - component: {fileID: 7434828162101734155}
   m_Layer: 0
   m_Name: HurtBox
   m_TagString: Untagged
@@ -154,6 +155,22 @@ MonoBehaviour:
   knockbackForce: 0
   spawnOnDeath: {fileID: 0}
   enemyAnim: {fileID: 0}
+--- !u!58 &7434828162101734155
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2220449301035990177}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.49478638
 --- !u!1 &6380856491326547307
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,6 +183,7 @@ GameObject:
   - component: {fileID: 4465666990949104225}
   - component: {fileID: 4834028852758561121}
   - component: {fileID: 3208615648235958279}
+  - component: {fileID: 571282651}
   m_Layer: 0
   m_Name: Armadillo
   m_TagString: Untagged
@@ -182,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 6380856491326547307}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.6605443, y: 4.194465, z: 1.7202891}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5697828260706095548}
@@ -226,7 +244,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &3208615648235958279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,4 +259,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallSpeed: -9.3
   wallDetectRange: 3
-  enemySpeed: 4
+  enemySpeed: 15
+--- !u!114 &571282651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6380856491326547307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b2dcf50c55e7d444b2c230c82136d64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  hurtPrefab: {fileID: 7337934333778476695, guid: a26d8a5b053dca0488cf09d00233d2a0, type: 3}
+  diePrefab: {fileID: 7337934333778476695, guid: e2c586fe32a44b448b770e9781794fd0, type: 3}
+  transformPrefab: {fileID: 7037511374688973649, guid: 1b5de640471f3464ea47a3366a204ce2, type: 3}
+  enemyAnimator: {fileID: 5053540047894065903}
+  invincible: 0
+  frozen: 0
