@@ -150,8 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f48905f509273cb4ea7af475322aec7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPiercing: 0
-  wallPiercing: 0
+  playerPiercing: 1
+  wallPiercing: 1
   knockbackForce: 0
   spawnOnDeath: {fileID: 0}
   enemyAnim: {fileID: 0}
