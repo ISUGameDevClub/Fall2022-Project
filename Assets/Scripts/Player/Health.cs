@@ -76,7 +76,7 @@ public class Health : MonoBehaviour
             {
                 Sprite hatSpriteCopy = hatSprite.sprite;
                 GameObject hatSpriteAnim = Instantiate(hatAnimPrefab, transform.position, Quaternion.identity);
-                hatSpriteAnim.GetComponent<SpriteRenderer>().sprite = hatSpriteCopy;
+                hatSpriteAnim.GetComponentInChildren<SpriteRenderer>().sprite = hatSpriteCopy;
                 Destroy(hatSpriteAnim, 5f);
                 //rethink powerdown
                 //Instantiate(powerDownPrefab, transform.position, Quaternion.identity);
