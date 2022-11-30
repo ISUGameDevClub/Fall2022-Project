@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
 
     [SerializeField] SpriteRenderer hatSprite;
+    [SerializeField] GameObject hatLocation;
     [SerializeField] GameObject hurtPrefab;
     [SerializeField] GameObject powerDownPrefab;
     [SerializeField] GameObject powerUpPrefab;
@@ -75,7 +76,7 @@ public class Health : MonoBehaviour
             if (playerHealth != "")
             {
                 Sprite hatSpriteCopy = hatSprite.sprite;
-                GameObject hatSpriteAnim = Instantiate(hatAnimPrefab, transform.position, Quaternion.identity);
+                GameObject hatSpriteAnim = Instantiate(hatAnimPrefab, hatLocation.transform.position, Quaternion.identity);
                 hatSpriteAnim.GetComponentInChildren<SpriteRenderer>().sprite = hatSpriteCopy;
                 Destroy(hatSpriteAnim, 5f);
                 //rethink powerdown
