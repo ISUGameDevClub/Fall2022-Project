@@ -187,14 +187,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5363307019101255825, guid: 6dc785928619abb45be245872aa77d9e, type: 3}
-      propertyPath: hatAnimPrefab
-      value: 
-      objectReference: {fileID: 2870415581400831743, guid: 9d4c652a3aee52a46bb67816362e1eb8, type: 3}
-    - target: {fileID: 5363307019101255825, guid: 6dc785928619abb45be245872aa77d9e, type: 3}
-      propertyPath: powerupWaitTime
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5363307019101255826, guid: 6dc785928619abb45be245872aa77d9e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -242,10 +234,6 @@ PrefabInstance:
     - target: {fileID: 5363307019101255829, guid: 6dc785928619abb45be245872aa77d9e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5363307019101255830, guid: 6dc785928619abb45be245872aa77d9e, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dc785928619abb45be245872aa77d9e, type: 3}
