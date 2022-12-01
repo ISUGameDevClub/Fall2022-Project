@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 593381375}
   - component: {fileID: 593381376}
+  - component: {fileID: 3470612490663334739}
   m_Layer: 7
   m_Name: FishSprite
   m_TagString: Untagged
@@ -84,6 +85,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3470612490663334739
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593381374}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cbf1af5892d385f47a4802323b857b56, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3485903284388114305
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +156,8 @@ MonoBehaviour:
   health: 50
   hurtPrefab: {fileID: 7337934333778476695, guid: a26d8a5b053dca0488cf09d00233d2a0, type: 3}
   diePrefab: {fileID: 7337934333778476695, guid: 440eacae6cf93bb4796a19247ae31556, type: 3}
+  enemyAnimator: {fileID: 3470612490663334739}
+  frozen: 0
 --- !u!114 &3485903284388114306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +234,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -231,3 +254,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPiercing: 1
   wallPiercing: 1
+  knockbackForce: 0

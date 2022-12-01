@@ -7,7 +7,6 @@ public class Racoon : MonoBehaviour
 {
     [SerializeField] private float range = 10.0f;
     [SerializeField] private bool invulnerable = true;
-    [SerializeField] private GameObject trashcan;
 
     private bool canShootNow;
 
@@ -43,8 +42,6 @@ public class Racoon : MonoBehaviour
             shoot();
         }
         // Vulerable behavior
-        renderer.enabled = !invulnerable;
-        trashcan.GetComponent<SpriteRenderer>().enabled = invulnerable;
         if(!invulnerable)
         {
            //Actual shooting
@@ -60,8 +57,17 @@ public class Racoon : MonoBehaviour
             canShootNow = false;
             Vector2 myPos = new Vector2(weapon.position.x, weapon.position.y);
             GameObject projectile = Instantiate(bullet, myPos, Quaternion.identity);
-            Vector2 direction = (Vector2)player.transform.position - myPos; //get the direction of the player.
-            projectile.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed; //shoot projectile
+
+            float direction = 1;//get the direction of the player.
+            if(player.transform.position.x < myPos.x)
+            {
+                direction = -1;
+            }
+            else
+            {
+                direction = 1;
+            }
+            projectile.GetComponent<Rigidbody2D>().velocity = Vector2.right * direction * bulletSpeed; //shoot projectile
 
             StartCoroutine(shotDelay());
         }

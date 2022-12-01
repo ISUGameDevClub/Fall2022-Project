@@ -13,40 +13,12 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    public float speed = 2.1f, fireRate = 1.0f, fireDelay = 0.0f;
-    //public Rigidbody2D rb;
-    public Transform weapon; //the weapon the bullet is firing from
-    public GameObject bullet; //The 'projectile' prefab
-    public Transform player;
-
-    void Start()
+    [SerializeField]
+    [Range(0.25f,1.0f)]
+    float
+        attackCooldown = .5f;
+    private IEnumerator SwingAttack()
     {
+        yield return new WaitForSeconds(attackCooldown);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        Fire();
-    }
-
-    private void Fire()
-    {
-        if(Time.time > fireDelay)
-        {
-            fireDelay = Time.time + fireRate; //fireRate instantiates as making the enemy fire every 1 second.
-            Vector2 myPos = new Vector2(weapon.position.x, weapon.position.y);
-            GameObject projectile = Instantiate(bullet, myPos, Quaternion.identity);
-            Vector2 direction = (Vector2)player.position - myPos; //get the direction of the player.
-            projectile.GetComponent<Rigidbody2D>().velocity = direction * speed; //shoot projectile
-        }
-    }
-
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "Player")
-        {
-            Fire();
-        }
-    }
-
 }

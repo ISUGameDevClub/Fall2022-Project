@@ -12,6 +12,7 @@ TagManager:
   - Kill
   - OneWayDown
   - Ground
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -63,6 +64,12 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 1442576427
+    locked: 0
+  - name: Enemy/Snake/Hole
+    uniqueID: 3074332295
+    locked: 0
+  - name: Enemy/Snake/Snake
+    uniqueID: 2734069711
     locked: 0
   - name: Enemies
     uniqueID: 691333133

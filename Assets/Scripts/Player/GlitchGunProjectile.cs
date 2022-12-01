@@ -15,7 +15,7 @@ public class GlitchGunProjectile : MonoBehaviour
     public float movement = .5f;
     private float endMovement;
     public float despawnTime = .5f;
-    public GameObject gun;
+
     private Rigidbody2D rb;
     private Attack atk;
 

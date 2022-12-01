@@ -20,6 +20,10 @@ public class PlayerMovement : MonoBehaviour
         public float jumpHeight;
         private bool flipped = true;
         Rigidbody2D playerRB;
+    [SerializeField]
+    [Range(1.2f,3f)]
+    float
+        coyoteTime;
     [SerializeField] 
     Animator 
         lowerBodyAnim;
@@ -29,8 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool grounded;
 
-    private float yoteTime = 1.2f;
-    private float yoteTimeCounter;
+
 
     // Start is called before the first frame update
     void Start()
@@ -45,14 +48,14 @@ public class PlayerMovement : MonoBehaviour
     {
         
 
-        if (Input.GetKeyDown(KeyCode.Space) && yoteTimeCounter > 0f && !(Input.GetKey(KeyCode.LeftShift)))
+        if (Input.GetKeyDown(KeyCode.Space) && grounded && !(Input.GetKey(KeyCode.LeftShift)) && Time.timeScale!=0)
         {
             playerRB.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
             Instantiate(jumpPrefab, transform.position, Quaternion.identity);
-            yoteTimeCounter = 0f;
+
         }
 
-        if (Input.GetAxisRaw("Horizontal") != 0 && !(Input.GetKey(KeyCode.LeftShift) && grounded)) 
+        if (Input.GetAxisRaw("Horizontal") != 0 && !(Input.GetKey(KeyCode.LeftShift) && grounded) && Time.timeScale != 0) 
         {
             lowerBodyAnim.SetBool("walking", true);
         }
@@ -61,10 +64,10 @@ public class PlayerMovement : MonoBehaviour
             lowerBodyAnim.SetBool("walking", false);
         }
 
-        LayerMask mask = LayerMask.GetMask("Ground");
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.1f, mask);
-
-        if (hit.collider != null && LayerMask.LayerToName(hit.collider.gameObject.layer) == "Ground")
+        LayerMask[] masks = new LayerMask[2] {LayerMask.GetMask("Ground"), LayerMask.GetMask("Enemy")};
+        //RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.1f,masks[0]);
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position,1f, Vector2.down, 1.1f, masks[0]);
+        if (hit.collider != null && (LayerMask.LayerToName(hit.collider.gameObject.layer) == "Ground" || LayerMask.LayerToName(hit.collider.gameObject.layer) == "Enemy"))
         {
             if (playerRB.velocity.y <= 0)
             {
@@ -78,15 +81,6 @@ public class PlayerMovement : MonoBehaviour
             grounded = false;
         }
 
-        if (grounded)
-        {
-            yoteTimeCounter = yoteTime;
-        }
-        else
-        {
-            yoteTimeCounter -= Time.deltaTime;
-        }
-
         doWeFlip();
     }
 
@@ -95,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
     {
 
 
-        if (!(Input.GetKey(KeyCode.LeftShift) && grounded))
+        if (!(Input.GetKey(KeyCode.LeftShift) && grounded) && Time.timeScale != 0)
         {
             Vector2 playerVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, 0) * Time.fixedDeltaTime;
             playerRB.position += playerVelocity;
@@ -103,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(playerRB.velocity.y > 0)
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space) && Time.timeScale != 0)
             {
                 playerRB.gravityScale = 2.4f;
             }
@@ -131,7 +125,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void doWeFlip()
     {
-        if (Input.GetAxisRaw("Horizontal") == 1)
+        if (Input.GetAxisRaw("Horizontal") == 1 && Time.timeScale != 0)
         {
             flipped = true;
             SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
@@ -140,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
                 s.flipX = false;
             }
         }
-        else if (Input.GetAxisRaw("Horizontal") == -1)
+        else if (Input.GetAxisRaw("Horizontal") == -1 && Time.timeScale != 0)
         {
             flipped = false;
             SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
