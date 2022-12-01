@@ -12,6 +12,7 @@ public class BoxSpawner : MonoBehaviour
     private bool isSpawning;
     private ParticleSystem particleSystem;
     private AudioSource audioSource;
+    public bool facingRight;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +47,14 @@ public class BoxSpawner : MonoBehaviour
     {
         particleSystem.Play();
         audioSource.Play();
-        Instantiate(enemyToSpawn, new Vector3(transform.position.x - 2, transform.position.y, transform.position.z), Quaternion.identity);
+        if (facingRight == false)
+        {
+            Instantiate(enemyToSpawn, new Vector3(transform.position.x - 2, transform.position.y, transform.position.z), Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(enemyToSpawn, new Vector3(transform.position.x + 2, transform.position.y, transform.position.z), Quaternion.identity);
+        }
+        
     }
 }
