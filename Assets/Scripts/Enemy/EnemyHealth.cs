@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] int health;
+    [SerializeField] float despawnTime;
     [SerializeField] GameObject hurtPrefab;
     [SerializeField] GameObject diePrefab;
     [SerializeField] GameObject transformPrefab;
@@ -19,6 +20,9 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         currentHealth = health;
+        if(despawnTime>0){
+        Destroy(gameObject,despawnTime);
+        }
     }
 
     private void Update()
