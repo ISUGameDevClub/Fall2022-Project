@@ -49,7 +49,7 @@ public class Bird : MonoBehaviour
     private void Create2DForwardRay()
     {
         LayerMask mask = LayerMask.GetMask("Ground");
-        RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(0, 1f, 0), Vector2.left * direction, wallDetectRange, mask);
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position - new Vector3(0, 1f, 0), .525f, Vector2.left * direction, wallDetectRange, mask);
         if (hit.collider != null)
         {
             direction = direction * -1;

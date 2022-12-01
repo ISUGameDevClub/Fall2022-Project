@@ -26,6 +26,7 @@ public class EnemyHurtBehavior : MonoBehaviour
             {
                 enemyAnim.SetTrigger("Attack");
             }
+            StartCoroutine(HurtBoxRefresh());
             collision.gameObject.GetComponent<Health>().loseHealth();
             if (collision.gameObject.GetComponent<Rigidbody2D>())
             {
@@ -47,5 +48,11 @@ public class EnemyHurtBehavior : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+    private IEnumerator HurtBoxRefresh()
+    {
+        GetComponent<Collider2D>().enabled = false;
+        yield return new WaitForSeconds(.1f);
+        GetComponent<Collider2D>().enabled = true;
     }
 }
