@@ -149,10 +149,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1053379444496537519}
-  - component: {fileID: 3771349714621269363}
   - component: {fileID: 7296000086632838755}
   - component: {fileID: 783401641339129376}
   - component: {fileID: 2764299788757292983}
+  - component: {fileID: 1518770663707004671}
+  - component: {fileID: 6688972589555899147}
   m_Layer: 8
   m_Name: RaccoonProjectile
   m_TagString: Projectile
@@ -177,20 +178,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3771349714621269363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260506417258750844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39c5800cabe87b1448494ec2bb054093, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  right: 0
-  speed: 60
 --- !u!114 &7296000086632838755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,6 +192,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPiercing: 0
   wallPiercing: 0
+  knockbackForce: 0
+  spawnOnDeath: {fileID: 0}
 --- !u!50 &783401641339129376
 Rigidbody2D:
   serializedVersion: 4
@@ -242,6 +231,43 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.34, y: 0.5}
   m_Direction: 1
+--- !u!114 &1518770663707004671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260506417258750844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c8eb66702ef020409d7786192f70ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: 30
+  despawnTime: 1
+  bounces: 0
+  homing: 0
+  delayedHoming: 0
+  startOutwards: 0
+  startInwards: 0
+  drops: 0
+  verticalLaunch: 0
+  gradualVerticalDrop: 0
+  sticky: 0
+--- !u!114 &6688972589555899147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260506417258750844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76f541341c4ee5b4488db83bff38156e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 0
+  moveDirection: {x: 0, y: 0}
 --- !u!1 &3870274572504976045
 GameObject:
   m_ObjectHideFlags: 0

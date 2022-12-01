@@ -9,12 +9,15 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
 
     [SerializeField] SpriteRenderer hatSprite;
+    [SerializeField] GameObject hatLocation;
     [SerializeField] GameObject hurtPrefab;
     [SerializeField] GameObject powerDownPrefab;
     [SerializeField] GameObject powerUpPrefab;
+    [SerializeField] GameObject hatAnimPrefab;
     [SerializeField] Animator topSprite;
     [SerializeField] Animator bottomSprite;
     [SerializeField] GameObject powerupText;
+    [SerializeField] float powerupWaitTime = 1.5f;
     public string playerHealth;
     //public Text playerHealthText;
     private GameObject player;
@@ -58,7 +61,7 @@ public class Health : MonoBehaviour
     }
     private IEnumerator PowerupWait()
     {
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSecondsRealtime(powerupWaitTime);
         Time.timeScale = 1;
         powerupText.SetActive(false);
     }
@@ -72,6 +75,10 @@ public class Health : MonoBehaviour
             Instantiate(hurtPrefab, transform.position, Quaternion.identity);
             if (playerHealth != "")
             {
+                Sprite hatSpriteCopy = hatSprite.sprite;
+                GameObject hatSpriteAnim = Instantiate(hatAnimPrefab, hatLocation.transform.position, Quaternion.identity);
+                hatSpriteAnim.GetComponentInChildren<SpriteRenderer>().sprite = hatSpriteCopy;
+                Destroy(hatSpriteAnim, 5f);
                 //rethink powerdown
                 //Instantiate(powerDownPrefab, transform.position, Quaternion.identity);
                 playerHealth = "";

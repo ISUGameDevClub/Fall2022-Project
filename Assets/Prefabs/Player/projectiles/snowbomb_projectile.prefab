@@ -134,15 +134,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c8eb66702ef020409d7786192f70ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: 10
+  movement: 13
   despawnTime: 6
   bounces: 0
   homing: 0
+  delayedHoming: 0
   startOutwards: 0
   startInwards: 0
   drops: 1
-  verticalLaunch: 0.15
-  gradualVerticalDrop: 0.3
+  verticalLaunch: 0.2
+  gradualVerticalDrop: 0.75
   sticky: 1
 --- !u!58 &-7940606482709243296
 CircleCollider2D:

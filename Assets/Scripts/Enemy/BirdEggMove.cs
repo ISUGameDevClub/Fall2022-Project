@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class BirdEggMove : MonoBehaviour
 {
-
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    [Range(0.001f,20f)]
+    float
+        speed;
+    void FixedUpdate()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        transform.Translate(new Vector2(0, -1) * Time.deltaTime);
+       GetComponent<Rigidbody2D>().MovePosition((GetComponent<Rigidbody2D>().position-new Vector2(0,speed) * Time.fixedDeltaTime));
     }
 }

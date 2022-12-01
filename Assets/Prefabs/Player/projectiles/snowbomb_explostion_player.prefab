@@ -65,7 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPiercing: 1
   wallPiercing: 1
-  damage: 30
+  damage: 20
   defects: 0
   freezes: 0
   freeze: {fileID: 0}
@@ -86,11 +86,13 @@ MonoBehaviour:
   despawnTime: 0.3
   bounces: 0
   homing: 0
+  delayedHoming: 0
   startOutwards: 0
   startInwards: 0
   drops: 0
   verticalLaunch: 0
   gradualVerticalDrop: 0
+  sticky: 0
 --- !u!58 &-7940606482709243296
 CircleCollider2D:
   m_ObjectHideFlags: 0

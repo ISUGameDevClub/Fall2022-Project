@@ -737,12 +737,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hatSprite: {fileID: 5363307019206883104}
+  hatLocation: {fileID: 5363307019206883106}
   hurtPrefab: {fileID: 7337934333778476695, guid: f05cddef8fc1c53458f836acfbf4d554, type: 3}
   powerDownPrefab: {fileID: 7337934333778476695, guid: f0c76b1cafe477246b73f93346b0f4e6, type: 3}
   powerUpPrefab: {fileID: 7337934333778476695, guid: 4c765ef2a2f0fc04183571516c66f981, type: 3}
+  hatAnimPrefab: {fileID: 2870415581400831743, guid: 9d4c652a3aee52a46bb67816362e1eb8, type: 3}
   topSprite: {fileID: 352921590}
   bottomSprite: {fileID: 5363307018702865326}
   powerupText: {fileID: 4462753610218389811}
+  powerupWaitTime: 1.5
   playerHealth: 
   invincibleFrames: 1.25
 --- !u!70 &5363307019101255830
@@ -792,6 +795,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5363307019206883105}
   - component: {fileID: 5363307019206883104}
+  - component: {fileID: 3207339214939848454}
   m_Layer: 6
   m_Name: HatLocation
   m_TagString: Untagged
@@ -866,6 +870,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &3207339214939848454
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5363307019206883106}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &9202443475807649559
 GameObject:
   m_ObjectHideFlags: 0

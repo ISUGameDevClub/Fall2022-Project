@@ -23,7 +23,7 @@ public class Shoot : MonoBehaviour
     void Update()
     {
         //left click
-        if(Input.GetMouseButton(0) && canShootNow == true)
+        if(Input.GetMouseButton(0) && canShootNow == true && Time.timeScale != 0)
         {
             canShootNow = false;
             Vector2 position = gameObject.transform.position;
@@ -91,7 +91,7 @@ public class Shoot : MonoBehaviour
         }
 
         //Right Click
-        if (Input.GetMouseButton(1) && specialCanShootNow == true)
+        if (Input.GetMouseButton(1) && specialCanShootNow == true && Time.timeScale != 0)
         {
             specialCanShootNow = false;
             int bulletToSpawn = 10;
