@@ -51,23 +51,22 @@ public class CameraMovement : MonoBehaviour
     {
         //cameras current pos
         Vector3 startPos = transform.position;
-
         //cameras current pos
         Vector3 endPos = player.transform.position;
+        
         endPos.x += posOffset.x;
         endPos.y += posOffset.y;
         endPos.z = -1;
-
+        if (player.transform.position.x + posOffset.x < transform.position.x)
+        {
+       //     endPos.x = transform.position.x;
+        }
         if (endPos.x <= minX)
             endPos.x = minX;
 
         if (endPos.x >= maxX)
             endPos.x = maxX;
 
-        if (player.transform.position.x + posOffset.x < transform.position.x)
-        {
-            endPos.x = transform.position.x;
-        }
 
         if (endPos.y <= minY)
             endPos.y = minY;

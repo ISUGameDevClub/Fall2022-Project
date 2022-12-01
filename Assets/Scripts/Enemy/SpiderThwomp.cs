@@ -10,6 +10,10 @@ public class SpiderThwomp : MonoBehaviour
     private bool isDropping;
     private bool stop;
     private bool raise;
+    private bool dropSounding;
+    [SerializeField] GameObject dropPrefab;
+    [SerializeField] GameObject webby;
+    [SerializeField] GameObject webbyBase;
     [SerializeField] Animator anim;
     [SerializeField] private int dropSpeed = 3;
     [SerializeField] private int raiseSpeed = 3;
@@ -27,37 +31,44 @@ public class SpiderThwomp : MonoBehaviour
         yPos = transform.position.y;
         
     }
-
     // Update is called once per frame
     void Update()
     {
-        if (!stop && isDropping)
+        if (GetComponent<EnemyHealth>().frozen <= 0)
         {
-            anim.SetTrigger("fall");
-            rb.MovePosition(transform.position += Vector3.down * dropSpeed * Time.deltaTime);
-
-            if (Physics2D.Raycast(transform.position, -transform.up, maxDistance, layerHitGround))
+            webby.transform.position = new Vector3(webby.transform.position.x, (webbyBase.transform.position.y + .75f) + (((transform.position.y + .23f) - (webbyBase.transform.position.y + .75f)) / 2), webby.transform.position.z);
+            webby.transform.localScale = new Vector3(webby.transform.localScale.x, Vector2.Distance(webbyBase.transform.position + new Vector3(0, .75f, 0), transform.position + new Vector3(0, .23f, 0)), webby.transform.localScale.z);
+            if (!stop && isDropping)
+            {
+                if (!dropSounding)
+                {
+                    Instantiate(dropPrefab, transform.position, Quaternion.identity);
+                    dropSounding = true;
+                }
+                anim.SetTrigger("fall");
+                rb.MovePosition(transform.position += Vector3.down * dropSpeed * Time.deltaTime);
+                if (Physics2D.Raycast(transform.position, -transform.up, maxDistance, layerHitGround))
                 {
                     stop = true;
                     anim.SetTrigger("idle");
                     StartCoroutine(rise());
                 }
-        }
-        
-        if (raise)
-        {
-            anim.SetTrigger("climb");
-            rb.MovePosition(transform.position += Vector3.up * raiseSpeed * Time.deltaTime);
-            if (transform.position.y >= yPos)
+            }
+
+            if (raise)
             {
-                anim.SetTrigger("idle");
-                raise = false;
-                stop = false;
-                isDropping = false;
+                anim.SetTrigger("climb");
+                rb.MovePosition(transform.position += Vector3.up * raiseSpeed * Time.deltaTime);
+                if (transform.position.y >= yPos)
+                {
+                    anim.SetTrigger("idle");
+                    raise = false;
+                    stop = false;
+                    isDropping = false;
+                }
             }
         }
     }
-
 
     public void spiderMoveDown()
     {
@@ -70,6 +81,7 @@ public class SpiderThwomp : MonoBehaviour
     {
         yield return new WaitForSeconds(restTime);
         raise = true;
+        dropSounding = false;
     }
 
     

@@ -9,15 +9,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4178774408295233974}
-  - component: {fileID: 1381087537380680732}
   - component: {fileID: 4840113082145045385}
   - component: {fileID: 6274081950502782964}
   - component: {fileID: 5632686388252561166}
   - component: {fileID: 8944185307376279926}
   - component: {fileID: -3015801975973257773}
-  m_Layer: 0
+  - component: {fileID: 371554159}
+  - component: {fileID: 371554158}
+  m_Layer: 7
   m_Name: Bird
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,26 +31,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6658195219879759590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.5, y: 5.86, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1381087537380680732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6658195219879759590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b2dcf50c55e7d444b2c230c82136d64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
 --- !u!212 &4840113082145045385
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -91,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3625043607559282579, guid: 730f5ba7ed48dcc48aa0d7c7a5b05521, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -889565353, guid: 9540fde00fcec4f4193cf611fefb6e52, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -136,8 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy_speed: 4
-  walldetectrange: 1
-  height: 2
+  wallDetectRange: 1
 --- !u!61 &8944185307376279926
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -155,14 +142,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.5}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1, y: 0.6}
+  m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &-3015801975973257773
 MonoBehaviour:
@@ -176,4 +163,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2dcf50c55e7d444b2c230c82136d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 25
+  hurtPrefab: {fileID: 7337934333778476695, guid: a26d8a5b053dca0488cf09d00233d2a0, type: 3}
+  diePrefab: {fileID: 7337934333778476695, guid: e2c586fe32a44b448b770e9781794fd0, type: 3}
+  enemyAnimator: {fileID: 371554159}
+  frozen: 0
+--- !u!95 &371554159
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6658195219879759590}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c1def976beafd0d429dd5fbc288accf6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &371554158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6658195219879759590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd8ec92891425bb448f726d33a6e438b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  birdeggPrefab: {fileID: 8808450532312349108, guid: 5dcd5983b30431940aae91a175d8b516, type: 3}

@@ -5,19 +5,35 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-
+    [SerializeField]
+    GameObject
+        jumpPrefab;
+    [SerializeField]
+    GameObject
+        stepPrefab;
     [SerializeField]
     [Range(13f, 13.5f)]
-    float speed;
+    float
+        speed;
     [SerializeField]
     [Range(14f, 14.5f)]
-    public float jumpHeight;
-    public int jumpsAvailable = 1;
-    private int jumps = 0;
-    private bool flipped = true;
-    Rigidbody2D playerRB;
-    [SerializeField] Animator lowerBodyAnim;
-    [SerializeField] Animator upperBodyAnim;
+        public float jumpHeight;
+        private bool flipped = true;
+        Rigidbody2D playerRB;
+    [SerializeField]
+    [Range(1.2f,3f)]
+    float
+        coyoteTime;
+    [SerializeField] 
+    Animator 
+        lowerBodyAnim;
+    [SerializeField] 
+    Animator 
+        upperBodyAnim;
+
+    private bool grounded;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,12 +46,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && jumpsAvailable != jumps)
+        
+
+        if (Input.GetKeyDown(KeyCode.Space) && grounded && !(Input.GetKey(KeyCode.LeftShift)) && Time.timeScale!=0)
         {
             playerRB.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
-            jumps++;
+            Instantiate(jumpPrefab, transform.position, Quaternion.identity);
+
         }
-        if (Input.GetAxisRaw("Horizontal") != 0) 
+
+        if (Input.GetAxisRaw("Horizontal") != 0 && !(Input.GetKey(KeyCode.LeftShift) && grounded) && Time.timeScale != 0) 
         {
             lowerBodyAnim.SetBool("walking", true);
         }
@@ -43,7 +63,23 @@ public class PlayerMovement : MonoBehaviour
         {
             lowerBodyAnim.SetBool("walking", false);
         }
-        if (playerRB.velocity.y == 0) jumps = 0;
+
+        LayerMask[] masks = new LayerMask[2] {LayerMask.GetMask("Ground"), LayerMask.GetMask("Enemy")};
+        //RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.1f,masks[0]);
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position,1f, Vector2.down, 1.1f, masks[0]);
+        if (hit.collider != null && (LayerMask.LayerToName(hit.collider.gameObject.layer) == "Ground" || LayerMask.LayerToName(hit.collider.gameObject.layer) == "Enemy"))
+        {
+            if (playerRB.velocity.y <= 0)
+            {
+                grounded = true;
+            }
+            playerRB.velocity = new Vector2(0, playerRB.velocity.y);
+            
+        }
+        else
+        {
+            grounded = false;
+        }
 
         doWeFlip();
     }
@@ -51,19 +87,45 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector2 playerVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, 0) * Time.fixedDeltaTime;
-        playerRB.position += playerVelocity;
 
+
+        if (!(Input.GetKey(KeyCode.LeftShift) && grounded) && Time.timeScale != 0)
+        {
+            Vector2 playerVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, 0) * Time.fixedDeltaTime;
+            playerRB.position += playerVelocity;
+        }
+
+        if(playerRB.velocity.y > 0)
+        {
+            if (Input.GetKey(KeyCode.Space) && Time.timeScale != 0)
+            {
+                playerRB.gravityScale = 2.4f;
+            }
+            else
+            {
+                playerRB.gravityScale = 4.8f;
+            }
+        }
+        else
+        {
+            playerRB.gravityScale = 4.8f;
+        }
     }
 
     public bool getFlipped()
     {
         return flipped;
     }
-
+    public void StepSound()
+    {
+        if (grounded)
+        {
+            Instantiate(stepPrefab, transform.position, Quaternion.identity);
+        }
+    }
     private void doWeFlip()
     {
-        if (Input.GetAxisRaw("Horizontal") == 1)
+        if (Input.GetAxisRaw("Horizontal") == 1 && Time.timeScale != 0)
         {
             flipped = true;
             SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
@@ -72,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
                 s.flipX = false;
             }
         }
-        else if (Input.GetAxisRaw("Horizontal") == -1)
+        else if (Input.GetAxisRaw("Horizontal") == -1 && Time.timeScale != 0)
         {
             flipped = false;
             SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
