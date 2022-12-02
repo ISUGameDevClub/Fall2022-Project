@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5799793504235116959}
   - component: {fileID: 8405394096833117011}
   - component: {fileID: 8086184483426835378}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: MouseSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 5010701138803706190}
   - component: {fileID: 4829183479517606652}
   - component: {fileID: 8368257552064122869}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: HurtBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
 --- !u!114 &8368257552064122869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +170,7 @@ MonoBehaviour:
   wallPiercing: 1
   knockbackForce: 0
   spawnOnDeath: {fileID: 0}
+  enemyAnim: {fileID: 0}
 --- !u!1 &2626630487055481916
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 542794083363450082}
   - component: {fileID: 8399609660677520393}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -323,7 +324,7 @@ GameObject:
   - component: {fileID: -4687898568944800627}
   - component: {fileID: 3611161504430885562}
   - component: {fileID: 7784048656797497086}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Mouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,7 +363,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallSpeed: -9.3
   wallDetectRange: 5
-  enemySpeed: 4
+  enemySpeed: 10
+  floorHeight: 0
 --- !u!50 &-4687898568944800627
 Rigidbody2D:
   serializedVersion: 4
@@ -413,7 +415,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 25
-  hurtPrefab: {fileID: 0}
-  diePrefab: {fileID: 0}
+  hurtPrefab: {fileID: 7337934333778476695, guid: 2334a83a5464f0946b2bca07040a4e64, type: 3}
+  diePrefab: {fileID: 7337934333778476695, guid: e2c586fe32a44b448b770e9781794fd0, type: 3}
+  transformPrefab: {fileID: 0}
   enemyAnimator: {fileID: 0}
+  invincible: 0
   frozen: 0
+  destroyAfterSec: 4

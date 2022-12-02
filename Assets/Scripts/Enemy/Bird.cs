@@ -10,9 +10,11 @@ public class Bird : MonoBehaviour
     private float direction = 1.0f;
     float height = 99;
     SpriteRenderer sR;
+    public float distanceTrigger = 25;
+    private GameObject player;
 
     // Start is called before the first frame update
-    
+
     //BIRD DESPAWNING STUFF
     //make bird despawn (destroy function) when off camera
     //make bird despawn when hits platform/player
@@ -21,18 +23,23 @@ public class Bird : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         sR = GetComponent<SpriteRenderer>();
+        player = FindObjectOfType<PlayerMovement>().gameObject;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (GetComponent<EnemyHealth>().frozen <= 0)
+        if (Vector2.Distance(this.transform.position, player.transform.position) < distanceTrigger)
         {
-            Create2DRay();
-            Create2DForwardRay();
+            if (GetComponent<EnemyHealth>().frozen <= 0)
+            {
+                Create2DRay();
+                Create2DForwardRay();
+            }
         }
-        }
-        private void Create2DRay()
+    }
+
+    private void Create2DRay()
     {
         LayerMask mask = LayerMask.GetMask("Ground");
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, height, mask);
@@ -46,6 +53,7 @@ public class Bird : MonoBehaviour
             rb.MovePosition(rb.position + new Vector2(-1, -1) * Time.deltaTime * enemy_speed * direction);
         }
     }
+
     private void Create2DForwardRay()
     {
         LayerMask mask = LayerMask.GetMask("Ground");

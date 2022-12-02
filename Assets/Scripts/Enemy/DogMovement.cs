@@ -10,6 +10,7 @@ public class DogMovement : MonoBehaviour
     public float wallDetectRange = 5;
     public float enemySpeed = 4;
     SpriteRenderer sR;
+    public float floorHeight = 1;
 
 
     void Start()
@@ -35,7 +36,7 @@ public class DogMovement : MonoBehaviour
     private void Create2DRay()
     {
         LayerMask mask = LayerMask.GetMask("Ground");
-        RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(0,1f,0), Vector2.left * direction, wallDetectRange, mask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(0,floorHeight,0), Vector2.left * direction, wallDetectRange, mask);
         if (hit.collider != null)
         {
             direction = direction * -1;

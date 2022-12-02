@@ -21,7 +21,7 @@ public class Health : MonoBehaviour
     public string playerHealth;
     //public Text playerHealthText;
     private GameObject player;
-    bool invincible;
+    public bool invincible;
     [SerializeField] float invincibleFrames;
 
 

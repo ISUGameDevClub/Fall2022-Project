@@ -13,12 +13,17 @@ public class EnemyHealth : MonoBehaviour
     public bool invincible;
     [HideInInspector]
     public float frozen;
+    public float destroyAfterSec = -1;
 
     private int currentHealth;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = health;
+        if(destroyAfterSec != -1)
+        {
+            StartCoroutine(TimedDestroy());
+        }
     }
 
     private void Update()
@@ -55,5 +60,11 @@ public class EnemyHealth : MonoBehaviour
                 enemyAnimator.SetTrigger("Hurt");
             }
         }
+    }
+
+    private IEnumerator TimedDestroy()
+    {
+        yield return new WaitForSeconds(destroyAfterSec);
+        Destroy(gameObject);
     }
 }

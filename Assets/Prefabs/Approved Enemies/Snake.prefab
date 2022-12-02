@@ -191,6 +191,8 @@ MonoBehaviour:
   playerPiercing: 1
   wallPiercing: 1
   knockbackForce: 0
+  spawnOnDeath: {fileID: 0}
+  enemyAnim: {fileID: 0}
 --- !u!1 &6942877241250115061
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,5 +380,8 @@ MonoBehaviour:
   health: 25
   hurtPrefab: {fileID: 7337934333778476695, guid: a26d8a5b053dca0488cf09d00233d2a0, type: 3}
   diePrefab: {fileID: 7337934333778476695, guid: fbcea5123aa8cde4e9d6c95322ff922f, type: 3}
+  transformPrefab: {fileID: 0}
   enemyAnimator: {fileID: 7256706974723691273}
+  invincible: 0
   frozen: 0
+  destroyAfterSec: -1

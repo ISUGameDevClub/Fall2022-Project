@@ -32,7 +32,6 @@ public class BirdAttack : MonoBehaviour
             Instantiate(birdeggPrefab, transform.position, Quaternion.identity);
             CanShoot = false;
             StartCoroutine(AttackWait(1f));
-            Debug.Log("Fired");
         }
     }
 
