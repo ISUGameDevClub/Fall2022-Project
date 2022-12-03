@@ -18010,17 +18010,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 571282651, guid: abf1ab26ae9391349a69765b24961bad, type: 3}
-      propertyPath: health
-      value: 300
-      objectReference: {fileID: 0}
     - target: {fileID: 3208615648235958279, guid: abf1ab26ae9391349a69765b24961bad, type: 3}
       propertyPath: floorHeight
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3208615648235958279, guid: abf1ab26ae9391349a69765b24961bad, type: 3}
-      propertyPath: wallDetectRange
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6380856491326547307, guid: abf1ab26ae9391349a69765b24961bad, type: 3}
       propertyPath: m_Name
