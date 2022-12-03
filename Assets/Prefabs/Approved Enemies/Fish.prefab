@@ -156,8 +156,11 @@ MonoBehaviour:
   health: 50
   hurtPrefab: {fileID: 7337934333778476695, guid: a26d8a5b053dca0488cf09d00233d2a0, type: 3}
   diePrefab: {fileID: 7337934333778476695, guid: 440eacae6cf93bb4796a19247ae31556, type: 3}
+  transformPrefab: {fileID: 0}
   enemyAnimator: {fileID: 3470612490663334739}
+  invincible: 0
   frozen: 0
+  destroyAfterSec: -1
 --- !u!114 &3485903284388114306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,7 +176,7 @@ MonoBehaviour:
   shootPrefab: {fileID: 7337934333778476695, guid: d78915da603343d44b2f1ce80d3291e5, type: 3}
   fishprojectilePrefab: {fileID: 2688712039996539345, guid: cf116e941c815ff47ba00b1b4cec8a91, type: 3}
   facingRight: 0
-  activateDistance: 18
+  activateDistance: 17
   attackCooldown: 2.25
 --- !u!70 &8022032699547102493
 CapsuleCollider2D:
@@ -255,3 +258,5 @@ MonoBehaviour:
   playerPiercing: 1
   wallPiercing: 1
   knockbackForce: 0
+  spawnOnDeath: {fileID: 0}
+  enemyAnim: {fileID: 0}

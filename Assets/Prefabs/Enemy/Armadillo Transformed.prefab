@@ -243,11 +243,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 500
   hurtPrefab: {fileID: 7337934333778476695, guid: a26d8a5b053dca0488cf09d00233d2a0, type: 3}
-  diePrefab: {fileID: 0}
+  diePrefab: {fileID: 7337934333778476695, guid: e2c586fe32a44b448b770e9781794fd0, type: 3}
   transformPrefab: {fileID: 0}
   enemyAnimator: {fileID: 9153249046204736725}
   invincible: 0
   frozen: 0
+  destroyAfterSec: -1
 --- !u!70 &5557364937231022132
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

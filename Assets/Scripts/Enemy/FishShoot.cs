@@ -39,13 +39,13 @@ public class FishShoot : MonoBehaviour
     {
         while(waitTime > 0)
         {
+            yield return new WaitForSeconds(waitTime);
             if (GetComponent<EnemyHealth>().frozen <= 0)
             {
                 GameObject tempBul = Instantiate(fishprojectilePrefab, transform.position, Quaternion.identity);
                 Instantiate(shootPrefab, transform.position, Quaternion.identity);
                 tempBul.GetComponent<FishProjectileMove>().right = facingRight;
             }
-            yield return new WaitForSeconds(waitTime);
         }
     }
 }

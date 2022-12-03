@@ -27,7 +27,8 @@ public class Armadillo : MonoBehaviour
 
     private void Start()
     {
-        canAttack = true;
+        canAttack = false;
+        StartCoroutine(AttackWait());
         sR = GetComponentInChildren<SpriteRenderer>();
         enAnim = GetComponent<Animator>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;

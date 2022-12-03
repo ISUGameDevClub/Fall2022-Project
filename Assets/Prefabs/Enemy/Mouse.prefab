@@ -362,7 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallSpeed: -9.3
-  wallDetectRange: 5
+  wallDetectRange: 1
   enemySpeed: 10
   floorHeight: 0
 --- !u!50 &-4687898568944800627

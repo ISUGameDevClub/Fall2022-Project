@@ -194,6 +194,7 @@ MonoBehaviour:
   wallPiercing: 0
   knockbackForce: 0
   spawnOnDeath: {fileID: 0}
+  enemyAnim: {fileID: 0}
 --- !u!50 &783401641339129376
 Rigidbody2D:
   serializedVersion: 4
@@ -243,7 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c8eb66702ef020409d7786192f70ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: 30
+  movement: 20
   despawnTime: 1
   bounces: 0
   homing: 0

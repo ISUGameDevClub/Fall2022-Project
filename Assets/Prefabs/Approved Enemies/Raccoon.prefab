@@ -49,6 +49,7 @@ MonoBehaviour:
   wallPiercing: 1
   knockbackForce: 0
   spawnOnDeath: {fileID: 0}
+  enemyAnim: {fileID: 0}
 --- !u!61 &2269382300237783298
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -125,8 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc7f540fbc411504d9915d10c981fbe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activateDistance: 10
-  attackCooldown: 1
+  activateDistance: 17
   proj: {fileID: 1260506417258750844, guid: d2e4b7e3fc8bb8746884581fa9867d2d, type: 3}
 --- !u!50 &8107007925092239315
 Rigidbody2D:
@@ -190,9 +190,11 @@ MonoBehaviour:
   health: 100
   hurtPrefab: {fileID: 0}
   diePrefab: {fileID: 0}
+  transformPrefab: {fileID: 0}
   enemyAnimator: {fileID: 845987132678510824}
   invincible: 0
   frozen: 0
+  destroyAfterSec: -1
 --- !u!212 &4803977620770143708
 SpriteRenderer:
   m_ObjectHideFlags: 0

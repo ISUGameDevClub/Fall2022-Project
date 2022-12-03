@@ -213,7 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishprojectilePrefab: {fileID: 2688712039996539345, guid: 1781a152d529ed44db20506dffbd447c, type: 3}
   facingRight: 0
-  activateDistance: 15
+  activateDistance: 17
   attackCooldown: 3
 --- !u!1 &8625857852996117114
 GameObject:

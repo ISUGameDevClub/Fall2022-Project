@@ -5073,8 +5073,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyToSpawn: {fileID: 8849550592737582892, guid: 720fdad585fced64899df4c431268e4e, type: 3}
-  distanceTrigger: 15
+  distanceTrigger: 17
   spawnWaitTime: 2
+  facingRight: 0
 --- !u!114 &790751103814953550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5090,6 +5091,11 @@ MonoBehaviour:
   health: 100
   hurtPrefab: {fileID: 7337934333778476695, guid: a26d8a5b053dca0488cf09d00233d2a0, type: 3}
   diePrefab: {fileID: 7337934333778476695, guid: fbcea5123aa8cde4e9d6c95322ff922f, type: 3}
+  transformPrefab: {fileID: 0}
+  enemyAnimator: {fileID: 0}
+  invincible: 0
+  frozen: 0
+  destroyAfterSec: -1
 --- !u!82 &3033305848734920301
 AudioSource:
   m_ObjectHideFlags: 0
