@@ -25,7 +25,7 @@ public class FishShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GetComponent<EnemyHealth>().frozen <= 0)
+        if (GetComponent<EnemyHealth>().frozen <= 0 && playerTransform != null)
         {
             if (Vector2.Distance(this.transform.position, playerTransform.position) < activateDistance && !isShooting)
             {
