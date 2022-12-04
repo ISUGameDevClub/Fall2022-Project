@@ -29,7 +29,7 @@ public class Bird : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Vector2.Distance(this.transform.position, player.transform.position) < distanceTrigger)
+        if (player != null && Vector2.Distance(this.transform.position, player.transform.position) < distanceTrigger)
         {
             if (GetComponent<EnemyHealth>().frozen <= 0)
             {

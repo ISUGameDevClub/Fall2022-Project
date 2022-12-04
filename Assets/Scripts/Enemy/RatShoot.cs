@@ -29,7 +29,7 @@ public class RatShoot : MonoBehaviour
     void Update()
     {
 
-        if (Vector2.Distance(this.transform.position, playerTransform.position) < activateDistance && !isShooting)
+        if (playerTransform != null && Vector2.Distance(this.transform.position, playerTransform.position) < activateDistance && !isShooting)
         {
             isShooting = true;
             StartCoroutine(AttackWait(attackCooldown));

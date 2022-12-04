@@ -27,7 +27,7 @@ public class BoxSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(Vector2.Distance(this.transform.position, player.transform.position) < distanceTrigger && !isSpawning)
+       if(player != null && Vector2.Distance(this.transform.position, player.transform.position) < distanceTrigger && !isSpawning)
        {
             isSpawning = true;
             StartCoroutine(SpawnEnemies(spawnWaitTime));

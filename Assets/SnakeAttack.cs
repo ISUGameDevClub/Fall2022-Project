@@ -33,7 +33,7 @@ public class SnakeAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Vector2.Distance(this.transform.position, playerTransform.position) < activateDistance)
+        if(playerTransform != null && Vector2.Distance(this.transform.position, playerTransform.position) < activateDistance)
         {
             if (!snakeOut)
             {

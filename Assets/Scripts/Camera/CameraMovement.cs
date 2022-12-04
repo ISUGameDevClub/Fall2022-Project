@@ -49,32 +49,34 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //cameras current pos
-        Vector3 startPos = transform.position;
-        //cameras current pos
-        Vector3 endPos = player.transform.position;
-        
-        endPos.x += posOffset.x;
-        endPos.y += posOffset.y;
-        endPos.z = -1;
-        if (player.transform.position.x + posOffset.x < transform.position.x)
+        if (player != null)
         {
-       //     endPos.x = transform.position.x;
+            //cameras current pos
+            Vector3 startPos = transform.position;
+            //cameras current pos
+            Vector3 endPos = player.transform.position;
+
+            endPos.x += posOffset.x;
+            endPos.y += posOffset.y;
+            endPos.z = -1;
+            if (player.transform.position.x + posOffset.x < transform.position.x)
+            {
+                //     endPos.x = transform.position.x;
+            }
+            if (endPos.x <= minX)
+                endPos.x = minX;
+
+            if (endPos.x >= maxX)
+                endPos.x = maxX;
+
+
+            if (endPos.y <= minY)
+                endPos.y = minY;
+
+            if (endPos.y >= maxY)
+                endPos.y = maxY;
+
+            transform.position = Vector3.Lerp(startPos, endPos, cameraSpeed * Time.deltaTime);
         }
-        if (endPos.x <= minX)
-            endPos.x = minX;
-
-        if (endPos.x >= maxX)
-            endPos.x = maxX;
-
-
-        if (endPos.y <= minY)
-            endPos.y = minY;
-
-        if (endPos.y >= maxY)
-            endPos.y = maxY;
-       
-        transform.position = Vector3.Lerp(startPos, endPos, cameraSpeed * Time.deltaTime);
-
     }
 }

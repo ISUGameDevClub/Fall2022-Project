@@ -30,7 +30,7 @@ public class Raccoon : MonoBehaviour
     }
     private void Update()
     {
-        if (GetComponent<EnemyHealth>().frozen <= 0)
+        if (GetComponent<EnemyHealth>().frozen <= 0 && playerTransform != null)
         {
             if (Vector2.Distance(this.transform.position, playerTransform.position) < activateDistance)
             {
@@ -41,11 +41,11 @@ public class Raccoon : MonoBehaviour
                 enAnim.SetBool("Attack", false);
             }
         }
-        if (playerTransform.position.x > transform.position.x)
+        if (playerTransform != null && playerTransform.position.x > transform.position.x)
         {
             isFlipped = true;
             sR.flipX = isFlipped;
-        }else
+        }else if(playerTransform != null)
         {
             isFlipped = false;
             sR.flipX = isFlipped;
