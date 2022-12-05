@@ -10,6 +10,7 @@ public class Aiming : MonoBehaviour
     int currentAim;
     [HideInInspector]
     public Vector2 aimDirection;
+    public Health health;
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +24,31 @@ public class Aiming : MonoBehaviour
         float horz = Input.GetAxisRaw("Horizontal");
         if (Time.timeScale != 0)
         {
+            int weaponType;
+
+            if (health.playerHealth.Equals("") || health.playerHealth.Equals("bouncer") || health.playerHealth.Equals("juggernaut") || health.playerHealth.Equals("glitchgun"))
+            {
+                weaponType = 0;
+            }
+            else if(health.playerHealth.Equals("windbreaker") || health.playerHealth.Equals("chillout") || health.playerHealth.Equals("yarnwhip"))
+            {
+                weaponType = 1;
+            }
+            else
+            {
+                weaponType = 2;
+            }
+
             if (vert > 0 && horz == 0)
             {
                 //shoot up
                 currentAim = 0;
-                transform.localPosition = aimPositions[currentAim].transform.localPosition;
+                if(weaponType == 0)
+                    transform.localPosition = aimPositions[0].transform.localPosition;
+                else if(weaponType == 1)
+                    transform.localPosition = aimPositions[5].transform.localPosition;
+                else
+                    transform.localPosition = aimPositions[8].transform.localPosition;
                 aimDirection = Vector2.up;
             }
             else if (vert == 0 && horz > 0)
@@ -35,7 +56,12 @@ public class Aiming : MonoBehaviour
                 //shoot right
 
                 currentAim = 2;
-                transform.localPosition = aimPositions[currentAim].transform.localPosition;
+                if (weaponType == 0)
+                    transform.localPosition = aimPositions[2].transform.localPosition;
+                else if (weaponType == 1)
+                    transform.localPosition = aimPositions[6].transform.localPosition;
+                else
+                    transform.localPosition = aimPositions[8].transform.localPosition;
                 aimDirection = Vector2.right;
             }
             else if (vert == 0 && horz < 0)
@@ -43,7 +69,12 @@ public class Aiming : MonoBehaviour
                 //shoot left
 
                 currentAim = 2;
-                transform.localPosition = aimPositions[currentAim].transform.localPosition;
+                if (weaponType == 0)
+                    transform.localPosition = aimPositions[2].transform.localPosition;
+                else if (weaponType == 1)
+                    transform.localPosition = aimPositions[6].transform.localPosition;
+                else
+                    transform.localPosition = aimPositions[8].transform.localPosition;
                 aimDirection = Vector2.left;
             }
             else if (vert < 0 && horz == 0)
@@ -51,7 +82,12 @@ public class Aiming : MonoBehaviour
                 //shoot down
 
                 currentAim = 4;
-                transform.localPosition = aimPositions[currentAim].transform.localPosition;
+                if (weaponType == 0)
+                    transform.localPosition = aimPositions[4].transform.localPosition;
+                else if (weaponType == 1)
+                    transform.localPosition = aimPositions[7].transform.localPosition;
+                else
+                    transform.localPosition = aimPositions[9].transform.localPosition;
                 aimDirection = Vector2.down;
             }
             else if (vert > 0 && horz > 0)
@@ -59,7 +95,12 @@ public class Aiming : MonoBehaviour
                 //shoot top right
 
                 currentAim = 1;
-                transform.localPosition = aimPositions[currentAim].transform.localPosition;
+                if (weaponType == 0)
+                    transform.localPosition = aimPositions[1].transform.localPosition;
+                else if (weaponType == 1)
+                    transform.localPosition = aimPositions[5].transform.localPosition;
+                else
+                    transform.localPosition = aimPositions[8].transform.localPosition;
                 aimDirection = new Vector2(1, 1).normalized;
             }
             else if (vert > 0 && horz < 0)
@@ -67,21 +108,36 @@ public class Aiming : MonoBehaviour
                 //shoot top left
 
                 currentAim = 1;
-                transform.localPosition = aimPositions[currentAim].transform.localPosition;
+                if (weaponType == 0)
+                    transform.localPosition = aimPositions[1].transform.localPosition;
+                else if (weaponType == 1)
+                    transform.localPosition = aimPositions[5].transform.localPosition;
+                else
+                    transform.localPosition = aimPositions[8].transform.localPosition;
                 aimDirection = new Vector2(-1, 1).normalized;
             }
             else if (vert < 0 && horz > 0)
             {
                 //shoot bottom right
                 currentAim = 3;
-                transform.localPosition = aimPositions[currentAim].transform.localPosition;
+                if (weaponType == 0)
+                    transform.localPosition = aimPositions[3].transform.localPosition;
+                else if (weaponType == 1)
+                    transform.localPosition = aimPositions[7].transform.localPosition;
+                else
+                    transform.localPosition = aimPositions[9].transform.localPosition;
                 aimDirection = new Vector2(1, -1).normalized;
             }
             else if (vert < 0 && horz < 0)
             {
                 //shoot bottom left
                 currentAim = 3;
-                transform.localPosition = aimPositions[currentAim].transform.localPosition;
+                if (weaponType == 0)
+                    transform.localPosition = aimPositions[3].transform.localPosition;
+                else if (weaponType == 1)
+                    transform.localPosition = aimPositions[7].transform.localPosition;
+                else
+                    transform.localPosition = aimPositions[9].transform.localPosition;
                 aimDirection = new Vector2(-1, -1).normalized;
             }
             else if (vert == 0 && horz == 0)
@@ -91,7 +147,12 @@ public class Aiming : MonoBehaviour
                     //shoot right
 
                     currentAim = 2;
-                    transform.localPosition = aimPositions[currentAim].transform.localPosition;
+                    if (weaponType == 0)
+                        transform.localPosition = aimPositions[2].transform.localPosition;
+                    else if (weaponType == 1)
+                        transform.localPosition = aimPositions[6].transform.localPosition;
+                    else
+                        transform.localPosition = aimPositions[8].transform.localPosition;
                     aimDirection = Vector2.right;
                 }
                 else
@@ -99,7 +160,12 @@ public class Aiming : MonoBehaviour
                     //shoot left
 
                     currentAim = 2;
-                    transform.localPosition = aimPositions[currentAim].transform.localPosition;
+                    if (weaponType == 0)
+                        transform.localPosition = aimPositions[2].transform.localPosition;
+                    else if (weaponType == 1)
+                        transform.localPosition = aimPositions[6].transform.localPosition;
+                    else
+                        transform.localPosition = aimPositions[8].transform.localPosition;
                     aimDirection = Vector2.left;
                 }
             }
