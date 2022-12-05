@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2629259759836794067, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1956938547, guid: 77e00c04e27c50b429e651e4c2ab51f7, type: 3}
     - target: {fileID: 8618745532429111452, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
       propertyPath: m_Name
       value: Glitchgun Hat Variant

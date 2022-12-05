@@ -33,7 +33,7 @@ public class ItemPickup: MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Health>() != null) 
         {
-            collision.gameObject.GetComponent<Health>().gainHealth(pickupType);
+            collision.gameObject.GetComponent<Health>().gainHealth(pickupType,GetComponentInChildren<SpriteRenderer>().sprite);
             PickMeUp(); 
         }
     }

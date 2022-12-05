@@ -8,6 +8,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] GameObject[] bulletPrefab;
     [SerializeField] GameObject[] shootSounds;
     Health playerHP;
+    [SerializeField] Animator playerUpper;
     private bool canShootNow;
     private bool specialCanShootNow;
 
@@ -15,6 +16,7 @@ public class Shoot : MonoBehaviour
     void Start()
     {
         playerHP = transform.parent.GetComponent<Health>();
+
         canShootNow = true;
         specialCanShootNow = true;
     }
@@ -82,6 +84,18 @@ public class Shoot : MonoBehaviour
             //spawn bullet here
             if (bulletPrefab[bulletToSpawn] != null)
             {
+                if (bulletToSpawn < 3)
+                {
+                    AttackAnimation(GetComponent<Aiming>().GetCurrentAim(), "revolver");
+                }
+                else if (bulletToSpawn > 6)
+                {
+                    AttackAnimation(GetComponent<Aiming>().GetCurrentAim(), "grenade");
+                }
+                else
+                {
+                    AttackAnimation(GetComponent<Aiming>().GetCurrentAim(), "whip");
+                }
                 GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], position, Quaternion.identity);
                 bullet.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
 
@@ -157,6 +171,18 @@ public class Shoot : MonoBehaviour
 
             if (bulletPrefab[bulletToSpawn] != null)
             {
+                if (bulletToSpawn < 14)
+                {
+                    AttackAnimation(GetComponent<Aiming>().GetCurrentAim(), "revolver");
+                }
+                else if (bulletToSpawn > 16)
+                {
+                    AttackAnimation(GetComponent<Aiming>().GetCurrentAim(), "grenade");
+                }
+                else
+                {
+                    AttackAnimation(GetComponent<Aiming>().GetCurrentAim(), "whip");
+                }
                 //spawn bullet here
                 GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], transform.position, Quaternion.identity);
                 bullet.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
@@ -165,8 +191,86 @@ public class Shoot : MonoBehaviour
                 StartCoroutine(specialShotDelay(bullet.GetComponent<Attack>().attackCooldown));
             }
         }
-    }
 
+    }
+    void AttackAnimation(int direction,string attackType)
+    {
+        if(direction == 0)
+        {
+            if (attackType.Equals("revolver"))
+            {
+                playerUpper.SetTrigger("ShootUp");
+            }
+            if (attackType.Equals("whip"))
+            {
+                playerUpper.SetTrigger("WhipUpRight");
+            }
+            if (attackType.Equals("grenade"))
+            {
+                playerUpper.SetTrigger("ThrowOver");
+            }
+        }
+        else if(direction == 1)
+        {
+            if (attackType.Equals("revolver"))
+            {
+                playerUpper.SetTrigger("ShootUpRight");
+            }
+            if (attackType.Equals("whip"))
+            {
+                playerUpper.SetTrigger("WhipUpRight");
+            }
+            if (attackType.Equals("grenade"))
+            {
+                playerUpper.SetTrigger("ThrowOver");
+            }
+        }
+        else if (direction == 2)
+        {
+            if (attackType.Equals("revolver"))
+            {
+                playerUpper.SetTrigger("ShootRight");
+            }
+            if (attackType.Equals("whip"))
+            {
+                playerUpper.SetTrigger("WhipRight");
+            }
+            if (attackType.Equals("grenade"))
+            {
+                playerUpper.SetTrigger("ThrowOver");
+            }
+        }
+        else if (direction == 3)
+        {
+            if (attackType.Equals("revolver"))
+            {
+                playerUpper.SetTrigger("ShootDownRight");
+            }
+            if (attackType.Equals("whip"))
+            {
+                playerUpper.SetTrigger("WhipDownRight");
+            }
+            if (attackType.Equals("grenade"))
+            {
+                playerUpper.SetTrigger("ThrowUnder");
+            }
+        }
+        else if (direction == 4)
+        {
+            if (attackType.Equals("revolver"))
+            {
+                playerUpper.SetTrigger("ShootDown");
+            }
+            if (attackType.Equals("whip"))
+            {
+                playerUpper.SetTrigger("WhipDownRight");
+            }
+            if (attackType.Equals("grenade"))
+            {
+                playerUpper.SetTrigger("ThrowUnder");
+            }
+        }
+    }
     private IEnumerator BouncerShots(int bulletToSpawn)
     {
         yield return new WaitForSeconds(.1f);

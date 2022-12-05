@@ -43,10 +43,11 @@ public class Health : MonoBehaviour
     }
 
     //simple Health Gain method
-    public void gainHealth(string powerup)
+    public void gainHealth(string powerup,Sprite sprite)
     {
         Instantiate(powerUpPrefab, transform.position, Quaternion.identity);
         playerHealth = powerup;
+        hatSprite.sprite = sprite;
         hatSprite.enabled = true;
         PowerupPause();
         topSprite.SetTrigger("Power");

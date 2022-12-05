@@ -275,7 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 300
   hurtPrefab: {fileID: 7337934333778476695, guid: a26d8a5b053dca0488cf09d00233d2a0, type: 3}
-  diePrefab: {fileID: 7337934333778476695, guid: e2c586fe32a44b448b770e9781794fd0, type: 3}
+  diePrefab: {fileID: 7337934333778476695, guid: a25405791f70b964d955be9e3c31d573, type: 3}
   transformPrefab: {fileID: 7037511374688973649, guid: 1b5de640471f3464ea47a3366a204ce2, type: 3}
   enemyAnimator: {fileID: 5053540047894065903}
   invincible: 0

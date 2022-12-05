@@ -7,7 +7,7 @@ public class Aiming : MonoBehaviour
 {
     public GameObject[] aimPositions;
     [SerializeField] SpriteRenderer torsoSprite;
-
+    int currentAim;
     [HideInInspector]
     public Vector2 aimDirection;
 
@@ -26,50 +26,62 @@ public class Aiming : MonoBehaviour
             if (vert > 0 && horz == 0)
             {
                 //shoot up
-                transform.localPosition = aimPositions[0].transform.localPosition;
+                currentAim = 0;
+                transform.localPosition = aimPositions[currentAim].transform.localPosition;
                 aimDirection = Vector2.up;
             }
             else if (vert == 0 && horz > 0)
             {
                 //shoot right
-                transform.localPosition = aimPositions[2].transform.localPosition;
+
+                currentAim = 2;
+                transform.localPosition = aimPositions[currentAim].transform.localPosition;
                 aimDirection = Vector2.right;
             }
             else if (vert == 0 && horz < 0)
             {
                 //shoot left
-                transform.localPosition = aimPositions[2].transform.localPosition;
+
+                currentAim = 2;
+                transform.localPosition = aimPositions[currentAim].transform.localPosition;
                 aimDirection = Vector2.left;
             }
             else if (vert < 0 && horz == 0)
             {
                 //shoot down
 
-                transform.localPosition = aimPositions[4].transform.localPosition;
+                currentAim = 4;
+                transform.localPosition = aimPositions[currentAim].transform.localPosition;
                 aimDirection = Vector2.down;
             }
             else if (vert > 0 && horz > 0)
             {
                 //shoot top right
-                transform.localPosition = aimPositions[1].transform.localPosition;
+
+                currentAim = 1;
+                transform.localPosition = aimPositions[currentAim].transform.localPosition;
                 aimDirection = new Vector2(1, 1).normalized;
             }
             else if (vert > 0 && horz < 0)
             {
                 //shoot top left
-                transform.localPosition = aimPositions[1].transform.localPosition;
+
+                currentAim = 1;
+                transform.localPosition = aimPositions[currentAim].transform.localPosition;
                 aimDirection = new Vector2(-1, 1).normalized;
             }
             else if (vert < 0 && horz > 0)
             {
                 //shoot bottom right
-                transform.localPosition = aimPositions[3].transform.localPosition;
+                currentAim = 3;
+                transform.localPosition = aimPositions[currentAim].transform.localPosition;
                 aimDirection = new Vector2(1, -1).normalized;
             }
             else if (vert < 0 && horz < 0)
             {
                 //shoot bottom left
-                transform.localPosition = aimPositions[3].transform.localPosition;
+                currentAim = 3;
+                transform.localPosition = aimPositions[currentAim].transform.localPosition;
                 aimDirection = new Vector2(-1, -1).normalized;
             }
             else if (vert == 0 && horz == 0)
@@ -77,13 +89,17 @@ public class Aiming : MonoBehaviour
                 if (GetComponentInParent<PlayerMovement>(false).getFlipped() == true)
                 {
                     //shoot right
-                    transform.localPosition = aimPositions[2].transform.localPosition;
+
+                    currentAim = 2;
+                    transform.localPosition = aimPositions[currentAim].transform.localPosition;
                     aimDirection = Vector2.right;
                 }
                 else
                 {
                     //shoot left
-                    transform.localPosition = aimPositions[2].transform.localPosition;
+
+                    currentAim = 2;
+                    transform.localPosition = aimPositions[currentAim].transform.localPosition;
                     aimDirection = Vector2.left;
                 }
             }
@@ -92,5 +108,9 @@ public class Aiming : MonoBehaviour
         {
             transform.localPosition = new Vector2(-transform.localPosition.x, transform.localPosition.y);
         }
+    }
+    public int GetCurrentAim()
+    {
+        return currentAim;
     }
 }
