@@ -41,7 +41,6 @@ public class EnemyHealth : MonoBehaviour
     {
         if(!invincible)
         {
-            Debug.Log("HIT");
             currentHealth -= dmg;
             if (currentHealth <= 0 && diePrefab != null)
             {
