@@ -84,7 +84,7 @@ public class Shoot : MonoBehaviour
             //spawn bullet here
             if (bulletPrefab[bulletToSpawn] != null)
             {
-                if (bulletToSpawn < 3)
+                if (bulletToSpawn < 4)
                 {
                     AttackAnimation(GetComponent<Aiming>().GetCurrentAim(), "revolver");
                 }
@@ -191,6 +191,11 @@ public class Shoot : MonoBehaviour
                 StartCoroutine(specialShotDelay(bullet.GetComponent<Attack>().attackCooldown));
             }
         }
+        else if (Input.GetMouseButtonDown(1) && Time.timeScale != 0)
+        {
+
+        }
+        
 
     }
     void AttackAnimation(int direction,string attackType)
