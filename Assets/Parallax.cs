@@ -8,6 +8,7 @@ public class Parallax : MonoBehaviour
     private Transform cameraTransform;
     private Vector3 lastCameraPosition;
     private float textureUnitSizeX;
+    public float autoPar;
     private void Start()
     {
         cameraTransform = Camera.main.transform;
@@ -22,14 +23,15 @@ public class Parallax : MonoBehaviour
     }
     private void LateUpdate()
     {
-        Vector3 deltaMovement = cameraTransform.position - lastCameraPosition;
+        Vector3 autoParVec3 = new Vector3(autoPar * Time.time, 0, 0);
+        Vector3 deltaMovement = (autoParVec3 + cameraTransform.position) - lastCameraPosition;
         transform.position += new Vector3(deltaMovement.x * speed.x, deltaMovement.y * speed.y, 0);
-        lastCameraPosition = cameraTransform.position;
+        lastCameraPosition = (autoParVec3 + cameraTransform.position);
 
-        if(Mathf.Abs(cameraTransform.position.x - transform.position.x) >= textureUnitSizeX)
+        if(Mathf.Abs((autoParVec3.x + cameraTransform.position.x) - transform.position.x) >= textureUnitSizeX)
         {
-            float offsetPositionX = (cameraTransform.position.x - transform.position.x) % textureUnitSizeX;
-            transform.position = new Vector3(cameraTransform.position.x + offsetPositionX, transform.position.y);
+            float offsetPositionX = ((autoParVec3.x + cameraTransform.position.x) - transform.position.x) % textureUnitSizeX;
+            transform.position = new Vector3((autoParVec3.x + cameraTransform.position.x) + offsetPositionX, transform.position.y);
         }
     }
 }
