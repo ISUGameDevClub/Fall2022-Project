@@ -187,7 +187,7 @@ public class Shoot : MonoBehaviour
                 GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], transform.position, Quaternion.identity);
                 bullet.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
 
-                //Instantiate(shootSounds[bulletToSpawn], transform.position, Quaternion.identity);
+                Instantiate(shootSounds[bulletToSpawn], transform.position, Quaternion.identity);
                 StartCoroutine(specialShotDelay(bullet.GetComponent<Attack>().attackCooldown));
             }
         }

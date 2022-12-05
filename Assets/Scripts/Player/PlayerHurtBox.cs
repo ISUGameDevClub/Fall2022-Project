@@ -23,6 +23,7 @@ public class PlayerHurtBox : MonoBehaviour
 
             if(freezes > 0)
             {
+                //add freeze sound @cody
                 Icecube ic = Instantiate(freeze).GetComponent<Icecube>();
                 ic.eh = collision.gameObject.GetComponent<EnemyHealth>();
                 collision.gameObject.GetComponent<EnemyHealth>().frozen += freezes;
