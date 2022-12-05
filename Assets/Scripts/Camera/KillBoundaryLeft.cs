@@ -26,7 +26,6 @@ public class KillBoundaryLeft : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("Enemy Kill!");
             Destroy(collision.gameObject.transform.parent.gameObject);
             Destroy(collision.gameObject);
         }

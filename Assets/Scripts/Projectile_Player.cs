@@ -33,9 +33,11 @@ public class Projectile_Player : MonoBehaviour
 
         if (startOutwards)
         {
-            startPos = transform.position;
-            //transform.position = startPos + ((GetComponent<SpriteRenderer>().size.x / 2) * atk.moveDirection);
-            //transform.right = (Vector2)transform.position - startPos;
+            startPos = transform.localPosition;
+            transform.localPosition = startPos + ((GetComponent<SpriteRenderer>().size.x / 2) * atk.moveDirection);
+            transform.right = (Vector2)transform.localPosition - startPos;
+            transform.localPosition = (Vector2)transform.position + new Vector2(0, .25f);
+            transform.parent = FindObjectOfType<PlayerMovement>().gameObject.transform;
         }
         else if(startInwards)
         {
@@ -101,11 +103,14 @@ public class Projectile_Player : MonoBehaviour
             }
         }
 
-        Vector2 vertLaunch = new Vector2(0, verticalLaunch);
-        if (drops)
-            verticalLaunch -= gradualVerticalDrop * Time.fixedDeltaTime;
+        if (movement != 0)
+        {
+            Vector2 vertLaunch = new Vector2(0, verticalLaunch);
+            if (drops)
+                verticalLaunch -= gradualVerticalDrop * Time.fixedDeltaTime;
 
-        rb.MovePosition((Vector2)transform.position + vertLaunch + movement * atk.moveDirection.normalized * Time.deltaTime);
+            rb.MovePosition((Vector2)transform.position + vertLaunch + movement * atk.moveDirection.normalized * Time.deltaTime);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
