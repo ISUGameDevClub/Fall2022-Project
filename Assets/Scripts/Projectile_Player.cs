@@ -23,6 +23,7 @@ public class Projectile_Player : MonoBehaviour
     private Rigidbody2D rb;
     private Attack atk;
     private GameObject closestEnemy;
+    private Vector2 startPos;
 
     // Start is called before the first frame update
     void Start()
@@ -32,8 +33,9 @@ public class Projectile_Player : MonoBehaviour
 
         if (startOutwards)
         {
-            transform.position = (Vector2)FindObjectOfType<PlayerMovement>().gameObject.transform.position + ((GetComponent<SpriteRenderer>().size.x / 2) * atk.moveDirection);
-            transform.right = (Vector2)transform.position - (Vector2)FindObjectOfType<PlayerMovement>().gameObject.transform.position;
+            startPos = transform.position;
+            transform.position = startPos + ((GetComponent<SpriteRenderer>().size.x / 2) * atk.moveDirection);
+            transform.right = (Vector2)transform.position - startPos;
         }
         else if(startInwards)
         {
