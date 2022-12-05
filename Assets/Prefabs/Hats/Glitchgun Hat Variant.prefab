@@ -7,10 +7,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 21894245, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2629259759836794067, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1956938547, guid: 77e00c04e27c50b429e651e4c2ab51f7, type: 3}
+      objectReference: {fileID: 653490011, guid: e331c3ae10a198946beea27b8f830e30, type: 3}
+    - target: {fileID: 7923541872255832392, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7923541872255832392, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7923541872255832392, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.499
+      objectReference: {fileID: 0}
     - target: {fileID: 8618745532429111452, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
       propertyPath: m_Name
       value: Glitchgun Hat Variant
@@ -20,12 +36,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8618745532429111454, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618745532429111454, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618745532429111454, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.34
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8618745532429111454, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 25.08
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8618745532429111454, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
       propertyPath: m_LocalPosition.z

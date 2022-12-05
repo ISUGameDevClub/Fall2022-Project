@@ -34,8 +34,8 @@ public class Projectile_Player : MonoBehaviour
         if (startOutwards)
         {
             startPos = transform.position;
-            transform.position = startPos + ((GetComponent<SpriteRenderer>().size.x / 2) * atk.moveDirection);
-            transform.right = (Vector2)transform.position - startPos;
+            //transform.position = startPos + ((GetComponent<SpriteRenderer>().size.x / 2) * atk.moveDirection);
+            //transform.right = (Vector2)transform.position - startPos;
         }
         else if(startInwards)
         {
