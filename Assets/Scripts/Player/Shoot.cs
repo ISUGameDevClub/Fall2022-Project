@@ -106,7 +106,7 @@ public class Shoot : MonoBehaviour
         }
 
         //Right Click
-        if (Input.GetMouseButton(1) && specialCanShootNow == true && Time.timeScale != 0)
+        if (Input.GetMouseButton(1) && specialCanShootNow == true && Time.timeScale != 0 && !playerHP.playerHealth.Equals(""))
         {
             specialCanShootNow = false;
             int bulletToSpawn = 10;

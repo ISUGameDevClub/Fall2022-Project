@@ -6,6 +6,7 @@ public class PauseMenu : MonoBehaviour
 {
     public bool isPaused;
     public GameObject pauseMenu;
+    public AudioClip titleMusic;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,11 @@ public class PauseMenu : MonoBehaviour
 
     public void ReturnToTitle(string titleName)
     {
+        UnpauseGame();
+        if(FindObjectOfType<Music>() != null)
+        {
+            FindObjectOfType<Music>().ChangeSong(titleMusic);
+        }
         FindObjectOfType<SceneTransition>().ChangeScene(titleName);        
     }
 }

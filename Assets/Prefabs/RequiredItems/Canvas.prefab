@@ -296,6 +296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPaused: 0
   pauseMenu: {fileID: 2853670771067049101}
+  titleMusic: {fileID: 8300000, guid: 1d63d55f6a009004f9af45aa7e6074eb, type: 3}
 --- !u!1 &2853670771067049101
 GameObject:
   m_ObjectHideFlags: 0

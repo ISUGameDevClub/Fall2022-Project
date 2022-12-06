@@ -6,21 +6,39 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Levels Approved/0. Title.unity
+    guid: 6f7e1b94922b744cd816e3058bfe52f2
+  - enabled: 1
     path: Assets/Scenes/Levels Approved/1. David.unity
     guid: 4d123ff163539284ea59e9a609cb6c6c
   - enabled: 1
-    path: Assets/Scenes/Levels Approved/2. Kyle.unity
+    path: Assets/Scenes/Levels Approved/6. Kyle.unity
     guid: 4aa031e219cad09408b11c0ab4ca0e72
   - enabled: 1
-    path: Assets/Scenes/Levels Approved/3.Jamison.unity
+    path: Assets/Scenes/Levels Approved/3. Jamison.unity
     guid: 69c4b5abde052af40b59f032a5c748b6
   - enabled: 1
-    path: Assets/Scenes/Levels Approved/4. Nick.unity
+    path: Assets/Scenes/Levels Approved/5. Nick.unity
     guid: 842cce9336215a7469ad52b922cc4542
   - enabled: 1
-    path: Assets/Prefabs/Depreciated Assets/5. DemoEnd.unity
-    guid: 05492a7dddf0faf4d92f3ae4576f1c23
+    path: Assets/Scenes/Levels Approved/11. Boss.unity
+    guid: bd7a834cbaf1f274bbaba2f452f55a39
   - enabled: 1
-    path: Assets/Scenes/DevRoom.unity
-    guid: 5bb46ba1c43d9194c929447e5950d1ca
+    path: Assets/Scenes/Levels Approved/11. Credits.unity
+    guid: 0c3aeb1de75b911448e94069e89e44f6
+  - enabled: 1
+    path: Assets/Scenes/Levels Approved/2. Dakota.unity
+    guid: f2c50ee1ca7aec44b8c2c9198ef72c97
+  - enabled: 1
+    path: Assets/Scenes/Levels Approved/9. Jamison.unity
+    guid: 6f51cdc512426264689aa0b2705fffc5
+  - enabled: 1
+    path: Assets/Scenes/Levels Approved/4. Gian.unity
+    guid: 0b6a7e4b068708f42b08a7798c3d80f9
+  - enabled: 1
+    path: Assets/Scenes/Levels Approved/7. Gian.unity
+    guid: 46faa0a5245ea1b4587963a3e9c3c503
+  - enabled: 1
+    path: Assets/Scenes/Levels WIP/X - X (Gian 3).unity
+    guid: f8c8037ddbebeca499c7d68ffc3ecdfe
   m_configObjects: {}
