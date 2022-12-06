@@ -36,14 +36,14 @@ public class CameraMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startPos = new Vector3(cameraStartPos.x, cameraStartPos.y, -1);
+        startPos = new Vector3(cameraStartPos.x, cameraStartPos.y, -10);
         player = GameObject.Find("Player");
 
         if (useCameraStartPos)
             transform.position = startPos;
 
         else
-            transform.position = new Vector3(player.transform.position.x + posOffset.x, player.transform.position.y + posOffset.y, -1);
+            transform.position = new Vector3(player.transform.position.x + posOffset.x, player.transform.position.y + posOffset.y, -10);
     }
 
     // Update is called once per frame
@@ -58,7 +58,7 @@ public class CameraMovement : MonoBehaviour
 
             endPos.x += posOffset.x;
             endPos.y += posOffset.y;
-            endPos.z = -1;
+            endPos.z = -10;
             if (player.transform.position.x + posOffset.x < transform.position.x)
             {
                 //     endPos.x = transform.position.x;
