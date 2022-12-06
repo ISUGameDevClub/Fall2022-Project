@@ -12,10 +12,12 @@ public class Boss : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<PlayerMovement>().gameObject;
+        GetComponent<EnemyHealth>().invincible = true;
     }
 
     public void StartFight()
     {
+        GetComponent<EnemyHealth>().invincible = false;
         StartCoroutine(AttackPattern());
     }
 
