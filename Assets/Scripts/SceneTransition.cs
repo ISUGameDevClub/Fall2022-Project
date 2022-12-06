@@ -36,4 +36,9 @@ public class SceneTransition : MonoBehaviour
         anim.SetTrigger("Scene End");
         newScene = SceneManager.GetActiveScene().name;
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

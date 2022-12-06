@@ -42,7 +42,6 @@ public class Shoot : MonoBehaviour
                 float ang1 = Vector2.SignedAngle(Vector2.right, bul1.GetComponent<Attack>().moveDirection);
                 ang1 += 20;
                 bul1.GetComponent<Attack>().moveDirection = (Vector2)(Quaternion.Euler(0, 0, ang1) * Vector2.right);
-                Debug.Log(ang1);
 
                 GameObject bul2 = Instantiate(bulletPrefab[bulletToSpawn], transform.position, Quaternion.identity);
                 bul2.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
@@ -50,7 +49,6 @@ public class Shoot : MonoBehaviour
                 float ang2 = Vector2.SignedAngle(Vector2.right, bul2.GetComponent<Attack>().moveDirection); 
                 ang2 -= 20;
                 bul2.GetComponent<Attack>().moveDirection = (Vector2)(Quaternion.Euler(0, 0, ang2) * Vector2.right);
-                Debug.Log(ang2);
             }
             else if (playerHP.playerHealth.Equals("glitchgun"))
             {
@@ -99,7 +97,7 @@ public class Shoot : MonoBehaviour
                 GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], position, Quaternion.identity);
                 bullet.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
 
-                Instantiate(shootSounds[bulletToSpawn], transform.position, Quaternion.identity);
+                //Instantiate(shootSounds[bulletToSpawn], transform.position, Quaternion.identity);
                 StartCoroutine(shotDelay(bullet.GetComponent<Attack>().attackCooldown));
             }
         }
@@ -187,7 +185,7 @@ public class Shoot : MonoBehaviour
                 GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], transform.position, Quaternion.identity);
                 bullet.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
 
-                Instantiate(shootSounds[bulletToSpawn], transform.position, Quaternion.identity);
+                //Instantiate(shootSounds[bulletToSpawn], transform.position, Quaternion.identity);
                 StartCoroutine(specialShotDelay(bullet.GetComponent<Attack>().attackCooldown));
             }
         }

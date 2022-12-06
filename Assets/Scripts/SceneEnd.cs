@@ -5,6 +5,8 @@ using UnityEngine;
 public class SceneEnd : MonoBehaviour
 {
     public string nextScene;
+    public AudioClip changeToSong;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,8 @@ public class SceneEnd : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             FindObjectOfType<SceneTransition>().ChangeScene(nextScene);
+            if(changeToSong != null)
+                FindObjectOfType<Music>().ChangeSong(changeToSong);
         }
     }
 }

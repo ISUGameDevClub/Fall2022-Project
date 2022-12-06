@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 21894245, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 21894246, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
       propertyPath: pickupType
       value: yarnwhip
@@ -14,7 +18,7 @@ PrefabInstance:
     - target: {fileID: 2629259759836794067, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0685d2c73d640314ebc3f614b1facfeb, type: 3}
+      objectReference: {fileID: -1547542871, guid: e331c3ae10a198946beea27b8f830e30, type: 3}
     - target: {fileID: 8618745532429111452, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
       propertyPath: m_Name
       value: Yarn Hat Variant
@@ -22,6 +26,14 @@ PrefabInstance:
     - target: {fileID: 8618745532429111454, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618745532429111454, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618745532429111454, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8618745532429111454, guid: 65a007c122fc0a741a1fcce0efb8bcf6, type: 3}
       propertyPath: m_LocalPosition.x

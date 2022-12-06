@@ -23,7 +23,6 @@ public class SpiderDummy : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             spiderMovement.spiderMoveDown();
-            Debug.Log("Trigger!");
         }
     }
 
