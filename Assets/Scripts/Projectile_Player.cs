@@ -33,11 +33,17 @@ public class Projectile_Player : MonoBehaviour
 
         if (startOutwards)
         {
+<<<<<<< HEAD
             startPos = transform.localPosition;
             transform.localPosition = startPos + ((GetComponent<SpriteRenderer>().size.x / 2) * atk.moveDirection);
             transform.right = (Vector2)transform.localPosition - startPos;
             transform.localPosition = (Vector2)transform.position + new Vector2(0, .25f);
             transform.parent = FindObjectOfType<PlayerMovement>().gameObject.transform;
+=======
+            startPos = transform.position;
+            transform.position = startPos + ((GetComponent<SpriteRenderer>().size.x / 2) * atk.moveDirection);
+            transform.right = (Vector2)transform.position - startPos;
+>>>>>>> parent of 357c294 (fixed Hats)
         }
         else if(startInwards)
         {
