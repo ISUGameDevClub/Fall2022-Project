@@ -32,10 +32,6 @@ public class EnemyHurtBehavior : MonoBehaviour
                 attackSound.Play();
             }
             collision.gameObject.GetComponent<Health>().loseHealth();
-            if (collision.gameObject.GetComponent<Rigidbody2D>())
-            {
-                collision.gameObject.GetComponent<Rigidbody2D>().AddForce(direction , ForceMode2D.Impulse);
-            }
             if (!playerPiercing)
             {
                 Destroy(gameObject);
