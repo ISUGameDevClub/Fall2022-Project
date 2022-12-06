@@ -50,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && grounded && !(Input.GetKey(KeyCode.LeftShift)) && Time.timeScale!=0)
         {
+            playerRB.velocity = new Vector2(playerRB.velocity.x, 0);
             playerRB.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
             Instantiate(jumpPrefab, transform.position, Quaternion.identity);
 
@@ -64,10 +65,9 @@ public class PlayerMovement : MonoBehaviour
             lowerBodyAnim.SetBool("walking", false);
         }
 
-        LayerMask[] masks = new LayerMask[2] {LayerMask.GetMask("Ground"), LayerMask.GetMask("Enemy")};
-        //RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.1f,masks[0]);
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position,.3f, Vector2.down, 1.1f, masks[0]);
-        if (hit.collider != null && (LayerMask.LayerToName(hit.collider.gameObject.layer) == "Ground" || LayerMask.LayerToName(hit.collider.gameObject.layer) == "Enemy"))
+        LayerMask masks = LayerMask.GetMask("Ground", "One Way Ground");
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position,.3f, Vector2.down, 1.1f, masks);
+        if (hit.collider != null && (LayerMask.LayerToName(hit.collider.gameObject.layer) == "Ground" || LayerMask.LayerToName(hit.collider.gameObject.layer) == "One Way Ground"))
         {
             if (playerRB.velocity.y <= 0)
             {
