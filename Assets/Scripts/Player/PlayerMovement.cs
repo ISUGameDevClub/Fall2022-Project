@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
 
         LayerMask[] masks = new LayerMask[2] {LayerMask.GetMask("Ground"), LayerMask.GetMask("Enemy")};
         //RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.1f,masks[0]);
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position,1f, Vector2.down, 1.1f, masks[0]);
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position,.3f, Vector2.down, 1.1f, masks[0]);
         if (hit.collider != null && (LayerMask.LayerToName(hit.collider.gameObject.layer) == "Ground" || LayerMask.LayerToName(hit.collider.gameObject.layer) == "Enemy"))
         {
             if (playerRB.velocity.y <= 0)
