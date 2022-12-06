@@ -658,7 +658,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7647389450389717472, guid: 56274c432f5735145967aa765fcb2efb, type: 3}
       propertyPath: maxX
-      value: 338
+      value: 41.75
       objectReference: {fileID: 0}
     - target: {fileID: 7647389450389717472, guid: 56274c432f5735145967aa765fcb2efb, type: 3}
       propertyPath: maxY
@@ -748,6 +748,7 @@ MonoBehaviour:
   knockbackForce: 0
   spawnOnDeath: {fileID: 0}
   enemyAnim: {fileID: 0}
+  attackSound: {fileID: 0}
 --- !u!61 &1137669177
 BoxCollider2D:
   m_ObjectHideFlags: 0
