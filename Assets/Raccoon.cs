@@ -16,6 +16,15 @@ public class Raccoon : MonoBehaviour
     [SerializeField]
     GameObject
         proj;
+    [SerializeField]
+    AudioClip
+        cloak;
+    [SerializeField]
+    AudioClip
+        deCloak;
+    [SerializeField]
+    AudioSource
+        raccoonSounds;
     bool 
         isFlipped;
     bool
@@ -67,10 +76,14 @@ public class Raccoon : MonoBehaviour
     }
     public void MakeInvincible()
     {
+        raccoonSounds.clip = cloak;
+        raccoonSounds.Play();
         GetComponent<EnemyHealth>().invincible = true;
     }
     public void MakeVulnerable()
     {
+        raccoonSounds.clip = deCloak;
+        raccoonSounds.Play();
         GetComponent<EnemyHealth>().invincible = false;
     }
 }
