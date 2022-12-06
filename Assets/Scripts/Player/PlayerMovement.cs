@@ -87,14 +87,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
-
         if (!(Input.GetKey(KeyCode.LeftShift) && grounded) && Time.timeScale != 0)
         {
             Vector2 playerVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, 0) * Time.fixedDeltaTime;
             playerRB.position += playerVelocity;
         }
-
         if(playerRB.velocity.y > 0)
         {
             if (Input.GetKey(KeyCode.Space) && Time.timeScale != 0)

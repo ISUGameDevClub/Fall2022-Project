@@ -121,7 +121,7 @@ MonoBehaviour:
   defects: 0
   freezes: 0
   freeze: {fileID: 0}
-  spawnOnDeath: {fileID: 0}
+  spawnOnDeath: {fileID: 7337934333778476695, guid: 7e4735c22f956a04f81dbc4ec0ca2a16, type: 3}
 --- !u!114 &340810856908286075
 MonoBehaviour:
   m_ObjectHideFlags: 0
