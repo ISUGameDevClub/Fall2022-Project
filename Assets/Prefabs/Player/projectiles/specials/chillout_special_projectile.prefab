@@ -107,6 +107,7 @@ MonoBehaviour:
   defects: 0
   freezes: 1
   freeze: {fileID: 2316583547973704734, guid: 8e831c52f3d7ac74f9e3aeb7b800dc83, type: 3}
+  spawnOnDeath: {fileID: 0}
 --- !u!114 &340810856908286075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,8 +124,13 @@ MonoBehaviour:
   despawnTime: 0.3
   bounces: 0
   homing: 0
+  delayedHoming: 0
   startOutwards: 1
   startInwards: 0
+  drops: 0
+  verticalLaunch: 0
+  gradualVerticalDrop: 0
+  sticky: 0
 --- !u!114 &434690556425180604
 MonoBehaviour:
   m_ObjectHideFlags: 0

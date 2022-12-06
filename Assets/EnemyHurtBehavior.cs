@@ -9,6 +9,7 @@ public class EnemyHurtBehavior : MonoBehaviour
     [SerializeField] float knockbackForce;
     [SerializeField] GameObject spawnOnDeath;
     [SerializeField] Animator enemyAnim;
+    [SerializeField] AudioSource attackSound;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Vector2 direction = collision.transform.position - transform.position;
@@ -25,6 +26,10 @@ public class EnemyHurtBehavior : MonoBehaviour
             if (enemyAnim != null)
             {
                 enemyAnim.SetTrigger("Attack");
+            }
+            if (attackSound != null)
+            {
+                attackSound.Play();
             }
             collision.gameObject.GetComponent<Health>().loseHealth();
             if (collision.gameObject.GetComponent<Rigidbody2D>())
