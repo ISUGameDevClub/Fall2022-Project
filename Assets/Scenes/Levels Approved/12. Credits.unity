@@ -572,7 +572,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -115}
+  m_AnchoredPosition: {x: 0, y: -125}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &232858054
@@ -597,14 +597,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Andrew Rohan
 
+    Connor McKiernan
+
     Dakota Adams
 
     David Salegna
 
-    Jamison Herald
+    Jamison
+    Herald
 
-    Kyle
-    Davies
+    Kyle Davies
 
     Nick Sears'
   m_isRightToLeft: 0
@@ -1386,10 +1388,10 @@ MonoBehaviour:
 
     Bren McMonigal
 
-    Connor
-    Basile
+    Connor Basile
 
-    Dave McCoy
+    Dave
+    McCoy
 
     Raef Suarez
 
@@ -3917,10 +3919,10 @@ MonoBehaviour:
 
     Nick Carroll
 
-    Shane
-    Stevens
+    Shane Stevens
 
-    Yunpeng Li'
+    Yunpeng
+    Li'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c00f025c1f4513244816394abb769b27, type: 2}
   m_sharedMaterial: {fileID: -5896623080191748634, guid: c00f025c1f4513244816394abb769b27, type: 2}
