@@ -13,6 +13,7 @@ TagManager:
   - OneWayDown
   - Ground
   - Projectile
+  - One Way Ground
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Enemy
   - Enemy/Projectile
   - Camera Boundary
-  - 
+  - One Way Ground
   - 
   - 
   - 
