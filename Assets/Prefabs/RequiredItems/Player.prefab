@@ -313,7 +313,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4462753610218389811}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -648,7 +648,6 @@ MonoBehaviour:
   specialNull: {fileID: 8300000, guid: 63b92a7cb5432ce4d871302be21a2bea, type: 3}
   specialPrefab: {fileID: 4972455293233802207}
   smokePrefab: {fileID: 8019436645716934802, guid: 357f331b92a71e84687b13f1ffb0a73d, type: 3}
-  parryPrefab: {fileID: 576396828388415040, guid: a10fdedfde9537947889a0d890434cc9, type: 3}
 --- !u!82 &21238195345419755
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1406,8 +1405,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1738055949
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &419682682691674167
 MonoBehaviour:
