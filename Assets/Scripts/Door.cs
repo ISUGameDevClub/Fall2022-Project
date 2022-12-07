@@ -43,6 +43,7 @@ public class Door : MonoBehaviour
             {
                 if (FindObjectOfType<Boss>() == null)
                 {
+                    FindObjectOfType<Timer>().StopTimer();
                     Destroy(otherDoor);
                 }
             }
