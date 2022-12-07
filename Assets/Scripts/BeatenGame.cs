@@ -52,7 +52,7 @@ public class BeatenGame : MonoBehaviour
 
     private void Start()
     {
-        if(checkIfGameBeaten)
+        if (checkIfGameBeaten)
         {
             LoadPlayer();
             if (!beatGame)
@@ -60,9 +60,9 @@ public class BeatenGame : MonoBehaviour
             else
             {
                 if (Mathf.RoundToInt(fastestSeconds) > 9)
-                    timer.text = "Fastest Time: " + fastestMinutes.ToString("F0") + ":" + Mathf.RoundToInt(fastestSeconds).ToString("F0");
+                    timer.text = fastestMinutes.ToString("F0") + ":" + Mathf.RoundToInt(fastestSeconds).ToString("F0");
                 else
-                    timer.text = "Fastest Time: " + fastestMinutes.ToString("F0") + ":" + "0" + Mathf.RoundToInt(fastestSeconds).ToString("F0");
+                    timer.text = fastestMinutes.ToString("F0") + ":" + "0" + Mathf.RoundToInt(fastestSeconds).ToString("F0");
             }
         }
     }

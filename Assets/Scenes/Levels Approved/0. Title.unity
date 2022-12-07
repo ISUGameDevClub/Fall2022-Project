@@ -596,6 +596,7 @@ GameObject:
   - component: {fileID: 795889431}
   - component: {fileID: 795889430}
   - component: {fileID: 795889429}
+  - component: {fileID: 795889433}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -690,6 +691,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &795889433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795889428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5855b42fc6956db47aa124c1b7ace6d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &818309430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -921,7 +934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd34b4b154d99745a62f4891f2137fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: {fileID: 0}
+  timer: {fileID: 1612376181}
   beatGame: 0
   fastestSeconds: 0
   fastestMinutes: 0
@@ -1958,7 +1971,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 1. David
+          m_StringArgument: 11. Boss
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 253493307}
@@ -1973,7 +1986,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 795889433}
         m_TargetAssemblyTypeName: Title, Assembly-CSharp
         m_MethodName: ResetTimer
         m_Mode: 1

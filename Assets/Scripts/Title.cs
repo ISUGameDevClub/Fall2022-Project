@@ -5,5 +5,8 @@ using TMPro;
 
 public class Title : MonoBehaviour
 {
-
+    public void ResetTimer()
+    {
+        Timer.ResetTimer();
+    }
 }
