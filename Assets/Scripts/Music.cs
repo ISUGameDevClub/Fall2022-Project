@@ -29,7 +29,7 @@ public class Music : MonoBehaviour
         {
             if(gameMusic.volume > .05f)
             {
-                gameMusic.volume -= Time.deltaTime * swapSpeed;
+                gameMusic.volume -= Time.unscaledDeltaTime * swapSpeed;
             }
             else
             {
@@ -42,7 +42,7 @@ public class Music : MonoBehaviour
         {
             if (gameMusic.volume < musicVolume)
             {
-                gameMusic.volume += Time.deltaTime * swapSpeed;
+                gameMusic.volume += Time.unscaledDeltaTime * swapSpeed;
             }
             else
             {
