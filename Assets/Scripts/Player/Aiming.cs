@@ -38,11 +38,11 @@ public class Aiming : MonoBehaviour
         {
             int weaponType;
 
-            if (health.playerHealth.Equals("") || health.playerHealth.Equals("bouncer") || health.playerHealth.Equals("juggernaut") || health.playerHealth.Equals("glitchgun"))
+            if (health != null && (health.playerHealth.Equals("") || health.playerHealth.Equals("bouncer") || health.playerHealth.Equals("juggernaut") || health.playerHealth.Equals("glitchgun")))
             {
                 weaponType = 0;
             }
-            else if(health.playerHealth.Equals("windbreaker") || health.playerHealth.Equals("chillout") || health.playerHealth.Equals("yarnwhip"))
+            else if(health != null && (health.playerHealth.Equals("windbreaker") || health.playerHealth.Equals("chillout") || health.playerHealth.Equals("yarnwhip")))
             {
                 weaponType = 1;
             }
