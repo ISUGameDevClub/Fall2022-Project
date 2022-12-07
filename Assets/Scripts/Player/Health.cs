@@ -7,7 +7,9 @@ using TMPro;
 public class Health : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    public bool lmp;
+    public bool p2;
+    public GameObject[] respawnPoints;
     [SerializeField] SpriteRenderer hatSprite;
     [SerializeField] GameObject hatLocation;
     [SerializeField] GameObject hurtPrefab;
@@ -87,8 +89,23 @@ public class Health : MonoBehaviour
             }
             else
             {
-                playerHealth = null;
-                FindObjectOfType<SceneTransition>().RestartScene();
+                if (!lmp)
+                {
+                    playerHealth = null;
+                    FindObjectOfType<SceneTransition>().RestartScene();
+                }
+                else
+                {
+                    transform.position = (Vector2)respawnPoints[Random.Range(0, respawnPoints.Length)].transform.position + Vector2.up;
+                    if (!p2)
+                    {
+                        FindObjectOfType<LMPManager>().P2P++;
+                    }
+                    else
+                    {
+                        FindObjectOfType<LMPManager>().P1P++;
+                    }
+                }
             }
             invincible = true;
             StartCoroutine(InvincibleFrames());

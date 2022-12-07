@@ -41,7 +41,15 @@ public class PlayerMovement : MonoBehaviour
         //Retrieve Components
         playerRB = GetComponent<Rigidbody2D>();
 
-
+        if (p2)
+        {
+            flipped = false;
+            SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
+            foreach (SpriteRenderer s in sprites)
+            {
+                s.flipX = true;
+            }
+        }
     }
 
     private void Update()

@@ -53,6 +53,21 @@ public class PlayerHurtBox : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        else if(collision.gameObject.GetComponent<Health>() != null && collision.gameObject.GetComponent<Health>().lmp && collision.gameObject.GetComponent<PlayerMovement>().p2 != GetComponent<Attack>().p2)
+        {
+            if (damage > 0)
+                collision.gameObject.GetComponent<Health>().loseHealth();
+
+            if (!enemyPiercing)
+            {
+                if (spawnOnDeath != null)
+                {
+                    Instantiate(spawnOnDeath, transform.position, Quaternion.identity);
+                }
+
+                Destroy(gameObject);
+            }
+        }
         else if(defects && collision.gameObject.tag == "Projectile")
         {
             GameObject parrySpawned = Instantiate(parryPrefab,collision.gameObject.transform.position,Quaternion.identity);

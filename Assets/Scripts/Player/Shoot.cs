@@ -50,6 +50,7 @@ public class Shoot : MonoBehaviour
                 bulletToSpawn = 2;
                 GameObject bul1 = Instantiate(bulletPrefab[bulletToSpawn], transform.position, Quaternion.identity);
                 bul1.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
+                bul1.GetComponent<Attack>().p2 = p2;
 
                 float ang1 = Vector2.SignedAngle(Vector2.right, bul1.GetComponent<Attack>().moveDirection);
                 ang1 += 20;
@@ -61,6 +62,7 @@ public class Shoot : MonoBehaviour
                 float ang2 = Vector2.SignedAngle(Vector2.right, bul2.GetComponent<Attack>().moveDirection); 
                 ang2 -= 20;
                 bul2.GetComponent<Attack>().moveDirection = (Vector2)(Quaternion.Euler(0, 0, ang2) * Vector2.right);
+                bul2.GetComponent<Attack>().p2 = p2;
             }
             else if (playerHP.playerHealth.Equals("glitchgun"))
             {
@@ -108,6 +110,8 @@ public class Shoot : MonoBehaviour
                 }
                 GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], position, Quaternion.identity);
                 bullet.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
+                bullet.GetComponent<Attack>().owner = gameObject;
+                bullet.GetComponent<Attack>().p2 = p2;
 
                 if (shootSounds[bulletToSpawn] != null)
                 {
@@ -209,6 +213,8 @@ public class Shoot : MonoBehaviour
 
 
                     bullet.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
+                    bullet.GetComponent<Attack>().owner = gameObject;
+                    bullet.GetComponent<Attack>().p2 = p2;
                     if (shootSounds[bulletToSpawn] != null)
                     {
                         Instantiate(shootSounds[bulletToSpawn], transform.position, Quaternion.identity);
@@ -308,10 +314,12 @@ public class Shoot : MonoBehaviour
         yield return new WaitForSeconds(.1f);
         GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], transform.position, Quaternion.identity);
         bullet.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
+        bullet.GetComponent<Attack>().p2 = p2;
         //Instantiate(shootSounds[bulletToSpawn], transform.position, Quaternion.identity);
         yield return new WaitForSeconds(.1f);
         GameObject bullet2 = Instantiate(bulletPrefab[bulletToSpawn], transform.position, Quaternion.identity);
         bullet2.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
+        bullet2.GetComponent<Attack>().p2 = p2;
         //Instantiate(shootSounds[bulletToSpawn], transform.position, Quaternion.identity);
     }
 
