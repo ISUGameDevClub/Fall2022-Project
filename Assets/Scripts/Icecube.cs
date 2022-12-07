@@ -14,10 +14,18 @@ public class Icecube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = eh.gameObject.transform.position;
-        if(eh.frozen <=0)
+        if(eh == null)
         {
             Destroy(gameObject);
+        }
+        else
+        {
+
+            transform.position = eh.gameObject.transform.position;
+            if (eh.frozen <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
