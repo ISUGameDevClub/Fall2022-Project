@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7647389450389717484}
+  - component: {fileID: 7647389450389717472}
   - component: {fileID: 7647389450389717475}
   - component: {fileID: 7647389450389717474}
   - component: {fileID: 7647389450389717473}
-  - component: {fileID: 7647389450389717472}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -35,6 +35,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7647389450389717472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7647389450389717479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ebe022c07b227c488a8c66f16fd989c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraSpeed: 3
+  useCameraStartPos: 0
+  cameraStartPos: {x: 0, y: 0}
+  posOffset: {x: 3, y: 1.5}
+  minX: -1000
+  maxX: 1000
+  minY: -1000
+  maxY: 1000
 --- !u!20 &7647389450389717475
 Camera:
   m_ObjectHideFlags: 0
@@ -119,23 +139,3 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!114 &7647389450389717472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7647389450389717479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ebe022c07b227c488a8c66f16fd989c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraSpeed: 3
-  useCameraStartPos: 0
-  cameraStartPos: {x: 0, y: 0}
-  posOffset: {x: 3, y: 1.5}
-  minX: -1000
-  maxX: 1000
-  minY: -1000
-  maxY: 1000
