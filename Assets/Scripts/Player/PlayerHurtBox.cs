@@ -60,4 +60,5 @@ public class PlayerHurtBox : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+
 }

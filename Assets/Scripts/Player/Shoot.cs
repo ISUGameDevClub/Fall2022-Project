@@ -206,7 +206,7 @@ public class Shoot : MonoBehaviour
                     specialCanShootNow = false;
                     GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], transform.position, Quaternion.identity);
 
-                    specialPrefab.SetActive(false);
+
 
                     bullet.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
                     if (shootSounds[bulletToSpawn] != null)
