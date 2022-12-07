@@ -52,7 +52,7 @@ public class BeatenGame : MonoBehaviour
 
     private void Start()
     {
-        if (checkIfGameBeaten)
+        if(checkIfGameBeaten)
         {
             LoadPlayer();
             if (!beatGame)
