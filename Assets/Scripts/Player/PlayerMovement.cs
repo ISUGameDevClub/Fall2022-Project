@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    public bool p2;
     [SerializeField]
     GameObject
         jumpPrefab;
@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
     {
         
 
-        if (Input.GetKeyDown(KeyCode.Space) && grounded && !(Input.GetKey(KeyCode.LeftShift)) && Time.timeScale!=0)
+        if (((Input.GetKeyDown(KeyCode.Space) && !p2) || (Input.GetKeyDown(KeyCode.I) && p2)) && grounded && !((Input.GetKey(KeyCode.LeftShift) && !p2) || (Input.GetKeyDown(KeyCode.RightShift) && p2)) && Time.timeScale!=0)
         {
             playerRB.velocity = new Vector2(playerRB.velocity.x, 0);
             playerRB.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        if (Input.GetAxisRaw("Horizontal") != 0 && !(Input.GetKey(KeyCode.LeftShift) && grounded) && Time.timeScale != 0) 
+        if (((Input.GetAxisRaw("Horizontal") != 0 && !p2) || (Input.GetAxisRaw("Horizontal2") != 0 && p2)) && !(((Input.GetKey(KeyCode.LeftShift) && !p2) || (Input.GetKeyDown(KeyCode.RightShift) && p2)) && grounded) && Time.timeScale != 0) 
         {
             lowerBodyAnim.SetBool("walking", true);
         }
@@ -87,14 +87,18 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!(Input.GetKey(KeyCode.LeftShift) && grounded) && Time.timeScale != 0)
+        if (!(((Input.GetKey(KeyCode.LeftShift) && !p2) || (Input.GetKeyDown(KeyCode.RightShift) && p2)) && grounded) && Time.timeScale != 0)
         {
-            Vector2 playerVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, 0) * Time.fixedDeltaTime;
+            Vector2 playerVelocity;
+            if (!p2)
+                playerVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, 0) * Time.fixedDeltaTime;
+            else
+                playerVelocity = new Vector2(Input.GetAxis("Horizontal2") * speed, 0) * Time.fixedDeltaTime;
             playerRB.position += playerVelocity;
         }
         if(playerRB.velocity.y > 0)
         {
-            if (Input.GetKey(KeyCode.Space) && Time.timeScale != 0)
+            if (((Input.GetKey(KeyCode.Space) && !p2) || (Input.GetKey(KeyCode.I) && p2)) && Time.timeScale != 0)
             {
                 playerRB.gravityScale = 2.4f;
             }
@@ -122,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void doWeFlip()
     {
-        if (Input.GetAxisRaw("Horizontal") == 1 && Time.timeScale != 0)
+        if (((Input.GetAxisRaw("Horizontal") == 1 && !p2) || (Input.GetAxisRaw("Horizontal2") == 1 && p2)) && Time.timeScale != 0)
         {
             flipped = true;
             SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
@@ -131,7 +135,7 @@ public class PlayerMovement : MonoBehaviour
                 s.flipX = false;
             }
         }
-        else if (Input.GetAxisRaw("Horizontal") == -1 && Time.timeScale != 0)
+        else if (((Input.GetAxisRaw("Horizontal") == -1 && !p2) || (Input.GetAxisRaw("Horizontal2") == -1 && p2)) && Time.timeScale != 0)
         {
             flipped = false;
             SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();

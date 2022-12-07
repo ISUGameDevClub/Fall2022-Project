@@ -56,4 +56,10 @@ public class PauseMenu : MonoBehaviour
         }
         FindObjectOfType<SceneTransition>().ChangeScene(titleName);        
     }
+
+    public void RestartLevel()
+    {
+        UnpauseGame();
+        FindObjectOfType<SceneTransition>().RestartScene();
+    }
 }

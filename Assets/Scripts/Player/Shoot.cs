@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-
+    public bool p2;
     [SerializeField] GameObject[] bulletPrefab;
     [SerializeField] GameObject[] shootSounds;
     Health playerHP;
@@ -37,7 +37,7 @@ public class Shoot : MonoBehaviour
     void Update()
     {
         //left click
-        if(Input.GetMouseButton(0) && canShootNow == true && Time.timeScale != 0)
+        if((((Input.GetMouseButton(0) || Input.GetKey(KeyCode.F)) && !p2) || (Input.GetKey(KeyCode.O) && p2)) && canShootNow == true && Time.timeScale != 0)
         {
             canShootNow = false;
             Vector2 position = gameObject.transform.position;
@@ -118,7 +118,7 @@ public class Shoot : MonoBehaviour
         }
 
         //Right Click
-        if (Input.GetMouseButton(1) && specialCanShootNow == true && Time.timeScale != 0 && !playerHP.playerHealth.Equals(""))
+        if ((((Input.GetMouseButton(1) || Input.GetKey(KeyCode.G)) && !p2) || (Input.GetKey(KeyCode.P) && p2)) && specialCanShootNow == true && Time.timeScale != 0 && !playerHP.playerHealth.Equals(""))
         {
 
             int bulletToSpawn = 10;
@@ -217,7 +217,7 @@ public class Shoot : MonoBehaviour
                 }
             }
         }
-        else if (Input.GetMouseButtonDown(1) && Time.timeScale != 0)
+        else if ((((Input.GetMouseButton(1) || Input.GetKey(KeyCode.G)) && !p2) || (Input.GetKey(KeyCode.P) && p2)) && Time.timeScale != 0)
         {
             GetComponent<AudioSource>().clip = specialNull;
             GetComponent<AudioSource>().Play();

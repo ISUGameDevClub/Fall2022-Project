@@ -5,6 +5,7 @@ using UnityEngine;
 public class Platform : MonoBehaviour
 {
     private GameObject player;
+    private GameObject player2;
     private bool playerOnPlatform;
 
     [SerializeField]
@@ -17,6 +18,7 @@ public class Platform : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
+        player2 = GameObject.Find("Player 2");
     }
 
     // Update is called once per frame
@@ -30,12 +32,26 @@ public class Platform : MonoBehaviour
         Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>(), false);
     }
 
+    private IEnumerator EnableCollider2()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Physics2D.IgnoreCollision(player2.GetComponent<Collider2D>(), GetComponent<Collider2D>(), false);
+    }
+
     private IEnumerator PlatformBreakTimer()
     {
         yield return new WaitForSeconds(platfromBreakTime);
         Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>(), true);
         StartCoroutine(EnableCollider());
         
+    }
+
+    private IEnumerator PlatformBreakTimer2()
+    {
+        yield return new WaitForSeconds(platfromBreakTime);
+        Physics2D.IgnoreCollision(player2.GetComponent<Collider2D>(), GetComponent<Collider2D>(), true);
+        StartCoroutine(EnableCollider());
+
     }
 
 
@@ -49,12 +65,22 @@ public class Platform : MonoBehaviour
                 Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>(), true);
                 StartCoroutine(EnableCollider());
             }
-            
+
+            if (Input.GetAxisRaw("Vertical2") < 0)
+            {
+                Physics2D.IgnoreCollision(player2.GetComponent<Collider2D>(), GetComponent<Collider2D>(), true);
+                StartCoroutine(EnableCollider2());
+            }
+
             if (platformBreak && player.transform.position.y > transform.position.y)
             {
                 StartCoroutine(PlatformBreakTimer());
             }
-            
+
+            if (platformBreak && player2.transform.position.y > transform.position.y)
+            {
+                StartCoroutine(PlatformBreakTimer2());
+            }
         }
     }
 

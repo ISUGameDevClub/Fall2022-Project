@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Aiming : MonoBehaviour
 {
+    public bool p2;
     public GameObject[] aimPositions;
     [SerializeField] SpriteRenderer torsoSprite;
     int currentAim;
@@ -20,8 +21,19 @@ public class Aiming : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float vert = Input.GetAxisRaw("Vertical");
-        float horz = Input.GetAxisRaw("Horizontal");
+        float vert;
+        float horz;
+        if (!p2)
+        {
+            vert = Input.GetAxisRaw("Vertical");
+            horz = Input.GetAxisRaw("Horizontal");
+        }
+        else
+        {
+            vert = Input.GetAxisRaw("Vertical2");
+            horz = Input.GetAxisRaw("Horizontal2");
+        }
+
         if (Time.timeScale != 0)
         {
             int weaponType;
