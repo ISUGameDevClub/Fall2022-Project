@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 3798674729731915158}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,11 +78,11 @@ SpriteRenderer:
   m_SortingLayerID: -1142830183
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 68c045564ecf55d4bbdefb0f2e9050d1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9675fcdbd2ea56447bc1eeb8935b0dfd, type: 3}
   m_Color: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 2
+  m_DrawMode: 0
   m_Size: {x: 4, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -120,6 +120,7 @@ MonoBehaviour:
   damage: 0
   defects: 1
   freezes: 0
+  parryLifespan: 0.75
   freeze: {fileID: 0}
   parryPrefab: {fileID: 576396828388415040, guid: a10fdedfde9537947889a0d890434cc9, type: 3}
   spawnOnDeath: {fileID: 0}
@@ -161,7 +162,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 1
 --- !u!50 &8923832109064360241
 Rigidbody2D:
   serializedVersion: 4

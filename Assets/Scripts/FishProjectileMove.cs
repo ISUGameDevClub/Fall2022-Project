@@ -15,16 +15,16 @@ public class FishProjectileMove : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (right)
         {
             GetComponentInChildren<SpriteRenderer>().flipX = true;
-            rb.MovePosition((Vector2)transform.position + speed * Vector2.right * Time.deltaTime);
+            rb.MovePosition((Vector2)transform.position + speed * Vector2.right * Time.fixedDeltaTime);
         }
         else
         {
-            rb.MovePosition((Vector2)transform.position + speed * Vector2.left * Time.deltaTime);
+            rb.MovePosition((Vector2)transform.position + speed * Vector2.left * Time.fixedDeltaTime);
         }
     }
 

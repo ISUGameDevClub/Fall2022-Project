@@ -42,6 +42,7 @@ public class Projectile_Player : MonoBehaviour
         else if(startInwards)
         {
             transform.position = (Vector2)FindObjectOfType<PlayerMovement>().gameObject.transform.position;
+            transform.parent = FindObjectOfType<PlayerMovement>().gameObject.transform;
         }
 
         if(homing)
