@@ -19,7 +19,7 @@ public class LMPManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        FindObjectOfType<PauseMenu>().PauseGame();
     }
 
     // Update is called once per frame

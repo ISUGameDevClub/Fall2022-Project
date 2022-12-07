@@ -45,7 +45,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels Approved/12. Credits.unity
     guid: 0c3aeb1de75b911448e94069e89e44f6
   - enabled: 1
-    path: Assets/Scenes/Levels Approved/13. Midboss.unity
+    path: Assets/Scenes/Levels Approved/5.5. Midboss.unity
     guid: 7f2736e26a16bb34c84b39dc3ca8f886
   - enabled: 1
     path: Assets/Scenes/Level Design/14. Unimportant.unity

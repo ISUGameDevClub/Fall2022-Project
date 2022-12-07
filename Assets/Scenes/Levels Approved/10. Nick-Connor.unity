@@ -92432,6 +92432,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1955796134}
     m_Modifications:
+    - target: {fileID: 5776930355515783810, guid: 5d5f991dcdb28ed42beccd1c5aaaf951, type: 3}
+      propertyPath: nextScene
+      value: 11. Boss
+      objectReference: {fileID: 0}
     - target: {fileID: 5776930355515783811, guid: 5d5f991dcdb28ed42beccd1c5aaaf951, type: 3}
       propertyPath: m_RootOrder
       value: 4

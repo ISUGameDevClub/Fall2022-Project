@@ -71674,17 +71674,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5776930355515783810, guid: 5d5f991dcdb28ed42beccd1c5aaaf951, type: 3}
+      propertyPath: nextScene
+      value: 9. Jamison
+      objectReference: {fileID: 0}
     - target: {fileID: 5776930355515783811, guid: 5d5f991dcdb28ed42beccd1c5aaaf951, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5776930355515783811, guid: 5d5f991dcdb28ed42beccd1c5aaaf951, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 343.43616
+      value: 352.43616
       objectReference: {fileID: 0}
     - target: {fileID: 5776930355515783811, guid: 5d5f991dcdb28ed42beccd1c5aaaf951, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.0544977
+      value: 1.5544977
       objectReference: {fileID: 0}
     - target: {fileID: 5776930355515783811, guid: 5d5f991dcdb28ed42beccd1c5aaaf951, type: 3}
       propertyPath: m_LocalPosition.z
