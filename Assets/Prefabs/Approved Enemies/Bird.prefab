@@ -126,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy_speed: 4
   wallDetectRange: 1
-  distanceTrigger: 20
+  distanceTrigger: 30
 --- !u!61 &8944185307376279926
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -282,3 +282,4 @@ MonoBehaviour:
   knockbackForce: 0
   spawnOnDeath: {fileID: 0}
   enemyAnim: {fileID: 0}
+  attackSound: {fileID: 0}
