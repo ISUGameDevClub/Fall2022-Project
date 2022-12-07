@@ -9,6 +9,18 @@ public class Shoot : MonoBehaviour
     [SerializeField] GameObject[] shootSounds;
     Health playerHP;
     [SerializeField] Animator playerUpper;
+    [SerializeField]
+    AudioClip
+        specialReady;
+    [SerializeField]
+    AudioClip
+        specialNull;
+    [SerializeField]
+    GameObject
+        specialPrefab;
+    [SerializeField]
+    GameObject
+        smokePrefab;
     private bool canShootNow;
     private bool specialCanShootNow;
 
@@ -108,7 +120,7 @@ public class Shoot : MonoBehaviour
         //Right Click
         if (Input.GetMouseButton(1) && specialCanShootNow == true && Time.timeScale != 0 && !playerHP.playerHealth.Equals(""))
         {
-            specialCanShootNow = false;
+
             int bulletToSpawn = 10;
             if (playerHP.playerHealth.Equals("bouncer"))
             {
@@ -150,10 +162,14 @@ public class Shoot : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(player.transform.position, dir, 4, mask);
                 if(hit.collider == null)
                 {
+                    GameObject smoke = Instantiate(smokePrefab, (Vector2)player.transform.position + dir * 4, Quaternion.identity,null);
+                    Destroy(smoke, 1);
                     player.transform.position = (Vector2)player.transform.position + dir * 4;
                 }
                 else
                 {
+                    GameObject smoke = Instantiate(smokePrefab, hit.point, Quaternion.identity,null);
+                    Destroy(smoke, 1);
                     player.transform.position = hit.point;
                 }
             }
@@ -185,18 +201,25 @@ public class Shoot : MonoBehaviour
                     AttackAnimation(GetComponent<Aiming>().GetCurrentAim(), "whip");
                 }
                 //spawn bullet here
-                GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], transform.position, Quaternion.identity);
-                bullet.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
-                if (shootSounds[bulletToSpawn]!=null
-                    ){
-                    Instantiate(shootSounds[bulletToSpawn], transform.position, Quaternion.identity);
+                if (bulletToSpawn != 10)
+                {
+                    specialCanShootNow = false;
+                    GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], transform.position, Quaternion.identity);
+
+                    specialPrefab.SetActive(false);
+                    bullet.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
+                    if (shootSounds[bulletToSpawn] != null)
+                    {
+                        Instantiate(shootSounds[bulletToSpawn], transform.position, Quaternion.identity);
+                    }
+                    StartCoroutine(specialShotDelay(bullet.GetComponent<Attack>().attackCooldown));
                 }
-                StartCoroutine(specialShotDelay(bullet.GetComponent<Attack>().attackCooldown));
             }
         }
         else if (Input.GetMouseButtonDown(1) && Time.timeScale != 0)
         {
-
+            GetComponent<AudioSource>().clip = specialNull;
+            GetComponent<AudioSource>().Play();
         }
         
 
@@ -300,6 +323,9 @@ public class Shoot : MonoBehaviour
     private IEnumerator specialShotDelay(float cooldown)
     {
         yield return new WaitForSeconds(cooldown);
+        GetComponent<AudioSource>().clip = specialReady;
+        GetComponent<AudioSource>().Play();
+        specialPrefab.SetActive(true);
         specialCanShootNow = true;
     }
 }
