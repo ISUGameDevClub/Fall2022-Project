@@ -63400,7 +63400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7647389450389717472, guid: 56274c432f5735145967aa765fcb2efb, type: 3}
       propertyPath: maxY
-      value: 32
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7647389450389717472, guid: 56274c432f5735145967aa765fcb2efb, type: 3}
       propertyPath: minX
@@ -63409,6 +63409,18 @@ PrefabInstance:
     - target: {fileID: 7647389450389717472, guid: 56274c432f5735145967aa765fcb2efb, type: 3}
       propertyPath: minY
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647389450389717472, guid: 56274c432f5735145967aa765fcb2efb, type: 3}
+      propertyPath: cameraStartPos.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647389450389717472, guid: 56274c432f5735145967aa765fcb2efb, type: 3}
+      propertyPath: cameraStartPos.y
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647389450389717472, guid: 56274c432f5735145967aa765fcb2efb, type: 3}
+      propertyPath: useCameraStartPos
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7647389450389717479, guid: 56274c432f5735145967aa765fcb2efb, type: 3}
       propertyPath: m_Name
@@ -63420,11 +63432,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7647389450389717484, guid: 56274c432f5735145967aa765fcb2efb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 155
+      value: 111.5
       objectReference: {fileID: 0}
     - target: {fileID: 7647389450389717484, guid: 56274c432f5735145967aa765fcb2efb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7647389450389717484, guid: 56274c432f5735145967aa765fcb2efb, type: 3}
       propertyPath: m_LocalPosition.z
