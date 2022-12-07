@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c8eb66702ef020409d7786192f70ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: 25
+  movement: 18.5
   despawnTime: 1
   bounces: 0
   homing: 0
@@ -280,7 +280,7 @@ AudioSource:
   m_GameObject: {fileID: 1260506417258750844}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 28bf959e1539ecf4bb4b73f315e7f472, type: 2}
   m_audioClip: {fileID: 8300000, guid: 45466fd6ee1671f4ebe0c3301faac057, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1

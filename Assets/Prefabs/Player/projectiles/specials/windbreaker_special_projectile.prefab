@@ -121,6 +121,8 @@ MonoBehaviour:
   defects: 1
   freezes: 0
   freeze: {fileID: 0}
+  parryPrefab: {fileID: 576396828388415040, guid: a10fdedfde9537947889a0d890434cc9, type: 3}
+  spawnOnDeath: {fileID: 0}
 --- !u!114 &340810856908286075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,8 +139,13 @@ MonoBehaviour:
   despawnTime: 0.3
   bounces: 0
   homing: 0
+  delayedHoming: 0
   startOutwards: 0
   startInwards: 1
+  drops: 0
+  verticalLaunch: 0
+  gradualVerticalDrop: 0
+  sticky: 0
 --- !u!58 &3093392973162115974
 CircleCollider2D:
   m_ObjectHideFlags: 0

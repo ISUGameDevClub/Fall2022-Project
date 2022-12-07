@@ -118,7 +118,7 @@ public class Shoot : MonoBehaviour
         }
 
         //Right Click
-        if (Input.GetMouseButton(1) && specialCanShootNow == true && Time.timeScale != 0)
+        if (Input.GetMouseButton(1) && specialCanShootNow == true && Time.timeScale != 0 && !playerHP.playerHealth.Equals(""))
         {
 
             int bulletToSpawn = 10;
@@ -206,7 +206,8 @@ public class Shoot : MonoBehaviour
                     specialCanShootNow = false;
                     GameObject bullet = Instantiate(bulletPrefab[bulletToSpawn], transform.position, Quaternion.identity);
 
-                    specialPrefab.SetActive(false);
+
+
                     bullet.GetComponent<Attack>().moveDirection = GetComponent<Aiming>().aimDirection;
                     if (shootSounds[bulletToSpawn] != null)
                     {

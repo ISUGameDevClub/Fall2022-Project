@@ -122,7 +122,9 @@ MonoBehaviour:
   damage: 0
   defects: 0
   freezes: 0
+  parryLifespan: 0.75
   freeze: {fileID: 0}
+  parryPrefab: {fileID: 0}
   spawnOnDeath: {fileID: 3798674729731915158, guid: b46146207e8cc3245a2e9e97b5922403, type: 3}
 --- !u!114 &340810856908286075
 MonoBehaviour:
@@ -193,7 +195,7 @@ AudioSource:
   m_GameObject: {fileID: 3798674729731915158}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 28bf959e1539ecf4bb4b73f315e7f472, type: 2}
   m_audioClip: {fileID: 8300000, guid: 94891e16a4197e84889c25aa678ec3c0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1

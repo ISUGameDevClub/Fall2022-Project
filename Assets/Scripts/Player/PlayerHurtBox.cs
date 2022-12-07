@@ -9,7 +9,9 @@ public class PlayerHurtBox : MonoBehaviour
     [SerializeField] int damage;
     [SerializeField] bool defects;
     [SerializeField] float freezes;
+    [SerializeField] float parryLifespan = .75f;
     [SerializeField] GameObject freeze;
+    [SerializeField] GameObject parryPrefab;
     public GameObject spawnOnDeath;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -53,7 +55,10 @@ public class PlayerHurtBox : MonoBehaviour
         }
         else if(defects && collision.gameObject.tag == "Projectile")
         {
+            GameObject parrySpawned = Instantiate(parryPrefab,collision.gameObject.transform.position,Quaternion.identity);
+            Destroy(parrySpawned, parryLifespan);
             Destroy(collision.gameObject);
         }
     }
+
 }

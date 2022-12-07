@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   right: 0
-  speed: 60
+  speed: 80
 --- !u!114 &-3355577688604961586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,6 +289,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPiercing: 0
   wallPiercing: 0
+  knockbackForce: 0
+  spawnOnDeath: {fileID: 0}
+  enemyAnim: {fileID: 0}
+  attackSound: {fileID: 0}
 --- !u!50 &-4687898568944800627
 Rigidbody2D:
   serializedVersion: 4
