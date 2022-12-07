@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels Approved/3. Jamison.unity
     guid: 69c4b5abde052af40b59f032a5c748b6
   - enabled: 1
-    path: Assets/Scenes/Levels Approved/4. Gian.unity
+    path: Assets/Scenes/Level Design/4. Gian (OLD).unity
     guid: 0b6a7e4b068708f42b08a7798c3d80f9
   - enabled: 1
     path: Assets/Scenes/Levels Approved/5. Nick.unity
@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels Approved/6. Kyle.unity
     guid: 4aa031e219cad09408b11c0ab4ca0e72
   - enabled: 1
-    path: Assets/Scenes/Levels Approved/7. Gian.unity
+    path: Assets/Scenes/Levels Approved/4. Gian.unity
     guid: 46faa0a5245ea1b4587963a3e9c3c503
   - enabled: 1
     path: Assets/Scenes/Levels Approved/8. Andrew.unity
