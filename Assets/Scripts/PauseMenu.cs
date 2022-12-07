@@ -11,8 +11,11 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 1;
-        pauseMenu.SetActive(false);
+        if (!FindObjectOfType<LMPManager>())
+        {
+            Time.timeScale = 1;
+            pauseMenu.SetActive(false);
+        }
     }
 
     // Update is called once per frame

@@ -37,12 +37,12 @@ public class Projectile_Player : MonoBehaviour
             transform.localPosition = startPos + ((GetComponent<SpriteRenderer>().size.x / 2) * atk.moveDirection);
             transform.right = (Vector2)transform.localPosition - startPos;
             transform.localPosition = (Vector2)transform.position + new Vector2(0, .25f);
-            transform.parent = FindObjectOfType<PlayerMovement>().gameObject.transform;
+            transform.parent = GetComponent<Attack>().owner.gameObject.transform;
         }
         else if(startInwards)
         {
-            transform.position = (Vector2)FindObjectOfType<PlayerMovement>().gameObject.transform.position;
-            transform.parent = FindObjectOfType<PlayerMovement>().gameObject.transform;
+            transform.position = (Vector2)GetComponent<Attack>().owner.gameObject.transform.position;
+            transform.parent = GetComponent<Attack>().owner.gameObject.transform;
         }
 
         if(homing)

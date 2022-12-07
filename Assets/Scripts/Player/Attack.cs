@@ -6,4 +6,6 @@ public class Attack : MonoBehaviour
 {
     public float attackCooldown;
     public Vector2 moveDirection;
+    public bool p2;
+    public GameObject owner;
 }
