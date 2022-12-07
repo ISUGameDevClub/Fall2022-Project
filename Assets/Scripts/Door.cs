@@ -12,6 +12,7 @@ public class Door : MonoBehaviour
     public SpriteRenderer sr;
 
     private bool fightStarted;
+    private bool fightEnded;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +44,13 @@ public class Door : MonoBehaviour
             {
                 if (FindObjectOfType<Boss>() == null)
                 {
-                    Destroy(otherDoor);
+                    if (!fightEnded)
+                    {
+                        fightEnded = true;
+                        GetComponent<BeatenGame>().BeatGame();
+                        FindObjectOfType<Timer>().StopTimer();
+                        Destroy(otherDoor);
+                    }
                 }
             }
             else
