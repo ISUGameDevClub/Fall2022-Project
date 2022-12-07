@@ -371,6 +371,7 @@ GameObject:
   - component: {fileID: 920925935}
   - component: {fileID: 920925934}
   - component: {fileID: 920925933}
+  - component: {fileID: 920925936}
   m_Layer: 3
   m_Name: crate_platform
   m_TagString: Ground
@@ -509,6 +510,23 @@ MonoBehaviour:
   otherDoor: {fileID: 1357027380}
   col: {fileID: 920925934}
   sr: {fileID: 920925931}
+--- !u!114 &920925936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920925930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cd34b4b154d99745a62f4891f2137fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 0}
+  beatGame: 0
+  fastestSeconds: 0
+  fastestMinutes: 0
+  checkIfGameBeaten: 0
 --- !u!1 &1036677469
 GameObject:
   m_ObjectHideFlags: 0

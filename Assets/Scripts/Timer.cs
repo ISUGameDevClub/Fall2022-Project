@@ -66,7 +66,7 @@ public class Timer : MonoBehaviour
         timerStoped = true;
     }
 
-    public void ResetTimer()
+    static public void ResetTimer()
     {
         minutes = 0;
         seconds = 0;
