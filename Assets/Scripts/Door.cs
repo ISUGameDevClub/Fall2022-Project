@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    public bool midBoss;
+    public GameObject midBossGO;
     private GameObject player;
     public GameObject otherDoor;
     public BoxCollider2D col;
@@ -15,6 +17,8 @@ public class Door : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<PlayerMovement>().gameObject;
+        if(midBoss)
+            midBossGO.GetComponent<EnemyHealth>().invincible = true;
     }
 
     // Update is called once per frame
@@ -23,15 +27,31 @@ public class Door : MonoBehaviour
         if(!fightStarted && player.transform.position.x > transform.position.x + 1.5f)
         {
             fightStarted = true;
-            FindObjectOfType<Boss>().StartFight();
+            if (!midBoss)
+                FindObjectOfType<Boss>().StartFight();
+            else
+            {
+                midBossGO.GetComponent<DogMovement>().enemySpeed = 15;
+                midBossGO.GetComponent<EnemyHealth>().invincible = false;
+            }
             col.enabled = true;
             sr.enabled = true;
         }   
         else if (fightStarted)
         {
-            if(FindObjectOfType<Boss>() == null)
+            if (!midBoss)
             {
-                Destroy(otherDoor);
+                if (FindObjectOfType<Boss>() == null)
+                {
+                    Destroy(otherDoor);
+                }
+            }
+            else
+            {
+                if (midBossGO == null && FindObjectOfType<FishShoot>() == null)
+                {
+                    Destroy(otherDoor);
+                }
             }
         }
     }

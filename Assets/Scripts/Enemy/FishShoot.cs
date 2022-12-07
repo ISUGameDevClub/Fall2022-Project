@@ -10,6 +10,7 @@ public class FishShoot : MonoBehaviour
     [SerializeField] GameObject shootPrefab;
     public GameObject fishprojectilePrefab;
     public bool facingRight;
+    public bool rotates;
     public float activateDistance = 10;
     private Transform playerTransform;
     private bool isShooting;
@@ -27,6 +28,20 @@ public class FishShoot : MonoBehaviour
     {
         if (GetComponent<EnemyHealth>().frozen <= 0 && playerTransform != null)
         {
+            if (rotates)
+            {
+                if(playerTransform.position.x > transform.position.x)
+                {
+                    GetComponentInChildren<SpriteRenderer>().flipX = true;
+                    facingRight = true;
+                }
+                else
+                {
+                    GetComponentInChildren<SpriteRenderer>().flipX = false;
+                    facingRight = false;
+                }
+            }
+
             if (Vector2.Distance(this.transform.position, playerTransform.position) < activateDistance && !isShooting)
             {
                 isShooting = true;
@@ -45,6 +60,10 @@ public class FishShoot : MonoBehaviour
                 GameObject tempBul = Instantiate(fishprojectilePrefab, transform.position, Quaternion.identity);
                 Instantiate(shootPrefab, transform.position, Quaternion.identity);
                 tempBul.GetComponent<FishProjectileMove>().right = facingRight;
+                if (rotates)
+                {
+                    GetComponentInChildren<Animator>().SetTrigger("Attack");
+                }
             }
         }
     }

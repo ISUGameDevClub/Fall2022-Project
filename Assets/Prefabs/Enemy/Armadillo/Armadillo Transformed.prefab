@@ -45,11 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f48905f509273cb4ea7af475322aec7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPiercing: 0
-  wallPiercing: 0
+  playerPiercing: 1
+  wallPiercing: 1
   knockbackForce: 0
   spawnOnDeath: {fileID: 0}
   enemyAnim: {fileID: 0}
+  attackSound: {fileID: 0}
 --- !u!70 &3366411264847097523
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -63,8 +64,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.3623237}
-  m_Size: {x: 1.2103895, y: 1.8229923}
+  m_Offset: {x: 0, y: 0.56}
+  m_Size: {x: 0.69, y: 3.71}
   m_Direction: 0
 --- !u!1 &3334855485218984001
 GameObject:
@@ -78,7 +79,7 @@ GameObject:
   - component: {fileID: 8525230336176962692}
   - component: {fileID: 9153249046204736725}
   m_Layer: 0
-  m_Name: ArmadilloSprite
+  m_Name: ArmadilloSprite2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,8 +93,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3334855485218984001}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.43, y: 0.49, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.638, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7384297574751945891}
@@ -140,7 +141,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 61765f08dc991864ba1a2ec502127097, type: 3}
+  m_Sprite: {fileID: 1673186409, guid: 2860fa41ab05f724ea790c2c132f4b3e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -159,9 +160,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3334855485218984001}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f97861505bff7974295653c062795b04, type: 2}
+  m_Controller: {fileID: 9100000, guid: bd95e65b188aec1409524a42dbc90f7b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -183,7 +184,7 @@ GameObject:
   - component: {fileID: 8805368252620412763}
   - component: {fileID: 285934226241317863}
   - component: {fileID: 5557364937231022132}
-  - component: {fileID: 5385947599270633561}
+  - component: {fileID: 7197463017895298749}
   m_Layer: 0
   m_Name: Armadillo Transformed
   m_TagString: Untagged
@@ -241,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2dcf50c55e7d444b2c230c82136d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 500
+  health: 300
   hurtPrefab: {fileID: 7337934333778476695, guid: a26d8a5b053dca0488cf09d00233d2a0, type: 3}
   diePrefab: {fileID: 7337934333778476695, guid: 23fd4bec8f789f942b73a569cafb8834, type: 3}
   transformPrefab: {fileID: 0}
@@ -262,10 +263,10 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.3623237}
-  m_Size: {x: 1.1450927, y: 1.7246474}
+  m_Offset: {x: 0, y: 0.56}
+  m_Size: {x: 0.59, y: 3.61}
   m_Direction: 0
---- !u!114 &5385947599270633561
+--- !u!114 &7197463017895298749
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -274,9 +275,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7037511374688973649}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27b0f885ff16a8440842050371992958, type: 3}
+  m_Script: {fileID: 11500000, guid: 168303f50f1f5a24aa76b5da27aa8865, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootPrefab: {fileID: 7337934333778476695, guid: d78915da603343d44b2f1ce80d3291e5, type: 3}
+  fishprojectilePrefab: {fileID: 2688712039996539345, guid: cf116e941c815ff47ba00b1b4cec8a91, type: 3}
+  facingRight: 0
+  rotates: 1
   activateDistance: 100
-  proj: {fileID: 1260506417258750844, guid: 8673b00c12ac61a45ad59072dc0337cc, type: 3}
-  attackWait: 3
+  attackCooldown: 1

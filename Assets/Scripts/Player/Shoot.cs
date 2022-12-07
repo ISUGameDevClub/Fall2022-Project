@@ -159,18 +159,18 @@ public class Shoot : MonoBehaviour
                     dir = Vector2.left;
                 }
 
-                RaycastHit2D hit = Physics2D.Raycast(player.transform.position, dir, 4, mask);
+                RaycastHit2D hit = Physics2D.Raycast(player.transform.position, dir, 5, mask);
                 if(hit.collider == null)
                 {
-                    GameObject smoke = Instantiate(smokePrefab, (Vector2)player.transform.position + dir * 4, Quaternion.identity,null);
+                    GameObject smoke = Instantiate(smokePrefab, (Vector2)player.transform.position + dir * 5, Quaternion.identity,null);
                     Destroy(smoke, 1);
-                    player.transform.position = (Vector2)player.transform.position + dir * 4;
+                    player.transform.position = (Vector2)player.transform.position + dir * 5;
                 }
                 else
                 {
-                    GameObject smoke = Instantiate(smokePrefab, hit.point, Quaternion.identity,null);
+                    GameObject smoke = Instantiate(smokePrefab, hit.point - dir * .5f, Quaternion.identity,null);
                     Destroy(smoke, 1);
-                    player.transform.position = hit.point;
+                    player.transform.position = hit.point - dir * .5f;
                 }
             }
             else if (playerHP.playerHealth.Equals("moab"))

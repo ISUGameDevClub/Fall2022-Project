@@ -85020,6 +85020,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5776930355515783810, guid: 5d5f991dcdb28ed42beccd1c5aaaf951, type: 3}
+      propertyPath: nextScene
+      value: 13. Midboss
+      objectReference: {fileID: 0}
     - target: {fileID: 5776930355515783811, guid: 5d5f991dcdb28ed42beccd1c5aaaf951, type: 3}
       propertyPath: m_RootOrder
       value: 4
