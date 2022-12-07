@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 8531299516597934742}
   m_Layer: 8
   m_Name: Rat Projectile
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -320,6 +320,8 @@ MonoBehaviour:
   wallPiercing: 0
   knockbackForce: 0
   spawnOnDeath: {fileID: 2688712039996539345, guid: 405d481be83f7384480fd1da317ff296, type: 3}
+  enemyAnim: {fileID: 0}
+  attackSound: {fileID: 0}
 --- !u!114 &1646150367772244660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,6 +359,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 0
   moveDirection: {x: 0, y: 0}
+  p2: 0
+  owner: {fileID: 0}
 --- !u!58 &8531299516597934742
 CircleCollider2D:
   m_ObjectHideFlags: 0
