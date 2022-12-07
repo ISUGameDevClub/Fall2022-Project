@@ -648,6 +648,7 @@ MonoBehaviour:
   specialNull: {fileID: 8300000, guid: 63b92a7cb5432ce4d871302be21a2bea, type: 3}
   specialPrefab: {fileID: 4972455293233802207}
   smokePrefab: {fileID: 8019436645716934802, guid: 357f331b92a71e84687b13f1ffb0a73d, type: 3}
+  parryPrefab: {fileID: 576396828388415040, guid: a10fdedfde9537947889a0d890434cc9, type: 3}
 --- !u!82 &21238195345419755
 AudioSource:
   m_ObjectHideFlags: 0

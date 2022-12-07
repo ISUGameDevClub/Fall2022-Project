@@ -10,6 +10,7 @@ public class PlayerHurtBox : MonoBehaviour
     [SerializeField] bool defects;
     [SerializeField] float freezes;
     [SerializeField] GameObject freeze;
+    [SerializeField] GameObject parryPrefab;
     public GameObject spawnOnDeath;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -53,6 +54,8 @@ public class PlayerHurtBox : MonoBehaviour
         }
         else if(defects && collision.gameObject.tag == "Projectile")
         {
+            GameObject parrySpawned = Instantiate(parryPrefab,collision.gameObject.transform.position,Quaternion.identity);
+            Destroy(parrySpawned, .75f);
             Destroy(collision.gameObject);
         }
     }
