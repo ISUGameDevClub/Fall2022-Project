@@ -177,7 +177,7 @@ MonoBehaviour:
   fishprojectilePrefab: {fileID: 2688712039996539345, guid: cf116e941c815ff47ba00b1b4cec8a91, type: 3}
   facingRight: 0
   activateDistance: 17
-  attackCooldown: 2.25
+  attackCooldown: 2.5
 --- !u!70 &8022032699547102493
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -260,3 +260,4 @@ MonoBehaviour:
   knockbackForce: 0
   spawnOnDeath: {fileID: 0}
   enemyAnim: {fileID: 0}
+  attackSound: {fileID: 0}
