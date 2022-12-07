@@ -30,7 +30,7 @@ public class HatSpawn : MonoBehaviour
     private IEnumerator SpawnHatEnum()
     {
         yield return new WaitForSeconds(Random.Range(hatSpawnMinTime, hatSpawnMaxTime));
-        myHat = Instantiate(hats[Random.Range(0, hats.Length - 1)], (Vector2)transform.position + Vector2.up, Quaternion.identity);
+        myHat = Instantiate(hats[Random.Range(0, hats.Length)], (Vector2)transform.position + Vector2.up, Quaternion.identity);
         spawningHat = false;
     }
 }

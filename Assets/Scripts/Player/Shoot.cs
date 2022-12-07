@@ -150,7 +150,7 @@ public class Shoot : MonoBehaviour
             else if (playerHP.playerHealth.Equals("yarnwhip"))
             {
                 bulletToSpawn = 16;
-                GameObject player = FindObjectOfType<PlayerMovement>().gameObject;
+                GameObject player = GetComponentInParent<PlayerMovement>().gameObject;
                 LayerMask mask = LayerMask.GetMask("Ground");
 
                 Vector2 dir;
