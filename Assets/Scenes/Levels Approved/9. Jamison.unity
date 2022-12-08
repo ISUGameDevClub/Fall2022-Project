@@ -693,6 +693,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ccebb7f47e414849aa842fec2847ef1, type: 3}
+--- !u!1001 &299127802
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3860346885576952232, guid: 3ab6f9f128dd09c4eadfb275feece9ce, type: 3}
+      propertyPath: m_RootOrder
+      value: 88
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860346885576952232, guid: 3ab6f9f128dd09c4eadfb275feece9ce, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 222
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860346885576952232, guid: 3ab6f9f128dd09c4eadfb275feece9ce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860346885576952232, guid: 3ab6f9f128dd09c4eadfb275feece9ce, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860346885576952232, guid: 3ab6f9f128dd09c4eadfb275feece9ce, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860346885576952232, guid: 3ab6f9f128dd09c4eadfb275feece9ce, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860346885576952232, guid: 3ab6f9f128dd09c4eadfb275feece9ce, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860346885576952232, guid: 3ab6f9f128dd09c4eadfb275feece9ce, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860346885576952232, guid: 3ab6f9f128dd09c4eadfb275feece9ce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860346885576952232, guid: 3ab6f9f128dd09c4eadfb275feece9ce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860346885576952232, guid: 3ab6f9f128dd09c4eadfb275feece9ce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860346885576952234, guid: 3ab6f9f128dd09c4eadfb275feece9ce, type: 3}
+      propertyPath: m_Name
+      value: Juggernaut Hat Variant (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3ab6f9f128dd09c4eadfb275feece9ce, type: 3}
 --- !u!1001 &384817366
 PrefabInstance:
   m_ObjectHideFlags: 0
