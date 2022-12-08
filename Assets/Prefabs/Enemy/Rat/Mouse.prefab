@@ -171,6 +171,7 @@ MonoBehaviour:
   knockbackForce: 0
   spawnOnDeath: {fileID: 0}
   enemyAnim: {fileID: 0}
+  attackSound: {fileID: 0}
 --- !u!1 &2626630487055481916
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,4 +422,4 @@ MonoBehaviour:
   enemyAnimator: {fileID: 0}
   invincible: 0
   frozen: 0
-  destroyAfterSec: 4
+  destroyAfterSec: 2
