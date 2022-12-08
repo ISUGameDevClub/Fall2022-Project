@@ -23260,7 +23260,7 @@ PrefabInstance:
     - target: {fileID: 5776930355515783810, guid: 5d5f991dcdb28ed42beccd1c5aaaf951, type: 3}
       propertyPath: changeToSong
       value: 
-      objectReference: {fileID: 8300000, guid: 1d63d55f6a009004f9af45aa7e6074eb, type: 3}
+      objectReference: {fileID: 8300000, guid: f7e67526d72bf6e4690d1bc37ff86adc, type: 3}
     - target: {fileID: 5776930355515783811, guid: 5d5f991dcdb28ed42beccd1c5aaaf951, type: 3}
       propertyPath: m_RootOrder
       value: 13

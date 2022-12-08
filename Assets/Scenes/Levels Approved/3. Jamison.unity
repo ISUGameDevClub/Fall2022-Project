@@ -1765,6 +1765,10 @@ PrefabInstance:
       propertyPath: nextScene
       value: 4. Gian
       objectReference: {fileID: 0}
+    - target: {fileID: 5776930355515783810, guid: 5d5f991dcdb28ed42beccd1c5aaaf951, type: 3}
+      propertyPath: changeToSong
+      value: 
+      objectReference: {fileID: 8300000, guid: 91926203d318aad44854aff5e9f14a13, type: 3}
     - target: {fileID: 5776930355515783811, guid: 5d5f991dcdb28ed42beccd1c5aaaf951, type: 3}
       propertyPath: m_RootOrder
       value: 51

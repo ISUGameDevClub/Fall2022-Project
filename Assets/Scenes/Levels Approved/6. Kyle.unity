@@ -248,6 +248,10 @@ PrefabInstance:
       propertyPath: nextScene
       value: 8. Andrew
       objectReference: {fileID: 0}
+    - target: {fileID: 5776930355515783810, guid: 5d5f991dcdb28ed42beccd1c5aaaf951, type: 3}
+      propertyPath: changeToSong
+      value: 
+      objectReference: {fileID: 8300000, guid: 0471aeb49af65774692e101c16b5822c, type: 3}
     - target: {fileID: 5776930355515783811, guid: 5d5f991dcdb28ed42beccd1c5aaaf951, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -56449,7 +56453,7 @@ Transform:
   m_Children:
   - {fileID: 1140477836}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1482239572
 PrefabInstance:
@@ -57225,7 +57229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2852148054842419982, guid: a2580c7c271bd7140be7208f94bddfde, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2852148054842419982, guid: a2580c7c271bd7140be7208f94bddfde, type: 3}
       propertyPath: m_AnchorMax.x
